@@ -26,4 +26,5 @@ hs_err_pid*
 *.properties~
 *.xml~
 *.txt~
+*~
 /bin/
