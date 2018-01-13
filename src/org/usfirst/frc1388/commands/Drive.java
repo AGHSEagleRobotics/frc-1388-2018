@@ -46,12 +46,12 @@ public class Drive extends Command {
     @Override
     protected void execute() {
     	
-    	double leftStickY = Robot.oi.getDriveController().getY(Hand.kLeft);
-    	double leftStickX = Robot.oi.getDriveController().getX(Hand.kLeft);
-    	double rightStickX = Robot.oi.getDriveController().getX(Hand.kRight);
+    	double stickY = Robot.oi.getJoystick().getY();
+    	double stickX = Robot.oi.getJoystick().getX();
+    	double stickZ = Robot.oi.getJoystick().getZ();
     	
     	
-    	RobotMap.driveTrainmecanumDrive.driveCartesian(leftStickX, leftStickY, rightStickX, 0.0);;
+    	RobotMap.driveTrainmecanumDrive.driveCartesian( -stickX, stickY, stickZ, 0.0);;
     }
 
     // Make this return true when this Command no longer needs to run execute()
