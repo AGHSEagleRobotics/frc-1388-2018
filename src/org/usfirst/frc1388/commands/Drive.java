@@ -10,6 +10,7 @@
 
 
 package org.usfirst.frc1388.commands;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1388.Robot;
 import org.usfirst.frc1388.RobotMap;
@@ -45,10 +46,12 @@ public class Drive extends Command {
     @Override
     protected void execute() {
     	
-    	double leftStickY = Robot.oi.getleftDriveStick().getY();
-    	double rightStickY = Robot.oi.getrightDriveStick().getY();
+    	double leftStickY = Robot.oi.getDriveController().getY(Hand.kLeft);
+    	double leftStickX = Robot.oi.getDriveController().getX(Hand.kLeft);
+    	double rightStickX = Robot.oi.getDriveController().getX(Hand.kRight);
     	
-    	RobotMap.driveTraintankDrive.tankDrive(leftStickY, rightStickY);
+    	
+    	RobotMap.driveTrainmecanumDrive.driveCartesian(leftStickX, leftStickY, rightStickX, 0.0);;
     }
 
     // Make this return true when this Command no longer needs to run execute()
