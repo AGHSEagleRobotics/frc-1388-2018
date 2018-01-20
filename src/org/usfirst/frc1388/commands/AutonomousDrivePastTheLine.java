@@ -40,7 +40,7 @@ public class AutonomousDrivePastTheLine extends Command {
     @Override
     protected void initialize() {
     	String localGameData = Robot.gameData;
-    	String localFieldPosition = Robot.fieldPosition;
+    	String localFieldPosition = Robot.fieldPos;
     	
     	SmartDashboard.putString("localGameData", localGameData);
     	SmartDashboard.putString("localFieldPosition", localFieldPosition);

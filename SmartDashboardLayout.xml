@@ -1,5 +1,11 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="fieldPos" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="387" y="114"/>
+	</widget>
+	<widget field="setFieldPos" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="28" y="216"/>
+	</widget>
 	<widget field="selected Autonomous Command" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="272" y="50"/>
 		<width>318</width>
@@ -11,21 +17,9 @@
 		<location x="26" y="198"/>
 		<property name="Text" value="To set Field position type 'L', 'C', or 'R' below"/>
 	</static-widget>
-	<widget field="setFieldPosition" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="25" y="213"/>
-	</widget>
-	<widget field="fieldPosition" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="369" y="115"/>
-		<height>20</height>
-	</widget>
 	<widget field="gameData" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="377" y="91"/>
 		<width>133</width>
-	</widget>
-	<widget field="Auto Selector" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="19" y="13"/>
-		<width>208</width>
-		<height>25</height>
 	</widget>
 	<widget field="localFieldPosition" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="347" y="184"/>
@@ -72,4 +66,6 @@
 		<location x="0" y="0"/>
 	</widget>
 </live-window>
+	<hidden field="fieldPosition"/>
+	<hidden field="Auto Selector"/>
 </xml>
