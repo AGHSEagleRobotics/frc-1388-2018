@@ -1,0 +1,75 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="selected Autonomous Command" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="272" y="50"/>
+		<width>318</width>
+	</widget>
+	<widget field="Auto mode" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="27" y="106"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="26" y="198"/>
+		<property name="Text" value="To set Field position type 'L', 'C', or 'R' below"/>
+	</static-widget>
+	<widget field="setFieldPosition" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="25" y="213"/>
+	</widget>
+	<widget field="fieldPosition" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="369" y="115"/>
+		<height>20</height>
+	</widget>
+	<widget field="gameData" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="377" y="91"/>
+		<width>133</width>
+	</widget>
+	<widget field="Auto Selector" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="19" y="13"/>
+		<width>208</width>
+		<height>25</height>
+	</widget>
+	<widget field="localFieldPosition" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="347" y="184"/>
+	</widget>
+	<widget field="localGameData" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="355" y="162"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="38" y="77"/>
+		<width>141</width>
+		<property name="Text" value="|"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="48" y="86"/>
+		<width>120</width>
+		<property name="Text" value="|"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="67" y="98"/>
+		<width>82</width>
+		<property name="Text" value="\/"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="68" y="96"/>
+		<width>81</width>
+		<property name="Text" value="|"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="33" y="60"/>
+		<width>177</width>
+		<property name="Text" value="Autonomous Function"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.ConnectionIndicator">
+		<location x="1" y="-2"/>
+		<width>906</width>
+		<height>299</height>
+	</static-widget>
+</dashboard>
+<live-window>
+	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="24"/>
+	</widget>
+	<widget field="DriveTrain" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="0"/>
+	</widget>
+</live-window>
+</xml>
