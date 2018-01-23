@@ -15,6 +15,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1388.Robot;
 import org.usfirst.frc1388.RobotMap;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 /**
  *
  */
@@ -46,8 +48,8 @@ public class Intake extends Command {
     @Override
     protected void execute() {
     	double intakeSpeed = 0;
-    	RobotMap.forksleftForkMotor.set(intakeSpeed);
-    	RobotMap.forksrightForkMotor.set(intakeSpeed);
+    	RobotMap.forksleftForkMotor.set(ControlMode.PercentOutput, intakeSpeed);
+    	RobotMap.forksrightForkMotor.set(ControlMode.PercentOutput, intakeSpeed);
     	
     	if( Robot.oi.getDriveController().getBButtonPressed() == true && Robot.oi.getDriveController().getAButtonPressed() == true  ) {
     		intakeSpeed = 0;

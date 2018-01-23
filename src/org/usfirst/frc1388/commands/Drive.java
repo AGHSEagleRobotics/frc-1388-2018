@@ -51,7 +51,7 @@ public class Drive extends Command {
     	double rightStickX = Robot.oi.getDriveController().getX(Hand.kRight);
     	
     	
-    	RobotMap.driveTrainmecanumDrive.driveCartesian(leftStickX, leftStickY, rightStickX, 0.0);;
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

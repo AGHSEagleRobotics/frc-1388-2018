@@ -15,6 +15,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1388.Robot;
 import org.usfirst.frc1388.RobotMap;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 /**
  *
  */
@@ -46,7 +48,8 @@ public class Rise extends Command {
     @Override
     protected void execute() {
     	double leftStickY = Robot.oi.getDriveController().getY(Hand.kLeft);
-    	RobotMap.elevatorelevatorMotor.set(leftStickY);
+    	RobotMap.elevatorMotor.set(ControlMode.PercentOutput, leftStickY);
+    
     	
     	
     }
