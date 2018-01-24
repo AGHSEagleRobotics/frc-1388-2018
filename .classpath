@@ -10,6 +10,6 @@
 	<classpathentry kind="var" path="USERLIBS_DIR/mindsensors-javadoc.jar"/>
 	<classpathentry kind="var" path="USERLIBS_DIR/mindsensors.jar"/>
 	<classpathentry kind="var" path="USERLIBS_DIR/CTRE_Phoenix-sources.jar"/>
-	<classpathentry kind="var" path="USERLIBS_DIR/CTRE_Phoenix.jar"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/CTRE_Phoenix.jar" sourcepath="/CTRE_Phoenix.sources"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
