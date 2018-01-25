@@ -50,7 +50,7 @@ public class Drive extends Command {
     	double leftStickX = Robot.oi.getDriveController().getX(Hand.kLeft);
     	double rightStickX = Robot.oi.getDriveController().getX(Hand.kRight);
     	
-    	
+    	RobotMap.driveTrainMecanumDrive1.driveCartesian(leftStickY, leftStickX, rightStickX, 0);
     	
     }
 

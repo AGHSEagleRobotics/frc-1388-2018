@@ -47,8 +47,8 @@ public class Rise extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	double leftStickY = Robot.oi.getDriveController().getY(Hand.kLeft);
-    	RobotMap.elevatorelevatorMotor.set(ControlMode.PercentOutput, leftStickY);
+    	double leftStickY = Robot.oi.getOptController().getY(Hand.kLeft);
+    	RobotMap.elevatorMotor.set(leftStickY);;
     
     	
     	
