@@ -40,6 +40,7 @@ public class Drive extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+    	System.out.println("Robot Drive Starts ###############");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -63,6 +64,7 @@ public class Drive extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+    	System.out.println("Robot Drive Ends ################");
     }
 
     // Called when another command which requires one or more of the same
