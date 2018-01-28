@@ -48,8 +48,8 @@ public class Intake extends Command {
     @Override
     protected void execute() {
     	double intakeSpeed = 0;
-    	RobotMap.leftForkMotor.set(intakeSpeed);
-    	RobotMap.rightForkMotor.set(intakeSpeed);
+    	//RobotMap.leftForkMotor.set(intakeSpeed);
+    	//RobotMap.rightForkMotor.set(intakeSpeed);
     	
     	if( Robot.oi.getDriveController().getBButtonPressed() == true && Robot.oi.getDriveController().getAButtonPressed() == true  ) {
     		intakeSpeed = 0;

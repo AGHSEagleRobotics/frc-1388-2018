@@ -48,7 +48,7 @@ public class Rise extends Command {
     @Override
     protected void execute() {
     	double leftStickY = Robot.oi.getOptController().getY(Hand.kLeft);
-    	RobotMap.elevatorMotor.set(leftStickY);;
+    	//RobotMap.elevatorMotor.set(leftStickY);;
     
     	
     	
