@@ -40,6 +40,9 @@ public class Drive extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+    	
+    	// set deadband. Xbox Controller seems to need at least 0.1
+    	RobotMap.driveTrainmecanumDrive.setDeadband(0.2);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -50,9 +53,20 @@ public class Drive extends Command {
     	double leftStickX = Robot.oi.getDriveController().getX(Hand.kLeft);
     	double rightStickX = Robot.oi.getDriveController().getX(Hand.kRight);
     	
-    	System.out.println(Robot.gyro.getAngleZ());
+    	// get Gyro Z angle and adjust so is always between 0 and 360
+    	double gyroZ = Robot.gyro.getAngleZ();
+    	if (gyroZ > 360) gyroZ-=360;
+    	if (gyroZ < 0) gyroZ+=360;
+    	    	
+    	// reverse left stick X
+    	leftStickX = -leftStickX;
     	
-    	RobotMap.driveTrainmecanumDrive.driveCartesian(leftStickX, leftStickY, rightStickX, Robot.gyro.getAngleZ());
+    	// reverse right stick X
+    	rightStickX = -rightStickX;
+    	
+    	System.out.println(gyroZ);
+    	
+    	RobotMap.driveTrainmecanumDrive.driveCartesian(leftStickX, leftStickY, rightStickX, gyroZ);
     }
 
     // Make this return true when this Command no longer needs to run execute()
