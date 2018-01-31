@@ -55,18 +55,20 @@ public class Drive extends Command {
     	
     	// get Gyro Z angle and adjust so is always between 0 and 360
     	double gyroZ = Robot.gyro.getAngleZ();
-    	if (gyroZ > 360) gyroZ-=360;
-    	if (gyroZ < 0) gyroZ+=360;
+    	//if (gyroZ > 360) gyroZ-=360;
+    	//if (gyroZ < 0) gyroZ+=360;
     	    	
     	// reverse left stick X
-    	leftStickX = -leftStickX;
+    	leftStickY = -leftStickY;
+    	System.out.println("LeftStickX: " + leftStickX + "\tLeftStickY: " + leftStickY + "\t rightStickX: " + rightStickX);
+    	
     	
     	// reverse right stick X
-    	rightStickX = -rightStickX;
+    	//rightStickX = -rightStickX;
     	
     	System.out.println(gyroZ);
     	
-    	RobotMap.driveTrainmecanumDrive.driveCartesian(leftStickX, leftStickY, rightStickX, gyroZ);
+    	RobotMap.driveTrainmecanumDrive.driveCartesian(leftStickX, leftStickY, rightStickX, -gyroZ);
     }
 
     // Make this return true when this Command no longer needs to run execute()
