@@ -49,24 +49,24 @@ public class Drive extends Command {
     @Override
     protected void execute() {
     	
-    	double leftStickY = Robot.oi.getDriveController().getY(Hand.kLeft);
-    	double leftStickX = Robot.oi.getDriveController().getX(Hand.kLeft);
-    	double rightStickX = Robot.oi.getDriveController().getX(Hand.kRight);
+    	// mecanum ySpeed is the X of left stick 
+    	double mecanum_ySpeed = Robot.oi.getDriveController().getX(Hand.kLeft);
     	
-    	double gyroZ = Robot.gyro.getAngleZ();
+    	// mecanum xSpeed is the inverse of Y of the left stick
+    	double mecanum_xSpeed = - Robot.oi.getDriveController().getY(Hand.kLeft);
     	
-    	// invert leftStick Y
-    	leftStickY = -leftStickY;
+    	// mecanum zRotation is the X of the right stick
+    	double mecanum_zRotation = Robot.oi.getDriveController().getX(Hand.kRight);
     	
-    	//invert gyroZ
-    	gyroZ = -gyroZ;
+    	// mechanum gyroAngle for menanum needs to be the inverse of the gyro's Z angle 
+    	double mecanum_gyroAngle = - Robot.gyro.getAngleZ();
     	
-    	System.out.println("LeftStickX: " + leftStickX + "\tLeftStickY: " + leftStickY + "\t rightStickX: " + rightStickX);
-
+    	// console debugging
+    	System.out.println("mecanum_ySpeed (left stick X): " + mecanum_ySpeed + "\tmecanum_xSpeed (inverse left stick Y): " + mecanum_xSpeed + "\t mecanum_zRotation (right Stick X): " + mecanum_zRotation);
+    	System.out.println("mecanum_gyroAngle (inverse Gyro Z): " + mecanum_gyroAngle);
     	
-    	System.out.println("Gyro Z Angle: " + gyroZ);
-    	
-    	RobotMap.driveTrainmecanumDrive.driveCartesian(leftStickX, leftStickY, rightStickX, gyroZ);
+    	// mecanum drive cartesian using Field orientation (gyro-based)
+    	RobotMap.driveTrainmecanumDrive.driveCartesian(mecanum_ySpeed, mecanum_xSpeed, mecanum_zRotation, mecanum_gyroAngle);
     }
 
     // Make this return true when this Command no longer needs to run execute()

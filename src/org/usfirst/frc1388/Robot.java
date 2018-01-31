@@ -95,6 +95,11 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
+    	
+    	// reset the gyro to zero at the start of Auto. We do not want to do this at the start of Tele because we won't know what position
+    	// the robot will be at the end of Auto
+    	gyro.reset();
+    	
     	// clear status fields in SmartDashboard
     	SmartDashboard.putString("gameData", "");
     	SmartDashboard.putString("localGameData", "");
