@@ -40,18 +40,33 @@ public class Drive extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+    	
+    	// set deadband. Xbox Controller seems to need at least 0.1
+    	RobotMap.driveTrainmecanumDrive.setDeadband(0.2);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
     	
-    	double leftStickY = Robot.oi.getDriveController().getY(Hand.kLeft);
-    	double leftStickX = Robot.oi.getDriveController().getX(Hand.kLeft);
-    	double rightStickX = Robot.oi.getDriveController().getX(Hand.kRight);
+    	// mecanum ySpeed is the X of left stick 
+    	double mecanum_ySpeed = Robot.oi.getDriveController().getX(Hand.kLeft);
     	
+    	// mecanum xSpeed is the inverse of Y of the left stick
+    	double mecanum_xSpeed = - Robot.oi.getDriveController().getY(Hand.kLeft);
     	
-    	RobotMap.driveTrainmecanumDrive.driveCartesian(leftStickX, leftStickY, rightStickX, 0.0);;
+    	// mecanum zRotation is the X of the right stick
+    	double mecanum_zRotation = Robot.oi.getDriveController().getX(Hand.kRight);
+    	
+    	// mechanum gyroAngle for menanum needs to be the inverse of the gyro's Z angle 
+    	double mecanum_gyroAngle = - Robot.gyro.getAngleZ();
+    	
+    	// console debugging
+    	System.out.println("mecanum_ySpeed (left stick X): " + mecanum_ySpeed + "\tmecanum_xSpeed (inverse left stick Y): " + mecanum_xSpeed + "\t mecanum_zRotation (right Stick X): " + mecanum_zRotation);
+    	System.out.println("mecanum_gyroAngle (inverse Gyro Z): " + mecanum_gyroAngle);
+    	
+    	// mecanum drive cartesian using Field orientation (gyro-based)
+    	RobotMap.driveTrainmecanumDrive.driveCartesian(mecanum_ySpeed, mecanum_xSpeed, mecanum_zRotation, mecanum_gyroAngle);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -69,5 +84,6 @@ public class Drive extends Command {
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+    	end();
     }
 }
