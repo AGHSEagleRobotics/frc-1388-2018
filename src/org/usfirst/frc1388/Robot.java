@@ -18,6 +18,10 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.usfirst.frc1388.commands.*;
 import org.usfirst.frc1388.subsystems.*;
 
@@ -133,6 +137,17 @@ public class Robot extends TimedRobot {
     	System.out.println("gameData = " + gameData);
     	System.out.println("autonomousCommand = " + autonomousCommand + "\n");
         
+    	ReaderOfTxt reader = new ReaderOfTxt();
+    	try {
+			reader.readFile("a");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
     	// schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
     }
