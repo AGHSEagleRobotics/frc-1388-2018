@@ -55,6 +55,7 @@ public class AutonomousDrive extends Command {
     @Override
     protected void initialize() {
     	// if time true, start timer
+    	System.out.println("AutonomousDrive init");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -76,7 +77,7 @@ public class AutonomousDrive extends Command {
     	// if this.time == timer return true
     	// or
     	// if this.distnace - encDistance = 0, return true
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

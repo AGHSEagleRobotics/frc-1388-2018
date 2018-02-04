@@ -51,6 +51,7 @@ public class AutonomousTurn extends Command {
     @Override
     protected void initialize() {
     	// if time true, start timer
+    	System.out.println("AutonomousTurn init");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -70,7 +71,7 @@ public class AutonomousTurn extends Command {
     	// if this.time == timer return true
     	// or
     	// if this.distnace - gyroAngle = 0, return true
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

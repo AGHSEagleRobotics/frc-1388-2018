@@ -42,6 +42,7 @@ public class AutonomousMoveFork extends Command {
     protected void initialize() {
     	//check if one of 3 options
     	//initialize option
+    	System.out.println("AutonomousMoveElevator init");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -62,7 +63,7 @@ public class AutonomousMoveFork extends Command {
     @Override
     protected boolean isFinished() {
     	//check if is at setpoint, if so return true
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
