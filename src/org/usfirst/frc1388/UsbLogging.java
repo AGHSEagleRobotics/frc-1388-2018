@@ -29,13 +29,15 @@ public class UsbLogging {
       }
       
       // Find the file name and open it
-      for (int i = 0; i <= 99999; i++) {
-         // fNum represents a number of the format 00001
+      // Creating a file based on timestamp would be ideal; however, since roboRIO has no RTC,
+      // there is no guarantee that a meaningful time has been set by the time we get here.
+      for (int i = 0; i <= 999; i++) {
+         // fNum represents a number of the format 001
          // fName represents the full file path, including file name
-         String fNum = String.format("%05d", i);
+         String fNum = String.format("%03d", i);
          String fName = logPath + "/" + logPrefix + fNum;
          if (! logSuffix.isEmpty()) {
-            fName += logSuffix;
+            fName += "." + logSuffix;
          }
 
          // See if the file exists
@@ -69,6 +71,7 @@ public class UsbLogging {
 
    public static void printLog(String str) {
       System.out.println(str);
+      // ToDo: Add timestamp to the string written to m_logStream
       if (m_logStream != null) m_logStream.println(str);
    }
 }
