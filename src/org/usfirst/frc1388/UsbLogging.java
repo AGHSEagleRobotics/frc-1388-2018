@@ -8,7 +8,7 @@ public class UsbLogging {
    private static final String logPath = "/u/RobotLogs";
    private static final String logPrefix = "RobotLog_";
    private static final String logSuffix = "txt";
-   private static final String className = Class.class.getSimpleName();
+   private static final String className = UsbLogging.class.getSimpleName();
 
    /**
     * Open a log file, if possible, to be used by logging statements.
@@ -24,7 +24,7 @@ public class UsbLogging {
       // Make sure the log directory exists
       File fLogPath = new File(logPath);
       if (! fLogPath.isDirectory()) {
-         System.out.println(className + ":  Logging directory does not exist");
+         System.out.println(className + ": Logging directory does not exist");
          m_logStream = null;
          return m_logStream;
       }
@@ -43,7 +43,7 @@ public class UsbLogging {
 
          // See if the file exists
          File fLogFile = new File(fName);
-         if (fLogFile.isFile()) {
+         if (! fLogFile.isFile()) {
             try {
                m_logStream = new PrintStream(fLogFile);
             } catch (FileNotFoundException e) {
@@ -56,9 +56,9 @@ public class UsbLogging {
       }
       
       if (m_logStream == null) {
-         System.out.println(className + ":  Couldn't determine log file name");
+         System.out.println(className + ": Couldn't determine log file name");
       } else {
-         System.out.println(className + ":  Log file: " + fName);
+         System.out.println(className + ": Log file: " + fName);
       }
       
       return m_logStream;
