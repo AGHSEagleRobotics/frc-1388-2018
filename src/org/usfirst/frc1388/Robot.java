@@ -148,6 +148,8 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopPeriodic() {
+    	// return distance in centimeters
+    	System.out.println("LIDAR Distance: " + RobotMap.lidarSensor.getDistance());
         Scheduler.getInstance().run();
     }
     
