@@ -20,6 +20,7 @@ public class UsbLogging {
     * @return     A stream to the file opened, or null if no file was opened.
     */
    public static PrintStream openLog() {
+	  String fName = "";
       // Make sure the log directory exists
       File fLogPath = new File(logPath);
       if (! fLogPath.isDirectory()) {
@@ -35,7 +36,7 @@ public class UsbLogging {
          // fNum represents a number of the format 001
          // fName represents the full file path, including file name
          String fNum = String.format("%03d", i);
-         String fName = logPath + "/" + logPrefix + fNum;
+         fName = logPath + "/" + logPrefix + fNum;
          if (! logSuffix.isEmpty()) {
             fName += "." + logSuffix;
          }
@@ -57,7 +58,7 @@ public class UsbLogging {
       if (m_logStream == null) {
          System.out.println(className + ":  Couldn't determine log file name");
       } else {
-         System.out.println(className + ":  Log file: " + fLogFile);
+         System.out.println(className + ":  Log file: " + fName);
       }
       
       return m_logStream;
