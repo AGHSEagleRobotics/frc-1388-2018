@@ -1,9 +1,11 @@
 package org.usfirst.frc1388;
 
 import java.io.*;
+import java.time.*;
 
 public class UsbLogging {
    private static PrintStream m_logStream = null;
+   private static LocalDate m_today = LocalDate.now();
    
    private static final String logPath = "/u/RobotLogs";
    private static final String logPrefix = "RobotLog_";
@@ -59,6 +61,7 @@ public class UsbLogging {
          System.out.println(className + ": Couldn't determine log file name");
       } else {
          System.out.println(className + ": Log file: " + fName);
+         m_logStream.print(m_today + "\r\n");
       }
       
       return m_logStream;
@@ -73,6 +76,12 @@ public class UsbLogging {
    public static void printLog(String str) {
       System.out.println(str);
       // ToDo: Add timestamp to the string written to m_logStream
-      if (m_logStream != null) m_logStream.println(str);
+      if (m_logStream != null) {
+    	  if (! m_today.equals(LocalDate.now())) {
+    		  m_today = LocalDate.now();
+    		  m_logStream.print(m_today + "\r\n");
+    	  }
+    	  m_logStream.print(LocalTime.now() + "  " + str + "\r\n");
+      }
    }
 }
