@@ -73,6 +73,8 @@ public class Robot extends TimedRobot {
         
         // reset the gyro to zero
         gyro.calibrate();
+        
+        RobotMap.lidarSensor.startMeasuring();
     }
 
     /**
@@ -81,6 +83,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit(){
+    	RobotMap.lidarSensor.stopMeasuring();
 
     }
 

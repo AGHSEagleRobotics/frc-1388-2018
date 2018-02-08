@@ -26,8 +26,9 @@ public class LIDARLiteV3 {
 		
 		// configure bit 5 using bitwise OR to read 1
 		// this configures the LIDAR sensor to use a custom MEASURE_DELAY as opposed to default value
-		writeRegister(0x04, 0x08 | 32);
+		writeRegister(0x04, 0x08 | 0x20);
 		
+		writeRegister(0x45, 0x50);
 		// register 0x11 configures # of times device retriggers self
 		// meaning 0x11 sets the # of times a measurement upon being called
 		// seting this register to the maximum value enables free running mode, which
