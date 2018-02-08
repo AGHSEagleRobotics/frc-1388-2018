@@ -51,19 +51,37 @@ public class AutonomousCommand extends CommandGroup {
     	Position position = Robot.fieldPosition; // Enum equal to value set in positionSelector SendableChooser, set in autonInit
     	Priority priority = Robot.autonPriority; // Enum equal to value set in autonSelector SendableChooser, set in autonInit
     	
-    	String gameData = Robot.gameData; // 3-char string from FMS / Driver Station
+    	String gameData = Robot.gameData; // 3-char string from FMS / Driver Station / ex. "LRL"
     	
+    	
+    	//test right side, scale, LRL
     	switch (priority) {
     		case SCALE:
-    	    	if(position.equals(Position.CENTER))
+    			String scaleSide = gameData.substring(1, 2);
+    			
+    	    	if(position.equals(Position.CENTER)) {
     	    		runLine();
-    			runScale(position);
+    	    		break;
+    	    	}
+    	    	
+    	    	if( compare(position, scaleSide) == true) {
+    	    		runScale(position, scaleSide);
+    	    		break;
+    	    	} else {
+    	    		// change priority (move to different case block in switch statement?
+    	    	}
+    	    	
     			break;
+    			
     		case SWITCH:
-    	    	if(position.equals(Position.CENTER))
+    	    	if(position.equals(Position.CENTER)) {
     	    		runLine();
-    			runSwitch(position);
+    	    		break;
+    	    	}
+    	    	
+    			runSwitch(position, gameData.substring(0, 1));
     			break;
+    			
     		default:
     			runLine();
     			break;
@@ -71,15 +89,38 @@ public class AutonomousCommand extends CommandGroup {
     	
     }
     
-    public void runSwitch(Position position) {
+    public void runSwitch(Position position, String switchSide) {
     	// check starting position of Robot
+    	
     }
     
-    public void runScale(Position position) {
+    public void runScale(Position position, String scaleSide) {
     	
     }
     
     public void runLine() {
+    	
+    }
+    
+    /**
+     * 
+     * 
+     * @param position Position to compare with gameData item
+     * @param gameData gameData substring to compare with Position
+     * 
+     * @return True if position and gameData are on the same side, false if otherwise
+     */
+    public boolean compare(Position position, String gameData) {
+    	if(position.equals(Position.LEFT) && gameData.equals("L")) {
+    		return true;
+    		
+    	} else if (position.equals(Position.RIGHT) && gameData.equals("R")) {
+    		return true;
+    		
+    	} else {
+    		return false;
+    		
+    	}
     	
     }
     
