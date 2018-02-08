@@ -21,6 +21,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc1388.commands.*;
 import org.usfirst.frc1388.subsystems.*;
 
+import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.IterativeRobot;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -77,6 +80,9 @@ public class Robot extends TimedRobot {
         
         // reset the gyro to zero
         gyro.calibrate();
+        
+        // camera 
+        CameraServer.getInstance().startAutomaticCapture();
     }
 
     /**
