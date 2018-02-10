@@ -73,8 +73,6 @@ public class Robot extends TimedRobot {
         
         // reset the gyro to zero
         gyro.calibrate();
-        
-        RobotMap.lidarSensor.startMeasuring();
     }
 
     /**
@@ -83,7 +81,6 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit(){
-    	RobotMap.lidarSensor.stopMeasuring();
 
     }
 
@@ -144,6 +141,10 @@ public class Robot extends TimedRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        
+        RobotMap.lidarSensor.start();
+        
+
     }
 
     /**
@@ -152,7 +153,7 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
     	// return distance in centimeters
-    	System.out.println("LIDAR Distance: " + RobotMap.lidarSensor.getDistance());
+    	System.out.println(RobotMap.lidarSensor.getDistanceIn());
         Scheduler.getInstance().run();
     }
     

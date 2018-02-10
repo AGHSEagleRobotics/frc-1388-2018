@@ -62,8 +62,8 @@ public class Drive extends Command {
     	double mecanum_gyroAngle = - Robot.gyro.getAngleZ();
     	
     	// console debugging
-    	System.out.println("mecanum_ySpeed (left stick X): " + mecanum_ySpeed + "\tmecanum_xSpeed (inverse left stick Y): " + mecanum_xSpeed + "\t mecanum_zRotation (right Stick X): " + mecanum_zRotation);
-    	System.out.println("mecanum_gyroAngle (inverse Gyro Z): " + mecanum_gyroAngle);
+    	//System.out.println("mecanum_ySpeed (left stick X): " + mecanum_ySpeed + "\tmecanum_xSpeed (inverse left stick Y): " + mecanum_xSpeed + "\t mecanum_zRotation (right Stick X): " + mecanum_zRotation);
+    	//System.out.println("mecanum_gyroAngle (inverse Gyro Z): " + mecanum_gyroAngle);
     	
     	// mecanum drive cartesian using Field orientation (gyro-based)
     	RobotMap.driveTrainmecanumDrive.driveCartesian(mecanum_ySpeed, mecanum_xSpeed, mecanum_zRotation, mecanum_gyroAngle);
