@@ -50,7 +50,7 @@ public class RobotMap {
         
         driveTrainmecanumDrive = new MecanumDrive(driveTrainleftFront, driveTrainleftRear,
               driveTrainrightFront, driveTrainrightRear);
-        //LiveWindow.addActuator("DriveTrain", "mecanumDrive", driveTrainmecanumDrive);
+        LiveWindow.addActuator("DriveTrain", "mecanumDrive", driveTrainmecanumDrive);
         driveTrainmecanumDrive.setSafetyEnabled(true);
         driveTrainmecanumDrive.setExpiration(0.1);
         driveTrainmecanumDrive.setMaxOutput(1.0);

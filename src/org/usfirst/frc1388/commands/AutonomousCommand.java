@@ -89,16 +89,18 @@ public class AutonomousCommand extends CommandGroup {
     }
     
     public void runSwitch(Position position, String switchSide) {
-    	// check starting position of Robot
+    	// drive straight 168 - 1/2 of the length of bot( 13.875 ) amount turn 90D and drive straight again 85.25 amount - 1/2 bot length( 13.875 ) 
+    
     	
     }
     
     public void runScale(Position position, String scaleSide) {
-    	
+    	//inches
+    	// drive straight 324 - 1/2 of the length of bot( 13.875 ) amount turn 90D and drive straight again 71.57 amount - 1/2 bot length( 13.875 ) 
     }
     
     public void runLine() {
-    	
+    	// drive straight X amount
     }
     
     /**
