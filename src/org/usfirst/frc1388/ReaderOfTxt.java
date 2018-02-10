@@ -5,11 +5,10 @@ import java.util.*;
 
 public class ReaderOfTxt {
 
-	public ArrayList<String> 
-	readFile(String fileName) 
+	public ArrayList<String> readFile(String fileName) 
 			throws FileNotFoundException, IOException  {
         // The name of the file to open. TODO: For testing purposes, remove later.
-        fileName = "/media/sda1/AutonScript.txt";
+        //fileName = "/media/sda1/AutonScript.txt";
 
         ArrayList<String> fileData = new ArrayList<>();
         
