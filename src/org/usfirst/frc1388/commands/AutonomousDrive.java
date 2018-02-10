@@ -12,13 +12,22 @@
 package org.usfirst.frc1388.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1388.Robot;
+import org.usfirst.frc1388.RobotMap;
 
 /**
  *
  */
 public class AutonomousDrive extends Command {
+	
+	private static double p = 0;
+	private static double threshold = .5;
+	
+	private double error;
+	
+	private double power;
 
 	private boolean isTime;
+
 	
 	private double distance;
 	private int time;
@@ -56,6 +65,8 @@ public class AutonomousDrive extends Command {
     protected void initialize() {
     	// if time true, start timer
     	System.out.println("AutonomousDrive init");
+    	RobotMap.driveTrainleftEncoder.reset();
+    	RobotMap.driveTrainrightEncoder.reset();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -63,10 +74,17 @@ public class AutonomousDrive extends Command {
     protected void execute() {
     	
     	if( this.isTime == true) {
-    		// check current time, if not at setpoint, continue move forward
+    		//if( this.time != ( )
+    			//power = .7;
+    			//RobotMap.driveTrainmecanumDrive.driveCartesian(power, 0, 0, 0);
     	} else {
-    		// check current encVal, if not = dist, move
-    		
+    		error = distance - ((RobotMap.driveTrainleftEncoder.getDistance() + RobotMap.driveTrainrightEncoder.getDistance())/2);
+    		power = p * error;
+    		power /= 2;
+    		if(Math.abs(power) <= .2){
+    			power = 0;
+    		}
+    		RobotMap.driveTrainmecanumDrive.driveCartesian(power, 0, 0, 0);
     	}
     	
     }
@@ -75,9 +93,17 @@ public class AutonomousDrive extends Command {
     @Override
     protected boolean isFinished() {
     	// if this.time == timer return true
-    	// or
+    	if(this.isTime == true) {
+    		if(this.time == RobotMap.driveTrainleftEncoder.get()) {
+        		return true;
+    		}
+    	}else {
+    		if( Math.abs(this.error) < threshold) {
+    			return true;
+    		}
+    	}
     	// if this.distnace - encDistance = 0, return true
-        return true;
+       return true;
     }
 
     // Called once after isFinished returns true
