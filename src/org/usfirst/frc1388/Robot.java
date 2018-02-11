@@ -155,9 +155,13 @@ public class Robot extends TimedRobot {
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
         
-        RobotMap.lidarSensor.start();
-        
+        RobotMap.lidarSensor.configure();
 
+        RobotMap.lidarSensor.read(0x11);
+        RobotMap.lidarSensor.read(0x01);
+        RobotMap.lidarSensor.read(0x1e);
+        RobotMap.lidarSensor.read(0x16);
+        RobotMap.lidarSensor.read(0x17);
     }
 
     /**
@@ -165,9 +169,12 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopPeriodic() {
-    	// return distance in centimeters
-    	System.out.println(RobotMap.lidarSensor.getDistanceIn());
+
         Scheduler.getInstance().run();
+        
+
+
+
     }
     
 }
