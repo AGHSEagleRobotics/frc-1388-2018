@@ -11,6 +11,9 @@
 
 package org.usfirst.frc1388.commands;
 import edu.wpi.first.wpilibj.command.Command;
+
+import edu.wpi.first.wpilibj.Timer;
+
 import org.usfirst.frc1388.Robot;
 import org.usfirst.frc1388.RobotMap;
 
@@ -19,11 +22,11 @@ import org.usfirst.frc1388.RobotMap;
  */
 public class AutonomousDrive extends Command {
 	
-	private static double p = 0;
+	private Timer timer;
+	
+	private static double p = .01;
 	private static double threshold = .5;
-	
 	private double error;
-	
 	private double power;
 
 	private boolean isTime;
@@ -58,6 +61,8 @@ public class AutonomousDrive extends Command {
     	
     	isTime = true;
     	this.time = time;
+    	timer = new Timer();
+    
     }
 
     // Called just before this Command runs the first time
@@ -67,6 +72,10 @@ public class AutonomousDrive extends Command {
     	System.out.println("AutonomousDrive init");
     	RobotMap.driveTrainleftEncoder.reset();
     	RobotMap.driveTrainrightEncoder.reset();
+    	if( this.isTime == true) {
+    		timer.reset();
+    		timer.start();
+    	}
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -74,9 +83,10 @@ public class AutonomousDrive extends Command {
     protected void execute() {
     	
     	if( this.isTime == true) {
-    		//if( this.time != ( )
-    			//power = .7;
-    			//RobotMap.driveTrainmecanumDrive.driveCartesian(power, 0, 0, 0);
+    		if( this.time != timer.get() ) {
+    			power = 1;
+    			RobotMap.driveTrainmecanumDrive.driveCartesian(power, 0, 0, 0);
+    		}
     	} else {
     		error = distance - ((RobotMap.driveTrainleftEncoder.getDistance() + RobotMap.driveTrainrightEncoder.getDistance())/2);
     		power = p * error;
@@ -94,7 +104,8 @@ public class AutonomousDrive extends Command {
     protected boolean isFinished() {
     	// if this.time == timer return true
     	if(this.isTime == true) {
-    		if(this.time == RobotMap.driveTrainleftEncoder.get()) {
+    		if(this.time == timer.get()) {
+    			timer.stop();
         		return true;
     		}
     	}else {
