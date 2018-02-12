@@ -41,8 +41,6 @@ public class Drive extends Command {
     @Override
     protected void initialize() {
     	
-    	// set deadband. Xbox Controller seems to need at least 0.1
-    	RobotMap.driveTrainmecanumDrive.setDeadband(0.2);
     }
 
     // Called repeatedly when this Command is scheduled to run
