@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc1388.commands.*;
+import org.usfirst.frc1388.lib.LIDARRegister;
 import org.usfirst.frc1388.subsystems.*;
 
 import edu.wpi.first.wpilibj.CameraServer;
@@ -81,6 +82,7 @@ public class Robot extends TimedRobot {
         
         gyro = new ADIS16448_IMU();
         
+        
         // reset the gyro to zero
         gyro.calibrate();
         
@@ -94,7 +96,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit(){
-
+    	RobotMap.lidarSensor.stopMeasuring();
     }
 
     @Override
@@ -155,13 +157,15 @@ public class Robot extends TimedRobot {
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
         
-        RobotMap.lidarSensor.configure();
-
-        RobotMap.lidarSensor.read(0x11);
-        RobotMap.lidarSensor.read(0x01);
-        RobotMap.lidarSensor.read(0x1e);
-        RobotMap.lidarSensor.read(0x16);
-        RobotMap.lidarSensor.read(0x17);
+        RobotMap.lidarSensor.write(LIDARRegister.MEASURE_DELAY, 0xA5);
+        
+        System.out.println(RobotMap.lidarSensor.read(LIDARRegister.OUTER_LOOP_COUNT));
+        System.out.println(RobotMap.lidarSensor.read(LIDARRegister.MEASURE_DELAY));
+        System.out.println(RobotMap.lidarSensor.read(LIDARRegister.ACQ_CONFIG_REG));
+        System.out.println(RobotMap.lidarSensor.read(LIDARRegister.REF_COUNT_VAL));
+        
+        RobotMap.lidarSensor.startMeasuring();
+        
     }
 
     /**
@@ -172,7 +176,7 @@ public class Robot extends TimedRobot {
 
         Scheduler.getInstance().run();
         
-
+        RobotMap.lidarSensor.getDistance();
 
 
     }
