@@ -40,8 +40,8 @@ public class Intake extends Subsystem {
 	
 	private final CANSD540 rightFork = RobotMap.rightForkMotor;
 	private final CANSD540 leftFork = RobotMap.leftForkMotor;
-	private final double y = Robot.oi.getOpController().getY(Hand.kLeft);
-	private final double x = Robot.oi.getOpController().getX(Hand.kLeft);
+	private final double y = Robot.oi.getOpController().getY(Hand.kLeft);   // maybe call it leftStickY instead of just y?
+	private final double x = Robot.oi.getOpController().getX(Hand.kLeft);   // same for x
 
     @Override
     public void initDefaultCommand() {

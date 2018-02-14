@@ -45,20 +45,34 @@ public class RunIntake extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	if( Robot.oi.getOpController().getY(Hand.kLeft) > 0) {
-    		RobotMap.leftForkMotor.set(Robot.oi.getOpController().getY(Hand.kLeft));
-    		RobotMap.rightForkMotor.set(Robot.oi.getOpController().getY(Hand.kLeft));
-    	}else if(Robot.oi.getOpController().getY(Hand.kLeft) < 0 ) {
-    		RobotMap.leftForkMotor.set(Robot.oi.getOpController().getY(Hand.kLeft));
-    		RobotMap.rightForkMotor.set(Robot.oi.getOpController().getY(Hand.kLeft));
-    	}else if( Robot.oi.getOpController().getX(Hand.kLeft) > 0 ) {
-    		RobotMap.leftForkMotor.set(Robot.oi.getOpController().getX(Hand.kLeft));
-    		RobotMap.rightForkMotor.set(-Robot.oi.getOpController().getX(Hand.kLeft));	
+       
+// Should a deadband be added?
+// Simple example:
+       if ((intake.y < DEADBAND) && (intake.y > -DEADBAND)) intake.y = 0;
+       if ((intake.x < DEADBAND) && (intake.x > -DEADBAND)) intake.x = 0;
+       
+// Joystick and motors can refer to subsystem rather than RobotMap
+    	if( intake.y > 0) {
+    		intake.leftFork.set(intake.y);
+    		intake.rightFork.set(intake.y);
+    	}else if(intake.y < 0 ) {
+    		intake.leftFork.set(intake.y);
+    		intake.rightFork.set(intake.y);
+    	}else if( intake.x > 0 ) {
+    		intake.leftFork.set(intake.x);
+    		intake.rightFork.set(-intake.x);	
     	}
-    	else if( Robot.oi.getOpController().getX(Hand.kLeft) > 0 ) {
-    		RobotMap.leftForkMotor.set(-Robot.oi.getOpController().getX(Hand.kLeft));
-    		RobotMap.rightForkMotor.set(Robot.oi.getOpController().getX(Hand.kLeft));	
+    	else if( intake.x > 0 ) {
+    		intake.leftFork.set(-intake.x);
+    		intake.rightFork.set(intake.x);	
     	}
+// What should happen if both x and y are zero?
+// What happens if y is > 0 and x is also > 0?
+
+// What would this do?
+    intake.leftFork.set(y + x);
+    intake.rightFork.set(y - x);
+
     }
     
     
