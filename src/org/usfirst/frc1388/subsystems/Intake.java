@@ -40,8 +40,14 @@ public class Intake extends Subsystem {
 	
 	private final CANSD540 rightFork = RobotMap.rightForkMotor;
 	private final CANSD540 leftFork = RobotMap.leftForkMotor;
-	private final double y = Robot.oi.getOpController().getY(Hand.kLeft);
-	private final double x = Robot.oi.getOpController().getX(Hand.kLeft);
+
+	public final CANSD540 leftMotor = RobotMap.leftForkMotor; // references to motors in RobotMap, setting these will set RobotMap motors
+	public final CANSD540 rightMotor = RobotMap.rightForkMotor;
+	
+	private double y = Robot.oi.getOpController().getY(Hand.kLeft);
+	private double x = Robot.oi.getOpController().getX(Hand.kLeft);
+	
+
 
     @Override
     public void initDefaultCommand() {
@@ -57,8 +63,14 @@ public class Intake extends Subsystem {
     @Override
     public void periodic() {
         // Put code here to be run every loop
-
+    	y = Robot.oi.getOpController().getY(Hand.kLeft);
+    	x = Robot.oi.getOpController().getX(Hand.kLeft);
+    	
     }
+    
+    public double getJoystickX() { return this.x; }
+    
+    public double getJoystickY() { return this.y; }
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
