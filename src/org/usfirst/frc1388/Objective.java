@@ -1,6 +1,6 @@
 package org.usfirst.frc1388;
 
-public enum Priority {
+public enum Objective {
 	SCALE,
 	SWITCH,
 	LINE;
