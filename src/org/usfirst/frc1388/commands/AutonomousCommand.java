@@ -52,72 +52,73 @@ public class AutonomousCommand extends CommandGroup {
 
 		// END AUTOGENERATEE, SOURCE=ROBOTBUILDER ID=COMMAND_DECLARATIONS
 
-		position = Robot.fieldPosition; // Enum equal to value set in positionSelector SendableChooser, set in autonInit
-		Objective priority = Robot.autonPriority; // Enum equal to value set in autonSelector SendableChooser, set in autonInit
-
 		gameData = Robot.gameData; // 3-char string from FMS / Driver Station / ex. "LRL"
+		position = Robot.fieldPosition; // Enum equal to value set in positionSelector SendableChooser, set in autonInit
+		
+		Objective priority = Robot.autonPriority; // Enum equal to value set in autonSelector SendableChooser, set in autonInit
+		setGoal(priority);
 
-//		goal = setGoal(priority);
-
-		//test right side, scale, LRL
+		//AutonShake command(s)? add here if necessary
+		
 		switch (goal) {
 		case SCALE:
 			String scaleSide = gameData.substring(1, 2);
-
-			if(position.equals(Position.CENTER)) {
-				runLine();
-				break;
-			}
-
 			runScale(position, scaleSide);
+			break;
 
 		case SWITCH:
 			String switchSide = gameData.substring(0, 1);
-
-			if(position.equals(Position.CENTER)) {
-				runLine();
-				break;
-			}
-
 			runSwitch(position, switchSide);
 			break;
 
 		default:
 			runLine();
-			break;
 		}
-
 	}
 
-	// Left -> Left
-	// Right -> Right
-	// Center -> Left
-	// Center -> Right
 	public void runSwitch(Position position, String switchSide) {
-		// drive straight 168 - 1/2 of the length of bot( 13.875 ) amount turn 90D and drive straight again 85.25 amount - 1/2 bot length( 13.875 ) 
 
-		addSequential( new AutonomousDrive(154)); addParallel( new AutonomousMoveElevator("switch") );
-		addSequential( new AutonomousTurn(90));
-		addSequential( new AutonomousDrive(71));
-		addSequential( new AutonomousMoveFork ("out"));
+		if( position.equals(Position.CENTER) ) {
+			if(switchSide == "R") {
+				//drive forward
+				//turn right
+				//drive forward
+				//turn left
+				//drive forward
+				//raise elevator
+				//drop cube
+			}
+			else {
+				//drive forward
+				//turn left
+				//drive forward
+				//turn right
+				//drive forward
+				//drop cube
+			}
+		}
+		//drive forward
+		//turn opposite
+		//drive forward
+		//raise elevator
+		//drop cube
+		
 	}
 
 	public void runScale(Position position, String scaleSide) {
-		// drive straight 324 - 1/2 of the length of bot( 13.875 ) amount turn 90D and drive straight again 71.57 amount - 1/2 bot length( 13.875 ) 
-
-		addSequential( new AutonomousDrive(310)); addParallel( new AutonomousMoveElevator("scale") );
-		addSequential( new AutonomousTurn(90));
-		addSequential( new AutonomousDrive(58));
-		addSequential( new AutonomousMoveFork ("out"));
+		//drive forward
+		//turn opposite
+		//drive forward
+		//raise elevator
+		//drop cube
+		
 	}
 
 	public void runLine() {
-		// drive straight passed line
 		addSequential( new AutonomousDrive(150));
 	}
 
 	/**
-	 * 
 	 * 
 	 * @param position Position to compare with gameData item
 	 * @param gameData gameData substring to compare with Position
@@ -127,62 +128,55 @@ public class AutonomousCommand extends CommandGroup {
 	private boolean compare(Position position, String gameData) {
 		if(position.equals(Position.LEFT) && gameData.equals("L")) {
 			return true;
-
-		} else if (position.equals(Position.RIGHT) && gameData.equals("R")) {
+		} 
+		else if (position.equals(Position.RIGHT) && gameData.equals("R")) {
 			return true;
-
-		} else {
-			return false;
-
 		}
-
+		
+		return false;
 	}
-/*
-	private Objective setGoal( Objective priority) {
 
-		if(gameData.length() != 3 || position == null)
+	private void setGoal( Objective priority) {
+
+		if( this.gameData.length() != 3 || this.position == null || priority == Objective.LINE ) {
 			this.goal = Objective.LINE;
 			return;
+		}
+	
+		if( this.position == position.CENTER ) {
+			this.goal = Objective.SWITCH;
+			return;
+		}
 		
-		//Check if start = valid
-		
-		//check if priority = valid
-
 		String switchSide = gameData.substring(0, 1);
 		String scaleSide = gameData.substring(1, 2);
 
-		if(this.goal.equals(Objective.SWITCH)) {
-
-			if(compare(position, switchSide)) {
+		if( priority.equals(Objective.SWITCH) ) {
+			
+			if( compare(this.position, switchSide) ) {
 				this.goal = Objective.SWITCH;
 				return;
+			}
+			else if( compare(this.position, scaleSide) ) {
+				this.goal = Objective.SCALE;
+				return;
+			}
+		}
+		
+		if( priority.equals(Objective.SCALE) ) {
 
-			} else if (compare(position, scaleSide)) {
-				return Objective.SCALE;
-
-			} else {
-				return Objective.LINE;
-
-			} //end nested else
-
-		} else {
-			if(compare(position, scaleSide)) {
-				return Objective.SCALE;
-
-			} else if (compare(position, switchSide)) {
-				return Objective.SWITCH;
-
-			} else {
-				return Objective.LINE;
-
-			} // nested else
-
-		} // else
-
-	} // checkOptimal()
-*/
-
-
+			if( compare(this.position, scaleSide) ) {
+				this.goal = Objective.SCALE;
+				return;
+			}
+			else if( compare(this.position, switchSide) ) {
+				this.goal = Objective.SWITCH;
+				return;
+			} 
+		}
+		
+		this.goal = Objective.LINE;
+	}
 }
 
 
