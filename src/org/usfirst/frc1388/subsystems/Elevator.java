@@ -74,6 +74,18 @@ public class Elevator extends Subsystem {
     @Override
     public void periodic() {
         // Put code here to be run every loop
+        
+        // Check elevator motor power limit
+        // Note:  This will not strictly override a command which is actively setting the power outside the limit,
+        // as the command and this code will be alternately setting different power values.
+        double currentPwr = elevatorMotor.get();
+        double limitedPwr = limitMotorPwr(currentPwr);
+        elevatorMotor.set(limitedPwr);
+        
+        // Check if the power limit has been violated:
+        if (fabs(currentPwr - limitedPwr) > 0.1) {
+           UsbLogging.printLog("Warning: Elevator motor power limit exceeded!");
+        }
 
         // Zero the encoder if the elevator is at the bottom limit switch
         if (atBottomLimit()) {
@@ -154,12 +166,31 @@ public class Elevator extends Subsystem {
     
     /**
      * Set the elevator motor power, after enforcing power limits
+     * <p>
+     * To ensure that the elevator is not overdriven, this method should be used to set the motor power,
+     * and the motor's power should NOT be set directly using the motor's set() method.
      *  
      * @param     pwr   Desired motor power
      * @return          Actual motor power that was set
      */
     public double setMotor(double pwr) {
+       double limitedPwr = limitMotorPwr(pwr);
+              
+       elevatorMotor.set(limitedPwr);
        
+       return limitedPwr;
+    }
+       
+    
+    /**
+     * Check elevator motor power limits
+     * <p>
+     * Desired motor power is limited based on max allowable power, physical limits, and proximity to physical limits.
+     *  
+     * @param     pwr   Desired motor power
+     * @return          Limited motor power
+     */
+    public double limitMotorPwr(double pwr) {
        double height = getHeight();
        
        // top/bottom limits (limit switches or soft limits)
@@ -193,8 +224,7 @@ public class Elevator extends Subsystem {
          if (pwr < motorDnFinalPwr) pwr = motorDnFinalPwr;
        }
        
-       // Finally, set the motor power
-       elevatorMotor.set(pwr);
+       return pwr;
     }
 }
 
