@@ -89,7 +89,7 @@ Children:
           default: '0'
           name: Channel A Channel (Digital)
           validators: &id004 [DigitalChannel]
-          value: '3'
+          value: '2'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Distance Per Pulse, validators: null, value: 0.0639954081}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
@@ -113,7 +113,7 @@ Children:
           default: '0'
           name: Channel B Channel (Digital)
           validators: &id008 [DigitalChannel]
-          value: '4'
+          value: '3'
       Base: Quadrature Encoder
       Name: leftEncoder
     - Children: []
@@ -123,7 +123,7 @@ Children:
           default: '0'
           name: Channel A Channel (Digital)
           validators: *id004
-          value: '1'
+          value: '0'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Distance Per Pulse, validators: null, value: 0.0639954081}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
@@ -145,7 +145,7 @@ Children:
           default: '0'
           name: Channel B Channel (Digital)
           validators: *id008
-          value: '2'
+          value: '1'
       Base: Quadrature Encoder
       Name: rightEncoder
     Properties:
@@ -175,9 +175,9 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: [DigitalChannel]
-          value: '0'
+          value: '8'
       Base: Limit Switch
-      Name: bottomElebvatorSwitch
+      Name: bottomElevatorSwitch
     - Children: []
       Properties:
         Channel A Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
@@ -185,7 +185,7 @@ Children:
           default: '0'
           name: Channel A Channel (Digital)
           validators: *id004
-          value: '5'
+          value: '4'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Distance Per Pulse, validators: null, value: 1.0}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
@@ -193,7 +193,7 @@ Children:
           default: kRate
           name: PID Source
           validators: null
-          value: kRate
+          value: kDisplacement
         Encoding Type: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: k4X
@@ -207,7 +207,7 @@ Children:
           default: '0'
           name: Channel B Channel (Digital)
           validators: *id008
-          value: '6'
+          value: '5'
       Base: Quadrature Encoder
       Name: elevatorEncoder
     Properties:

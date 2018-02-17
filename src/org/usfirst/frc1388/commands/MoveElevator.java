@@ -76,7 +76,8 @@ public class MoveElevator extends Command {
 			
 		}
 
-		RobotMap.elevatorMotor.set(elevatorSpeed);    	
+		Robot.elevator.setMotor(elevatorSpeed);
+		System.out.println("Elevator Motor Spd: " + RobotMap.elevatorMotor.get());  // DEBUG, TEMPORARY	
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
