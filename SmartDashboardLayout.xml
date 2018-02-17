@@ -59,13 +59,35 @@
 	</static-widget>
 </dashboard>
 <live-window>
-	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<location x="0" y="24"/>
-	</widget>
 	<widget field="DriveTrain" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<widget field="rightEncoder" type="Quadrature Encoder" class="edu.wpi.first.smartdashboard.livewindow.elements.EncoderDisplay">
+			<location x="6" y="16"/>
+			<height>98</height>
+			<width>201</width>
+		</widget>
+		<widget field="leftEncoder" type="Quadrature Encoder" class="edu.wpi.first.smartdashboard.livewindow.elements.EncoderDisplay">
+			<location x="6" y="114"/>
+			<height>98</height>
+			<width>201</width>
+		</widget>
+		<location x="0" y="44"/>
+		<width>213</width>
+		<height>219</height>
+	</widget>
+	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<widget field="DigitalInput[10]" type="Digital Input" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
+			<location x="6" y="16"/>
+			<height>20</height>
+			<width>250</width>
+		</widget>
+		<widget field="ADIS16448_IMU" type="Gyro" class="edu.wpi.first.smartdashboard.gui.elements.Compass">
+			<location x="6" y="36"/>
+			<height>150</height>
+			<width>250</width>
+		</widget>
 		<location x="0" y="0"/>
+		<width>262</width>
+		<height>193</height>
 	</widget>
 </live-window>
-	<hidden field="fieldPosition"/>
-	<hidden field="Auto Selector"/>
 </xml>
