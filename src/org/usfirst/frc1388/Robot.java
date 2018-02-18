@@ -21,6 +21,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc1388.commands.*;
 import org.usfirst.frc1388.subsystems.*;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 
@@ -91,6 +93,20 @@ public class Robot extends TimedRobot {
         
         // camera 
         CameraServer.getInstance().startAutomaticCapture();
+        
+        // Sets driveTrain motors to break when not receiving input
+        //RobotMap.driveTrainleftFront.setNeutralMode(NeutralMode.Brake);
+        //RobotMap.driveTrainleftRear.setNeutralMode(NeutralMode.Brake);
+        //RobotMap.driveTrainrightFront.setNeutralMode(NeutralMode.Brake);
+        //RobotMap.driveTrainrightRear.setNeutralMode(NeutralMode.Brake);
+        
+        // Sets mindsensor to brake when not receiving an input
+        //RobotMap.elevatorMotor.setStopMode(CANSD540.StopMode.Brake);
+        //RobotMap.leftForkMotor.setStopMode(CANSD540.StopMode.Brake);
+        //RobotMap.rightForkMotor.setStopMode(CANSD540.StopMode.Brake);
+        
+        // Sets elevator motor to break when not receiving input
+        RobotMap.elevatorelevatorMotor.setNeutralMode(NeutralMode.Brake);
     }
 
     /**
