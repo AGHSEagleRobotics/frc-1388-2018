@@ -28,6 +28,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import com.mindsensors.CANSD540;
+import com.mindsensors.CANSD540.StopMode;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -106,6 +107,8 @@ public class Robot extends TimedRobot {
         //RobotMap.elevatorMotor.setStopMode(CANSD540.StopMode.Brake);
         //RobotMap.leftForkMotor.setStopMode(CANSD540.StopMode.Brake);
         //RobotMap.rightForkMotor.setStopMode(CANSD540.StopMode.Brake);
+        RobotMap.climberMotor1.setStopMode(StopMode.Brake);
+        RobotMap.climberMotor2.setStopMode(StopMode.Brake);
         
     } // end robotInit()
 

@@ -48,21 +48,17 @@ public class Climb extends Command {
     @Override
     protected void execute() {
     	
-    	boolean extend = Robot.oi.getOpController().getBumperPressed(Hand.kRight);
-    	boolean retract = Robot.oi.getOpController().getBumperPressed(Hand.kLeft);
+    	boolean extend = Robot.oi.getOpController().getBumper(Hand.kRight);
+    	boolean retract = Robot.oi.getOpController().getBumper(Hand.kLeft);
     	
     	double power = 0;
-    	
-    	if( extend == true ) {
-    		power = 1;
-    	}
-    	else if ( retract == true ){
-    		power = -1;
-    	}
-    	else if(extend == true && retract == true) {
+    	if(extend == true && retract == true) {
     		power = 0;
-    	}
-    	else {
+    	} else if( extend == true ) {
+    		power = 1;
+    	} else if ( retract == true ){
+    		power = -1;
+    	} else {
     		power = 0;
     	}
     	RobotMap.climberMotor1.set(power);
