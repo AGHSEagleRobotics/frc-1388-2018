@@ -88,6 +88,9 @@ public class Robot extends TimedRobot {
 
 		// camera 
 		CameraServer.getInstance().startAutomaticCapture();
+		
+		RobotMap.lidarSensor.startMeasuring();
+		
 	}
 
 	/**
@@ -157,14 +160,16 @@ public class Robot extends TimedRobot {
 		// this line or comment it out.
 		if (autonomousCommand != null) autonomousCommand.cancel();
 		
-		RobotMap.lidarSensor.startMeasuring();
 
-		RobotMap.lidarSensor.write(0x45, 0xA5);
 
+		/*
+		 * Testing for reading registers from the LIDAR
+		 * 
 		System.out.println(RobotMap.lidarSensor.read(0x11)); //expect ff, 255
 		System.out.println(RobotMap.lidarSensor.read(0x04)); //expect 08, 8
 		System.out.println(RobotMap.lidarSensor.read(0x45)); //expect A5, 165
 		System.out.println(RobotMap.lidarSensor.read(0x12)); //expect 05, 5
+		*/
 	}
 
 	/**
@@ -175,7 +180,7 @@ public class Robot extends TimedRobot {
 
 		Scheduler.getInstance().run();
 
-		System.out.println(RobotMap.lidarSensor.getDistance());
+		// System.out.println(RobotMap.lidarSensor.getDistance()); Print distance to console
 
 
 	}

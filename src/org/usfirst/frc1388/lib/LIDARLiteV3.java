@@ -14,6 +14,8 @@ public class LIDARLiteV3 {
 	}
 	
 	/*
+	 * Configuration used on Arduino which produced best results, untested
+	 * 
 	public void configure() {
 		write(0x02, 0x00);
 		write(0x04, 0x08);
@@ -74,15 +76,25 @@ public class LIDARLiteV3 {
 		write(0x11, 0x01);
 	}
 	
-	
+	/**
+	 * Ping the LIDAR via I2C
+	 * <p>
+	 * Print out a boolean representing whether or not LIDAR is found on the I2C bus
+	 */
 	public void check() {
 		System.out.println("LiDAR ping: " + !i2c.addressOnly());
 	}
 	
+	/**
+	 * Get the distance measurement read by the LIDAR in centimeters
+	 * <p>
+	 * Read two bytes from register 0x0f and its increment, 0x10, and combine them to fom a 16-bit int distance
+	 * 
+	 * @return Integer distance in centimeters
+	 */
 	public int getDistance() {
 		
 		return (read(0x0f) << 8) + (read(0x10));
-
 	}
 	
 	
