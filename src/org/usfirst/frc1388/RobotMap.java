@@ -80,6 +80,8 @@ public class RobotMap {
         
         lidarSensor = new LIDARLiteV3(I2C.Port.kOnboard);
         
+        driveTrainmecanumDrive.setDeadband(0.3);
+        
         driveTrainleftFront.setInverted(true);
         driveTrainleftRear.setInverted(true);
         driveTrainrightFront.setInverted(true);

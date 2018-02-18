@@ -41,8 +41,6 @@ public class Drive extends Command {
     @Override
     protected void initialize() {
     	
-    	// set deadband. Xbox Controller seems to need at least 0.1
-    	RobotMap.driveTrainmecanumDrive.setDeadband(0.2);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -66,7 +64,7 @@ public class Drive extends Command {
     	//System.out.println("mecanum_gyroAngle (inverse Gyro Z): " + mecanum_gyroAngle);
     	
     	// mecanum drive cartesian using Field orientation (gyro-based)
-    	RobotMap.driveTrainmecanumDrive.driveCartesian(mecanum_ySpeed, mecanum_xSpeed, mecanum_zRotation, mecanum_gyroAngle);
+    	RobotMap.driveTrainmecanumDrive.driveCartesian(mecanum_ySpeed, mecanum_xSpeed, mecanum_zRotation, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
