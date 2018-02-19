@@ -25,6 +25,11 @@ import org.usfirst.frc1388.subsystems.*;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+import com.mindsensors.CANSD540;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -91,7 +96,18 @@ public class Robot extends TimedRobot {
 
         // camera 
         CameraServer.getInstance().startAutomaticCapture();
-    }
+    
+        RobotMap.driveTrainleftFront.setNeutralMode(NeutralMode.Brake);
+        RobotMap.driveTrainleftRear.setNeutralMode(NeutralMode.Brake);
+        RobotMap.driveTrainrightFront.setNeutralMode(NeutralMode.Brake);
+        RobotMap.driveTrainrightRear.setNeutralMode(NeutralMode.Brake);
+        
+        // Sets mindsensor to brake when not receiving an input
+        //RobotMap.elevatorMotor.setStopMode(CANSD540.StopMode.Brake);
+        //RobotMap.leftForkMotor.setStopMode(CANSD540.StopMode.Brake);
+        //RobotMap.rightForkMotor.setStopMode(CANSD540.StopMode.Brake);
+        
+    } // end robotInit()
 
     /**
      * This function is called when the disabled button is hit.
@@ -100,6 +116,7 @@ public class Robot extends TimedRobot {
     @Override
     public void disabledInit(){
 		RobotMap.lidarSensor.stopMeasuring();
+        UsbLogging.printLog("########  Robot disabled");
     }
 
     @Override
@@ -109,6 +126,10 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
+		
+		RobotMap.lidarSensor.startMeasuring();
+		
+        UsbLogging.printLog("########  Autonomous enabled");
 
     	// reset the gyro to zero at the start of Auto. We do not want to do this at the start of Tele because we won't know what position
     	// the robot will be at the end of Auto
@@ -154,20 +175,27 @@ public class Robot extends TimedRobot {
 
     @Override
     public void teleopInit() {
+		
+		RobotMap.lidarSensor.startMeasuring();
+		
+        UsbLogging.printLog("########  Teleop enabled");
+        
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
 		
-		RobotMap.lidarSensor.startMeasuring();
 
-		RobotMap.lidarSensor.write(0x45, 0xA5);
 
+		/*
+		 * Testing for reading registers from the LIDAR
+		 * 
 		System.out.println(RobotMap.lidarSensor.read(0x11)); //expect ff, 255
 		System.out.println(RobotMap.lidarSensor.read(0x04)); //expect 08, 8
 		System.out.println(RobotMap.lidarSensor.read(0x45)); //expect A5, 165
 		System.out.println(RobotMap.lidarSensor.read(0x12)); //expect 05, 5
+		*/
     }
 
     /**
@@ -176,9 +204,11 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
 
+		
+		
         Scheduler.getInstance().run();
 
-		System.out.println(RobotMap.lidarSensor.getDistance());
+		// System.out.println(RobotMap.lidarSensor.getDistance()); Print distance to console
 
 
     }
