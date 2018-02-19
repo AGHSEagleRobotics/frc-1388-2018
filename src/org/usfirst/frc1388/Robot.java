@@ -92,7 +92,7 @@ public class Robot extends TimedRobot {
         gyro.calibrate();
         
         // camera 
-        CameraServer.getInstance().startAutomaticCapture();
+        //CameraServer.getInstance().startAutomaticCapture(); TODO uncomment
         
         // Sets driveTrain motors to break when not receiving input
         //RobotMap.driveTrainleftFront.setNeutralMode(NeutralMode.Brake);

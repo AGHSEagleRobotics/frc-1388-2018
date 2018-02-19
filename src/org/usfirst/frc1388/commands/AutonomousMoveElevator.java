@@ -84,21 +84,21 @@ public class AutonomousMoveElevator extends Command {
     	
     	// stop the motor if elevator is within acceptable range of the setpoint
     	if( delta > 0 && delta < acceptableThreshold ) {
-    		elevator.setMotor(0);
+    		elevator.setMotor(0, false);
     	}
     	// move elevator up if elevator is below setpoint
     	else if( delta < 0 ) {
-    		elevator.setMotor(1);
+    		elevator.setMotor(1, false);
     	}
     	
     	// move elevator down if elevator is above setpoint
     	else if(delta > 0) {
-    		elevator.setMotor(-1);
+    		elevator.setMotor(-1, false);
     	}
     	
     	// by default stop elevator
     	else {
-    		elevator.setMotor(0);
+    		elevator.setMotor(0, false);
     	}
     }
 
@@ -108,24 +108,24 @@ public class AutonomousMoveElevator extends Command {
     	
     	// stop the motor if elevator is within acceptable range of the setpoint
     	if( delta > 0 && delta < acceptableThreshold ) {
-    		elevator.setMotor(0);
+    		elevator.setMotor(0, false);
     		currentLocation = setpoint;
     	}
     	// move elevator up if elevator is below setpoint
     	else if( delta < 0 ) {
-    		elevator.setMotor(1);
+    		elevator.setMotor(1, false);
     		currentLocation = ElevatorSetpoint.DONTKNOW;
     	}
     	
     	// move elevator down if elevator is above setpoint
     	else if(delta > 0) {
-    		elevator.setMotor(-1);
+    		elevator.setMotor(-1, false);
     		currentLocation = ElevatorSetpoint.DONTKNOW;
     	}
     	
     	// by default stop elevator
     	else {
-    		elevator.setMotor(0);
+    		elevator.setMotor(0, false);
     		currentLocation = ElevatorSetpoint.DONTKNOW;
     	}
     }
@@ -136,7 +136,7 @@ public class AutonomousMoveElevator extends Command {
     	
     	// initialize elevator - move down to bottom to reset encoder
     	if(elevator.isinitialized() == false) {
-    		elevator.setMotor(-1) ; // TODO speed not actual, will be scaled based on power limit\
+    		elevator.setMotor(-1, false) ; // TODO speed not actual, will be scaled based on power limit\
     		return;
 
     	// deploy the arms if not deployed 
