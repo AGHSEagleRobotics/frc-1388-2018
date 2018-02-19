@@ -77,7 +77,7 @@ public class Elevator extends Subsystem {
 
 	//elevator motor limits
 	private final double k_maxPwrUp = 1.0; //max power when moving up, not tested
-	private final double k_finalPwrUp = 0.15; //max power when elevator is at top, not tested
+	private final double k_finalPwrUp = 0.3; //max power when elevator is at top, not tested
 	private final double k_rampDistUp = 12; //distance from top when power will scale down, not tested
 
 	private final double k_maxPwrDwn = -1.0; //max power when moving down, not tested
