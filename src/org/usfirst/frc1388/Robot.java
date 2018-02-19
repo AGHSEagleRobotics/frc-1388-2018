@@ -92,7 +92,6 @@ public class Robot extends TimedRobot {
 		// camera 
 		CameraServer.getInstance().startAutomaticCapture();
 		
-		RobotMap.lidarSensor.startMeasuring();
 		
 	}
 
@@ -113,6 +112,9 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void autonomousInit() {
+		
+		RobotMap.lidarSensor.startMeasuring();
+		
         UsbLogging.printLog("########  Autonomous enabled");
 
 		// reset the gyro to zero at the start of Auto. We do not want to do this at the start of Tele because we won't know what position
@@ -159,6 +161,9 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
+		
+		RobotMap.lidarSensor.startMeasuring();
+		
         UsbLogging.printLog("########  Teleop enabled");
         
 		// This makes sure that the autonomous stops running when
@@ -185,6 +190,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 
+		
+		
 		Scheduler.getInstance().run();
 
 		// System.out.println(RobotMap.lidarSensor.getDistance()); Print distance to console
