@@ -25,6 +25,11 @@ import org.usfirst.frc1388.subsystems.*;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+import com.mindsensors.CANSD540;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -91,9 +96,18 @@ public class Robot extends TimedRobot {
 
 		// camera 
 		CameraServer.getInstance().startAutomaticCapture();
-		
-		
-	}
+    
+        RobotMap.driveTrainleftFront.setNeutralMode(NeutralMode.Brake);
+        RobotMap.driveTrainleftRear.setNeutralMode(NeutralMode.Brake);
+        RobotMap.driveTrainrightFront.setNeutralMode(NeutralMode.Brake);
+        RobotMap.driveTrainrightRear.setNeutralMode(NeutralMode.Brake);
+        
+        // Sets mindsensor to brake when not receiving an input
+        //RobotMap.elevatorMotor.setStopMode(CANSD540.StopMode.Brake);
+        //RobotMap.leftForkMotor.setStopMode(CANSD540.StopMode.Brake);
+        //RobotMap.rightForkMotor.setStopMode(CANSD540.StopMode.Brake);
+        
+    } // end robotInit()
 
 	/**
 	 * This function is called when the disabled button is hit.
