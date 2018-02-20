@@ -27,7 +27,10 @@ public class AutonomousTurn extends Command {
 	private int time;
 	
 	private double error;
-	private static double p;
+	private final double p = 0.1;
+	private final double maxTurnPwr = 0.2; // not tested
+	private final double marginOfErrorUp = 0.3; // not tested
+	private final double marginOfErrorDwn = -0.3; // not tested
 	
 	private Timer timer;
 
@@ -83,8 +86,9 @@ public class AutonomousTurn extends Command {
         		// check current time, if not at setpoint, continue move forward
     		}    		
     	} else {
-    		if(error !=0 ) {
-    			power = p * error;
+    		if(error > marginOfErrorUp || error < marginOfErrorDwn ) {
+    			//power = p * error; dont want because it might overshoot/undershoot indefinitely and/or for too long. 
+    			power = maxTurnPwr;
     			RobotMap.driveTrainmecanumDrive.driveCartesian(0, 0, power, 0);
     		}
     		
@@ -102,7 +106,7 @@ public class AutonomousTurn extends Command {
         		timer.stop();
         		return true;  	
     	}else {
-    		if( this.error == 0) {
+    		if(error < marginOfErrorUp && error > marginOfErrorDwn) {
     			return true;
     		}
     	}
