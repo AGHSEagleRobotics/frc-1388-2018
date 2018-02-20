@@ -1,0 +1,284 @@
+{
+  "dividerPosition": 0.2518301610541728,
+  "tabPane": [
+    {
+      "title": "SmartDashboard",
+      "autoPopulate": true,
+      "autoPopulatePrefix": "SmartDashboard/",
+      "widgetPane": {
+        "gridSize": 128.0,
+        "hgap": 16.0,
+        "vgap": 16.0,
+        "tiles": {
+          "2,0": {
+            "size": [
+              2,
+              2
+            ],
+            "content": {
+              "_type": "Gyro",
+              "_source0": "network_table:///LiveWindow/Ungrouped/ADIS16448_IMU",
+              "_title": "LiveWindow/Ungrouped/ADIS16448_IMU",
+              "majorTickSpace": 45.0,
+              "startAngle": 180.0,
+              "tickMarkRingVisible": true
+            }
+          },
+          "5,0": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "ComboBox Chooser",
+              "_source0": "network_table:///SmartDashboard/Auto mode",
+              "_title": "/SmartDashboard/Auto mode"
+            }
+          },
+          "4,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Simple Dial",
+              "_title": "",
+              "minValue": 0.0,
+              "maxValue": 100.0,
+              "valueVisible": true
+            }
+          },
+          "0,0": {
+            "size": [
+              2,
+              2
+            ],
+            "content": {
+              "_type": "Camera Stream",
+              "_source0": "camera_server://USB Camera 0",
+              "_title": "USB Camera 0"
+            }
+          },
+          "4,0": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_title": "",
+              "colorWhenTrue": "#7CFC00FF",
+              "colorWhenFalse": "#8B0000FF"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "LiveWindow",
+      "autoPopulate": true,
+      "autoPopulatePrefix": "LiveWindow/",
+      "widgetPane": {
+        "gridSize": 128.0,
+        "hgap": 16.0,
+        "vgap": 16.0,
+        "tiles": {
+          "0,0": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "List Layout",
+              "_title": "Ungrouped",
+              "_children": [
+                {
+                  "_type": "Gyro",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/ADIS16448_IMU",
+                  "_title": "ADIS16448_IMU",
+                  "majorTickSpace": 45.0,
+                  "startAngle": 180.0,
+                  "tickMarkRingVisible": true
+                },
+                {
+                  "_type": "Boolean Box",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/DigitalInput[10]/Value",
+                  "_title": "DigitalInput[10]/Value",
+                  "colorWhenTrue": "#7CFC00FF",
+                  "colorWhenFalse": "#8B0000FF"
+                }
+              ]
+            }
+          },
+          "1,0": {
+            "size": [
+              1,
+              2
+            ],
+            "content": {
+              "_type": "List Layout",
+              "_title": "DriveTrain",
+              "_children": [
+                {
+                  "_type": "Mecanum Drivebase",
+                  "_source0": "network_table:///LiveWindow/DriveTrain/mecanumDrive",
+                  "_title": "mecanumDrive",
+                  "showForceVectors": true
+                }
+              ]
+            }
+          },
+          "2,0": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "List Layout",
+              "_title": "Ungrouped",
+              "_children": [
+                {
+                  "_type": "Gyro",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/ADIS16448_IMU",
+                  "_title": "ADIS16448_IMU",
+                  "majorTickSpace": 45.0,
+                  "startAngle": 180.0,
+                  "tickMarkRingVisible": true
+                },
+                {
+                  "_type": "Boolean Box",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/DigitalInput[10]/Value",
+                  "_title": "DigitalInput[10]/Value",
+                  "colorWhenTrue": "#7CFC00FF",
+                  "colorWhenFalse": "#8B0000FF"
+                }
+              ]
+            }
+          },
+          "3,0": {
+            "size": [
+              1,
+              2
+            ],
+            "content": {
+              "_type": "List Layout",
+              "_title": "DriveTrain",
+              "_children": [
+                {
+                  "_type": "Mecanum Drivebase",
+                  "_source0": "network_table:///LiveWindow/DriveTrain/mecanumDrive",
+                  "_title": "mecanumDrive",
+                  "showForceVectors": true
+                }
+              ]
+            }
+          },
+          "4,0": {
+            "size": [
+              1,
+              2
+            ],
+            "content": {
+              "_type": "List Layout",
+              "_title": "Ungrouped",
+              "_children": [
+                {
+                  "_type": "Gyro",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/ADIS16448_IMU",
+                  "_title": "ADIS16448_IMU",
+                  "majorTickSpace": 45.0,
+                  "startAngle": 180.0,
+                  "tickMarkRingVisible": true
+                },
+                {
+                  "_type": "Boolean Box",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/DigitalInput[10]/Value",
+                  "_title": "DigitalInput[10]/Value",
+                  "colorWhenTrue": "#7CFC00FF",
+                  "colorWhenFalse": "#8B0000FF"
+                }
+              ]
+            }
+          },
+          "0,1": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Encoder",
+              "_source0": "network_table:///LiveWindow/DriveTrain/rightEncoder",
+              "_title": "DriveTrain/rightEncoder"
+            }
+          },
+          "2,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Encoder",
+              "_source0": "network_table:///LiveWindow/DriveTrain/leftEncoder",
+              "_title": "DriveTrain/leftEncoder"
+            }
+          },
+          "5,0": {
+            "size": [
+              1,
+              2
+            ],
+            "content": {
+              "_type": "List Layout",
+              "_title": "DriveTrain",
+              "_children": [
+                {
+                  "_type": "Mecanum Drivebase",
+                  "_source0": "network_table:///LiveWindow/DriveTrain/mecanumDrive",
+                  "_title": "mecanumDrive",
+                  "showForceVectors": true
+                },
+                {
+                  "_type": "Encoder",
+                  "_source0": "network_table:///LiveWindow/DriveTrain/rightEncoder",
+                  "_title": "rightEncoder"
+                },
+                {
+                  "_type": "Encoder",
+                  "_source0": "network_table:///LiveWindow/DriveTrain/leftEncoder",
+                  "_title": "leftEncoder"
+                }
+              ]
+            }
+          },
+          "6,0": {
+            "size": [
+              1,
+              2
+            ],
+            "content": {
+              "_type": "List Layout",
+              "_title": "Ungrouped",
+              "_children": [
+                {
+                  "_type": "Boolean Box",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/DigitalInput[10]/Value",
+                  "_title": "DigitalInput[10]/Value",
+                  "colorWhenTrue": "#7CFC00FF",
+                  "colorWhenFalse": "#8B0000FF"
+                },
+                {
+                  "_type": "Gyro",
+                  "_source0": "network_table:///LiveWindow/Ungrouped/ADIS16448_IMU",
+                  "_title": "ADIS16448_IMU",
+                  "majorTickSpace": 45.0,
+                  "startAngle": 180.0,
+                  "tickMarkRingVisible": true
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -13,7 +13,6 @@ package org.usfirst.frc1388.commands;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1388.Robot;
-import org.usfirst.frc1388.RobotMap;
 import org.usfirst.frc1388.subsystems.Intake;
 
 /**
