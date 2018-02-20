@@ -92,7 +92,7 @@ public class AutonomousScriptableCommandGroup extends CommandGroup {
 				System.out.println("ele");
 				break;
 			case "fork": 
-				addSequential(new AutonomousMoveFork(param));
+				addSequential(new AutonomousRunIntake(param));
 				System.out.println("fork");
 				break;
 			default:
