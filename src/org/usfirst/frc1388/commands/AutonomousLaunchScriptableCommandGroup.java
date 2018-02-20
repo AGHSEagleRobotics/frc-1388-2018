@@ -13,8 +13,6 @@ package org.usfirst.frc1388.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-import org.usfirst.frc1388.Robot;
-
 /**
  *
  */

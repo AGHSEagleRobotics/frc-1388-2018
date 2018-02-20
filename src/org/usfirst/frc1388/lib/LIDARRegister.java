@@ -11,7 +11,7 @@ public enum LIDARRegister {
 	private int register;
 	
 	private LIDARRegister(int register) {
-		register = register;
+		this.register = register;
 	}
 	
 	public int getValue() {

@@ -11,7 +11,6 @@
 
 package org.usfirst.frc1388.commands;
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc1388.Robot;
 
 /**
  *

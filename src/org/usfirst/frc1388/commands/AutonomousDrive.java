@@ -12,6 +12,7 @@
 package org.usfirst.frc1388.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1388.Robot;
+import org.usfirst.frc1388.UsbLogging;
 
 /**
  *
@@ -55,7 +56,7 @@ public class AutonomousDrive extends Command {
     @Override
     protected void initialize() {
     	// if time true, start timer
-    	System.out.println("AutonomousDrive init");
+    	UsbLogging.printLog("AutonomousDrive init");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -63,10 +64,9 @@ public class AutonomousDrive extends Command {
     protected void execute() {
     	
     	if( this.isTime == true) {
-    		// check current time, if not at setpoint, continue move forward
+    		// TODO check current time, if not at setpoint, continue move forward
     	} else {
-    		// check current encVal, if not = dist, move
-    		
+    		// TODO check current encVal, if not = dist, move
     	}
     	
     }
@@ -74,9 +74,10 @@ public class AutonomousDrive extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
+    	// TODO
     	// if this.time == timer return true
     	// or
-    	// if this.distnace - encDistance = 0, return true
+    	// if this.distance - encDistance = 0, return true
         return true;
     }
 
@@ -89,5 +90,6 @@ public class AutonomousDrive extends Command {
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+    	end();
     }
 }

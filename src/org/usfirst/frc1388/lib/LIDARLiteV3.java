@@ -34,7 +34,7 @@ public class LIDARLiteV3 {
 	 * 
 	 * @return if the transaction was successful
 	 */
-	public boolean write(int register, int data)
+	private boolean write(int register, int data)
 	{
 		return i2c.write(register, data);
 	}
@@ -49,7 +49,7 @@ public class LIDARLiteV3 {
 	 * 
 	 * @return unsigned byte read from register as integer
 	 */
-	public int read(int register) {
+	private int read(int register) {
 		i2c.writeBulk(new byte[] {(byte) register});
 		i2c.readOnly(buffer, 1);
 		int result = buffer[0] & 0xff;

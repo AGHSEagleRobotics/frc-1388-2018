@@ -91,13 +91,13 @@ Children:
           validators: &id004 [DigitalChannel]
           value: '2'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
-          name: Distance Per Pulse, validators: null, value: 0.0639954081}
+          name: Distance Per Pulse, validators: null, value: 0.079994260125}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id005 [kDisplacement, kRate]
           default: kRate
           name: PID Source
           validators: null
-          value: kRate
+          value: kDisplacement
         Encoding Type: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id006 [k4X, k2X, k1X]
           default: k4X
@@ -125,13 +125,13 @@ Children:
           validators: *id004
           value: '0'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
-          name: Distance Per Pulse, validators: null, value: 0.0639954081}
+          name: Distance Per Pulse, validators: null, value: 0.079994260125}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id005
           default: kRate
           name: PID Source
           validators: null
-          value: kRate
+          value: kDisplacement
         Encoding Type: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: k4X
@@ -185,9 +185,9 @@ Children:
           default: '0'
           name: Channel A Channel (Digital)
           validators: *id004
-          value: '4'
+          value: '5'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
-          name: Distance Per Pulse, validators: null, value: 1.0}
+          name: Distance Per Pulse, validators: null, value: 0.0169270833}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id005
           default: kRate
@@ -207,7 +207,7 @@ Children:
           default: '0'
           name: Channel B Channel (Digital)
           validators: *id008
-          value: '5'
+          value: '4'
       Base: Quadrature Encoder
       Name: elevatorEncoder
     - Children: []
@@ -385,7 +385,7 @@ Children:
   - Children: []
     Properties:
       Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
-        name: Autonomous Selection, validators: null, value: true}
+        name: Autonomous Selection, validators: null, value: false}
       Parameters: !!robotbuilder.data.properties.ParametersProperty
         default: []
         name: Parameters
@@ -426,6 +426,28 @@ Children:
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: MoveElevator
+  - Children: []
+    Properties:
+      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Autonomous Selection, validators: null, value: false}
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Run When Disabled, validators: null, value: false}
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Elevator}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: &id009 []
+        name: Parameter presets
+        validators: null
+        value: *id009
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: false}
+    Base: Command
+    Name: ElevatorInit
   Properties: {}
   Base: Commands
   Name: Commands
