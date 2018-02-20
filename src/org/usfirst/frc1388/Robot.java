@@ -20,6 +20,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc1388.commands.*;
 import org.usfirst.frc1388.subsystems.*;
 
+import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.IterativeRobot;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -86,8 +89,10 @@ public class Robot extends TimedRobot {
 		gyro.calibrate();
 
 		// camera, TODO add check for Camera to see if camera is on robot, otherwise do not stop capture 
-		//CameraServer.getInstance().startAutomaticCapture(); TODO uncomment
-
+		CameraServer.getInstance().startAutomaticCapture();
+		
+		//elevator encoder
+		SmartDashboard.getData(elevator.getHeight());
 	}
 	/**
 	 * This function is called when the disabled button is hit.
