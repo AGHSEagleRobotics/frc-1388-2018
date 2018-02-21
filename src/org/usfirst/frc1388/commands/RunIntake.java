@@ -62,7 +62,8 @@ public class RunIntake extends Command {
     	
     	// if the y times the multiplier is greater than x then run intake motors in same direction
     	if (Math.abs(y) * k_yMultiplier >= Math.abs(x)) {
-    		intake.leftMotor.set(y);    		intake.rightMotor.set(-y); //opYt sure which one needs to be inverted
+    		intake.leftMotor.set(y);
+    		intake.rightMotor.set(-y); //opYt sure which one needs to be inverted
     		
     	// or run them in opposite directions
     	} else {

@@ -77,6 +77,7 @@ public class AutonomousMoveElevator extends Command {
 	@Override
 	protected void initialize() {
 		UsbLogging.printLog("AutonomousMoveElevator init");
+		
 	}
 
 	public void moveToSetpoint(double setpoint) {
