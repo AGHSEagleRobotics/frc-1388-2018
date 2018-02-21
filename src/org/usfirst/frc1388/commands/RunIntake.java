@@ -54,8 +54,8 @@ public class RunIntake extends Command {
         double y = applyDeadband(Robot.oi.getOpController().getY(Hand.kLeft));
     	double x = applyDeadband(Robot.oi.getOpController().getX(Hand.kLeft));
     	
-    	double cubeOut = applyDeadband(Robot.oi.getDriveController().getTriggerAxis(Hand.kLeft));
-    	double cubeIn = -1 * applyDeadband(Robot.oi.getDriveController().getTriggerAxis(Hand.kRight)); // invert always positive axis to simulate negative half of joystick
+    	double cubeOut = -1 * applyDeadband(Robot.oi.getDriveController().getTriggerAxis(Hand.kLeft));
+    	double cubeIn =  applyDeadband(Robot.oi.getDriveController().getTriggerAxis(Hand.kRight)); // invert always positive axis to simulate negative half of joystick
     	
     	y = y + (cubeIn + cubeOut);
     	

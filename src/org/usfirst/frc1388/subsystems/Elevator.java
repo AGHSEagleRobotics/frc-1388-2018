@@ -72,7 +72,7 @@ public class Elevator extends Subsystem {
 	 * Height variables refer to distance from lowest point of elevator travel (zero) in inches
 	 */
 	//TODO limits
-	public final double k_maxHeight = 80; // maximum height limit
+	public final double k_maxHeight = 81; // maximum height limit
 	public final double k_lowestHeight = 0; // lowest height limit
 	public final double k_maxHeightMargin = 3; // margin for overshoot above max height
 
@@ -82,8 +82,8 @@ public class Elevator extends Subsystem {
 
 	//TODO elevator motor limits
 	private final double k_maxPwrUp = 1.0; //max power when moving up, tested
-	private final double k_finalPwrUp = 0.5; //max power when elevator is at top, not tested
-	private final double k_rampDistUp = 5; //distance from top when power will scale down, not tested
+	private final double k_finalPwrUp = 0.2; //max power when elevator is at top, not tested
+	private final double k_rampDistUp = 2; //distance from top when power will scale down, not tested
 
 	private final double k_maxPwrDwn = -1.0; //max power when moving down, tested
 	private final double k_finalPwrDwn = -0.4; //max power when elevator is at bottom, not tested
