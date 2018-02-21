@@ -52,7 +52,7 @@ public class Elevator extends Subsystem {
 	public enum ElevatorSetpoint {
 		SCALE(80), //TODO adjust values to match real
 		SWITCH(40),
-		DEPLOYARMS(12),
+		DEPLOYARMS(20),
 		BOTTOM(0),
 		DONTKNOW(0);
 

@@ -11,7 +11,10 @@
 
 package org.usfirst.frc1388;
 
+import org.usfirst.frc1388.commands.DeployArms;
+
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
