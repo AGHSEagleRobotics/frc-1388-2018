@@ -26,9 +26,14 @@ public class DeployArms extends Command {
 
 	private double setPoint = ElevatorSetpoint.DEPLOYARMS.getDistance();
 
+	private double setPointIntermediate = 7.5;
+	
 	private final Elevator elevator = Robot.elevator;
 	
-	private final double k_deployArmsPwr = 0.32;
+	private final double k_deployArmsPwrInital = 0.32;
+	
+	private final double k_deployArmsPwrFinal = 0.6;
+	
 	
 
 
@@ -55,37 +60,39 @@ public class DeployArms extends Command {
     @Override
     protected void initialize() {
     	UsbLogging.printLog("DeployArms init");
+    	setTimeout(4);// Give robot to deploy the arms
     }
     
    
 
-    // Called repeatedly when this Command is scheduled to run
-    
+    // Called repeatedly when this Command is scheduled to run    
     @Override
     protected void execute() {
     	
-		double delta;
-		delta = elevator.distanceAboveSetPoint(setPoint);
+		double deltaIntermediate;
+		
+		deltaIntermediate = elevator.distanceAboveSetPoint(setPointIntermediate);
 	
-		// move elevator up if elevator is below setpoint
-		if( delta < 0 ) {
-			elevator.setMotor(k_deployArmsPwr, true);
-		}
-	
-		// move elevator down if elevator is above setpoint
-		else if(delta > 0) {
-			elevator.setMotor(k_deployArmsPwr, true);
-		}
-    	
+		if( deltaIntermediate >= 0 ) {
+			elevator.setMotor(k_deployArmsPwrFinal, true);
+		} else {
+			elevator.setMotor(k_deployArmsPwrInital, true);
+		}	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-    	double delta = elevator.distanceAboveSetPoint(this.setPoint);
-		return ( delta >= 0 && delta < k_acceptableThreshold );
+    	
+    	if(isTimedOut() ) {
+			return true;
+		} else {
+			double delta = elevator.distanceAboveSetPoint(this.setPoint);
+			return ( delta >= 0);
+		}
     }
-
+    
+    
     // Called once after isFinished returns true
     @Override
     protected void end() {
