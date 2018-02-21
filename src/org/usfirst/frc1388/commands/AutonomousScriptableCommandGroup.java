@@ -123,7 +123,7 @@ public class AutonomousScriptableCommandGroup extends CommandGroup {
 					break;
 					
 				case "cube": 
-					addSequential(new AutonomousMoveFork(param));
+					addSequential(new AutonomousRunIntake(param));
 					break;
 					
 				default:

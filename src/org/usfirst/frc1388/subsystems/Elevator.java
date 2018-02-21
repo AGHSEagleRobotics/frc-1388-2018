@@ -72,9 +72,9 @@ public class Elevator extends Subsystem {
 	 * Height variables refer to distance from lowest point of elevator travel (zero) in inches
 	 */
 	//TODO limits
-	public final double k_maxHeight = 50; // maximum height limit
+	public final double k_maxHeight = 80; // maximum height limit
 	public final double k_lowestHeight = 0; // lowest height limit
-	public final double k_maxHeightMargin = 5; // margin for overshoot above max height
+	public final double k_maxHeightMargin = 3; // margin for overshoot above max height
 
 	//TODO lidar
 	private final double k_lidarOffset = -3; // distance from bottom of lidar to lowest point of travel on elevator, should be negative
@@ -82,11 +82,11 @@ public class Elevator extends Subsystem {
 
 	//TODO elevator motor limits
 	private final double k_maxPwrUp = 1.0; //max power when moving up, tested
-	private final double k_finalPwrUp = 0.3; //max power when elevator is at top, not tested
-	private final double k_rampDistUp = 12; //distance from top when power will scale down, not tested
+	private final double k_finalPwrUp = 0.5; //max power when elevator is at top, not tested
+	private final double k_rampDistUp = 5; //distance from top when power will scale down, not tested
 
 	private final double k_maxPwrDwn = -1.0; //max power when moving down, tested
-	private final double k_finalPwrDwn = -0.3; //max power when elevator is at bottom, not tested
+	private final double k_finalPwrDwn = -0.4; //max power when elevator is at bottom, not tested
 	private final double k_rampDistDwn = 20; //distance from bottom when power will scale down, not tested
 	
 	private final double k_slopeUp = (k_maxPwrUp - k_finalPwrUp) / k_rampDistUp; // slope of the limit = y / x = power / distance

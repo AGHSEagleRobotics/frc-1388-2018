@@ -1,5 +1,5 @@
 {
-  "dividerPosition": 0.2518301610541728,
+  "dividerPosition": 0.25148367952522255,
   "tabPane": [
     {
       "title": "SmartDashboard",
@@ -7,51 +7,14 @@
       "autoPopulatePrefix": "SmartDashboard/",
       "widgetPane": {
         "gridSize": 128.0,
+        "showGrid": true,
         "hgap": 16.0,
         "vgap": 16.0,
         "tiles": {
-          "2,0": {
-            "size": [
-              2,
-              2
-            ],
-            "content": {
-              "_type": "Gyro",
-              "_source0": "network_table:///LiveWindow/Ungrouped/ADIS16448_IMU",
-              "_title": "LiveWindow/Ungrouped/ADIS16448_IMU",
-              "majorTickSpace": 45.0,
-              "startAngle": 180.0,
-              "tickMarkRingVisible": true
-            }
-          },
-          "5,0": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "ComboBox Chooser",
-              "_source0": "network_table:///SmartDashboard/Auto mode",
-              "_title": "/SmartDashboard/Auto mode"
-            }
-          },
-          "4,1": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Simple Dial",
-              "_title": "",
-              "minValue": 0.0,
-              "maxValue": 100.0,
-              "valueVisible": true
-            }
-          },
           "0,0": {
             "size": [
-              2,
-              2
+              3,
+              3
             ],
             "content": {
               "_type": "Camera Stream",
@@ -59,16 +22,64 @@
               "_title": "USB Camera 0"
             }
           },
-          "4,0": {
+          "3,0": {
             "size": [
               1,
               1
             ],
             "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///LiveWindow/Elevator/elevatorEncoder/Distance",
+              "_title": "Elevator Height"
+            }
+          },
+          "3,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Simple Dial",
+              "_source0": "network_table:///LiveWindow/Ungrouped/ADIS16448_IMU/AngleZ",
+              "_title": "Gyro Angle",
+              "minValue": -360.0,
+              "maxValue": 360.0,
+              "valueVisible": true
+            }
+          },
+          "4,0": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
               "_type": "Boolean Box",
-              "_title": "",
-              "colorWhenTrue": "#7CFC00FF",
-              "colorWhenFalse": "#8B0000FF"
+              "_source0": "network_table:///LiveWindow/Elevator/bottomElevatorSwitch/Value",
+              "_title": "Elevator Bottom Limit ",
+              "colorWhenTrue": "#FF0000FF",
+              "colorWhenFalse": "#00FF00FF"
+            }
+          },
+          "4,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///LiveWindow/DriveTrain/leftEncoder/Distance",
+              "_title": "Left Drive Enc"
+            }
+          },
+          "5,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///LiveWindow/DriveTrain/rightEncoder/Distance",
+              "_title": "Right Drive Enc"
             }
           }
         }
@@ -80,6 +91,7 @@
       "autoPopulatePrefix": "LiveWindow/",
       "widgetPane": {
         "gridSize": 128.0,
+        "showGrid": true,
         "hgap": 16.0,
         "vgap": 16.0,
         "tiles": {
@@ -200,7 +212,7 @@
               ]
             }
           },
-          "0,1": {
+          "2,2": {
             "size": [
               2,
               1
@@ -211,9 +223,9 @@
               "_title": "DriveTrain/rightEncoder"
             }
           },
-          "2,1": {
+          "0,2": {
             "size": [
-              1,
+              2,
               1
             ],
             "content": {
