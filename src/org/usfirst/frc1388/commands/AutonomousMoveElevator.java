@@ -76,8 +76,7 @@ public class AutonomousMoveElevator extends Command {
 	// Called just before this Command runs the first time
 	@Override
 	protected void initialize() {
-		UsbLogging.printLog("AutonomousMoveElevator init");
-		
+    	UsbLogging.printLog(">>> " + this.getClass().getSimpleName() + " started");
 	}
 
 	public void moveToSetpoint(double setpoint) {
@@ -118,12 +117,14 @@ public class AutonomousMoveElevator extends Command {
 	@Override
 	protected void end() {
 		elevator.setMotor(0, false);
+    	UsbLogging.printLog("<<< " + this.getClass().getSimpleName() + " ended");
 	}
 
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	@Override
 	protected void interrupted() {
+    	UsbLogging.printLog("<<< " + this.getClass().getSimpleName() + " interrupted");
 		end();
 	}
 }

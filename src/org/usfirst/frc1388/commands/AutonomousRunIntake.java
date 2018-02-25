@@ -12,6 +12,7 @@
 package org.usfirst.frc1388.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1388.Robot;
+import org.usfirst.frc1388.UsbLogging;
 import org.usfirst.frc1388.subsystems.Intake;
 
 /**
@@ -45,6 +46,7 @@ public class AutonomousRunIntake extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+    	UsbLogging.printLog(">>> " + this.getClass().getSimpleName() + " started");
     	//check if one of 3 options
     	//initialize option
     	if (direction.equals("in")) {
@@ -97,12 +99,14 @@ public class AutonomousRunIntake extends Command {
     protected void end() {
     	intake.leftMotor.set(0);
 		intake.rightMotor.set(0);
+    	UsbLogging.printLog("<<< " + this.getClass().getSimpleName() + " ended");
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+    	UsbLogging.printLog("<<< " + this.getClass().getSimpleName() + " interrupted");
     	end();
     }
 }

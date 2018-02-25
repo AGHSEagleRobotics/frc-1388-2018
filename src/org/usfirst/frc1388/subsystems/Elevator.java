@@ -93,6 +93,7 @@ public class Elevator extends Subsystem {
 	private final double k_slopeDwn = (k_maxPwrDwn - k_finalPwrDwn) / k_rampDistDwn; // slope of the limit = y / x = power / distance
 
 	private boolean m_initialized = false; 
+	private boolean m_prevAtBottomLimit = false;
 
 	public Elevator() {
 		
@@ -131,14 +132,24 @@ public class Elevator extends Subsystem {
 
 		// Zero the encoder if the elevator is at the bottom limit switch and set the elevator initialized flag
 		if (atBottomLimit()) {
+			if (! m_prevAtBottomLimit) {
+				UsbLogging.printLog("Elevator encoder held in reset; pre-reset value: " + elevatorEncoder.getDistance());
+			}
+			
 			// set the elevator encoder to zero so that we can use it to measure elevator height for set points 
 			// and so that we can ensure that the elevator height does not exceed the limits. 
 			elevatorEncoder.reset();
 			m_initialized = true;
 		}
-
+		else {
+			if (m_prevAtBottomLimit) {
+				UsbLogging.printLog("Elevator encoder released from reset");
+			}
+		}
+		m_prevAtBottomLimit = atBottomLimit();
 	}
 
+	
 	/**
 	 * Determine if the elevator is at the bottom limit
 	 * <p>

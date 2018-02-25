@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1388.Robot;
 import org.usfirst.frc1388.RobotMap;
+import org.usfirst.frc1388.UsbLogging;
 
 /**
  *
@@ -40,7 +41,7 @@ public class Drive extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    	
+    	UsbLogging.printLog(">>> " + this.getClass().getSimpleName() + " started");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -77,12 +78,14 @@ public class Drive extends Command {
     @Override
     protected void end() {
     	RobotMap.driveTrainmecanumDrive.driveCartesian(0.0, 0.0, 0.0, 0.0);
+    	UsbLogging.printLog("<<< " + this.getClass().getSimpleName() + " ended");
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+    	UsbLogging.printLog("<<< " + this.getClass().getSimpleName() + " interrupted");
     	end();
     }
 }

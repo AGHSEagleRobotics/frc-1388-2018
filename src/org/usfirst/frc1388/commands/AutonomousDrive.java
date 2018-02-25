@@ -56,7 +56,7 @@ public class AutonomousDrive extends Command {
     @Override
     protected void initialize() {
     	// if time true, start timer
-    	UsbLogging.printLog("AutonomousDrive init");
+    	UsbLogging.printLog(">>> " + this.getClass().getSimpleName() + " started");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -84,12 +84,13 @@ public class AutonomousDrive extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+    	UsbLogging.printLog("<<< " + this.getClass().getSimpleName() + " ended");
     }
-
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+    	UsbLogging.printLog("<<< " + this.getClass().getSimpleName() + " interrupted");
     	end();
     }
 }
