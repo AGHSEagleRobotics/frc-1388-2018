@@ -109,9 +109,16 @@ public class Robot extends TimedRobot {
 
     }
 
+    /**
+     * This function is called periodically in any robot mode.
+     */
+    @Override
+    public void robotPeriodic() {
+    }
+    
     @Override
     public void disabledPeriodic() {
-        Scheduler.getInstance().run();
+    	Scheduler.getInstance().run();
     }
 
     @Override
