@@ -42,6 +42,7 @@ public class RobotMap {
     public static MecanumDrive driveTrainmecanumDrive;
     public static Encoder driveTrainleftEncoder;
     public static Encoder driveTrainrightEncoder;
+    private static final double distancePerPulse = 0.0181818;
     public static DigitalInput elevatorbottomElevatorSwitch;
     public static Encoder elevatorelevatorEncoder;
     public static WPI_VictorSPX elevatorelevatorMotor;
@@ -76,13 +77,13 @@ public class RobotMap {
         driveTrainmecanumDrive.setExpiration(0.1);
         driveTrainmecanumDrive.setMaxOutput(1.0);
 
-        driveTrainleftEncoder = new Encoder(2, 3, false, EncodingType.k4X);
+        driveTrainleftEncoder = new Encoder(2, 3, false, EncodingType.k1X);
         LiveWindow.addSensor("DriveTrain", "leftEncoder", driveTrainleftEncoder);
-        driveTrainleftEncoder.setDistancePerPulse(0.079994260125);
+        driveTrainleftEncoder.setDistancePerPulse(distancePerPulse);
         driveTrainleftEncoder.setPIDSourceType(PIDSourceType.kDisplacement);
-        driveTrainrightEncoder = new Encoder(0, 1, false, EncodingType.k4X);
+        driveTrainrightEncoder = new Encoder(0, 1, false, EncodingType.k1X);
         LiveWindow.addSensor("DriveTrain", "rightEncoder", driveTrainrightEncoder);
-        driveTrainrightEncoder.setDistancePerPulse(0.079994260125);
+        driveTrainrightEncoder.setDistancePerPulse(distancePerPulse);
         driveTrainrightEncoder.setPIDSourceType(PIDSourceType.kDisplacement);
         elevatorbottomElevatorSwitch = new DigitalInput(8);
         LiveWindow.addSensor("Elevator", "bottomElevatorSwitch", elevatorbottomElevatorSwitch);
@@ -108,6 +109,7 @@ public class RobotMap {
          * 
          * 12 Tooth Sprocket:
          * 0.0639954081
+         * 0.0181818
          * 
          * TODO verify numbers empirically
          * 

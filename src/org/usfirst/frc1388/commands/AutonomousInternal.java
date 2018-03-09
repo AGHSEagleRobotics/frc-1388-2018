@@ -117,7 +117,7 @@ public class AutonomousInternal extends CommandGroup {
 	}
 
 	public void runLine() {
-		addSequential( new AutonomousDrive(150));
+		addSequential( new AutonomousDrive(24));
 	}
 
 	/**

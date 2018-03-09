@@ -42,6 +42,9 @@ public class Drive extends Command {
     @Override
     protected void initialize() {
     	UsbLogging.printLog(">>> " + this.getClass().getSimpleName() + " started");
+    	
+    	RobotMap.driveTrainmecanumDrive.setDeadband(0.3);
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -77,6 +80,8 @@ public class Drive extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+    	RobotMap.driveTrainmecanumDrive.setDeadband(0.0);
+    	
     	RobotMap.driveTrainmecanumDrive.driveCartesian(0.0, 0.0, 0.0, 0.0);
     	UsbLogging.printLog("<<< " + this.getClass().getSimpleName() + " ended");
     }
