@@ -76,7 +76,7 @@ public class UsbLogging {
 	 */
 
 	public static void printLog(String str) {
-		System.out.println(str);
+		System.out.println(LocalTime.now() + "  " + str);
 		// ToDo: Add timestamp to the string written to m_logStream
 		if (m_logStream != null) {
 			if (! m_today.equals(LocalDate.now())) {

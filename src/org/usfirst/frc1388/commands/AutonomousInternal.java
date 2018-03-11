@@ -12,11 +12,13 @@
 package org.usfirst.frc1388.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 import org.usfirst.frc1388.Position;
 import org.usfirst.frc1388.Objective;
 import org.usfirst.frc1388.Robot;
 import org.usfirst.frc1388.RobotMap;
+import org.usfirst.frc1388.UsbLogging;
 import org.usfirst.frc1388.subsystems.*;
 
 /**
@@ -84,6 +86,7 @@ public class AutonomousInternal extends CommandGroup {
 	}
 
 	public void runSwitch(Position position, String switchSide) {
+		UsbLogging.printLog("Auto: runScale:  position=" + position + "  switchSide=" + switchSide);
 
 		if( position.equals(Position.CENTER) ) {
 			if(switchSide == "R") {
@@ -115,6 +118,7 @@ public class AutonomousInternal extends CommandGroup {
 	}
 
 	public void runScale(Position position, String scaleSide) {
+		UsbLogging.printLog("Auto: runScale:  position=" + position + "  scaleSide=" + scaleSide);
 		//drive forward
 		//turn opposite
 		//drive forward
@@ -124,7 +128,15 @@ public class AutonomousInternal extends CommandGroup {
 	}
 
 	public void runLine() {
+		UsbLogging.printLog("Auto: runLine");
 		addSequential( new AutonomousDrive(k_autoDistanceWall));
+//		addSequential( new AutonomousDrive(k_autoDistanceLine));
+//		addSequential( new AutonomousTurnTo(180));
+//		addSequential( new AutonomousDrive(k_autoDistanceLine-k_robotFrame));
+//		addSequential( new AutonomousTurnTo(0));
+//		addSequential( new AutonomousDrive(k_autoDistanceLine-k_robotFrame));
+//		addSequential( new AutonomousTurnTo(-180));
+//		addSequential( new AutonomousDrive(k_autoDistanceLine-k_robotFrame));
 	}
 
 	/**

@@ -106,7 +106,7 @@ public class AutonomousScriptable extends CommandGroup {
 					} catch (Exception e) {
 						tempDouble = 0;
 					}
-					addSequential(new AutonomousTurn(tempDouble));
+					addSequential(new AutonomousTurnTo(tempDouble));
 					break;
 					
 				case "turnt": 
@@ -115,7 +115,7 @@ public class AutonomousScriptable extends CommandGroup {
 					} catch (Exception e) {
 						tempInt = 0;
 					}
-					addSequential(new AutonomousTurn(tempInt));
+					addSequential(new AutonomousTurnTo(tempInt));
 					break;
 					
 				case "ele": 
