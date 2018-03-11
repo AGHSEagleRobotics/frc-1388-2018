@@ -35,6 +35,7 @@ public class Robot extends TimedRobot {
     Command autonomousCommand;
     SendableChooser<Command> chooser = new SendableChooser<>();
 
+    public static DriverStation driverStation;
     public static String gameData;
     public static String fieldPos;
     
@@ -95,6 +96,8 @@ public class Robot extends TimedRobot {
 		
 		//elevator encoder
 		//SmartDashboard.getData(elevator.getHeight());
+		
+		driverStation = DriverStation.getInstance();
     }
     /**
      * This function is called when the disabled button is hit.
@@ -137,11 +140,30 @@ public class Robot extends TimedRobot {
     	SmartDashboard.putString("localGameData", "");
     	SmartDashboard.putString("localFieldPosition", "");
     	SmartDashboard.putString("selected Autonomous Command", "");
+    	
+    	if (driverStation == null)
+    		driverStation = DriverStation.getInstance();
+
+    	// Get match info from FMS
+    	if (driverStation.isFMSAttached()) {
+    		String fmsInfo = "FMS info:";
+    		fmsInfo += "  " + driverStation.getEventName();
+    		fmsInfo += " " + driverStation.getMatchType();
+    		fmsInfo += " match " + driverStation.getMatchNumber();
+    		if (driverStation.getReplayNumber() > 0) {
+    			fmsInfo += " replay " + driverStation.getReplayNumber();
+    		}
+    		fmsInfo += ";  " + driverStation.getAlliance() + " alliance";
+    		fmsInfo += ",  Driver Station " + driverStation.getLocation();
+    		UsbLogging.printLog(fmsInfo);
+    	} else {
+    		UsbLogging.printLog("FMS not connected");
+    	}
 
     	// get autonomous parameters from DriverStation and SmartDashboard
-
+    	
     	// get field game data (which plates are ours) 
-    	gameData = DriverStation.getInstance().getGameSpecificMessage();
+    	gameData = driverStation.getGameSpecificMessage();
 
     	// get Driver settable robot field position from Smart Dashboard
     	fieldPos = SmartDashboard.getString("setFieldPos", "D");
