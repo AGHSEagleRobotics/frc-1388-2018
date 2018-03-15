@@ -79,7 +79,7 @@ public class AutonomousMoveElevator extends Command {
     	UsbLogging.printLog(">>> " + this.getClass().getSimpleName() + " started");
 	}
 
-	public void moveToSetpoint(double setpoint) {
+	private void moveToSetpoint(double setpoint) {
 
 		if(elevator.isHeightValid()) {
 			
@@ -95,8 +95,6 @@ public class AutonomousMoveElevator extends Command {
 			else if(delta > 0) {
 				elevator.setMotor(-1, false);
 			}
-		} else {
-			this.cancel();
 		}
 	}
 
@@ -109,6 +107,11 @@ public class AutonomousMoveElevator extends Command {
 	// Make this return true when this Command no longer needs to run execute()
 	@Override
 	protected boolean isFinished() {
+		if(!elevator.isHeightValid()) {
+			UsbLogging.printLog("Elevator height not valid");
+			return true;
+		}
+
 		double delta = elevator.distanceAboveSetPoint(this.setPoint);
 		return ( delta >= 0 && delta < acceptableThreshold );
 	}
