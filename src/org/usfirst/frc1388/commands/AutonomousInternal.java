@@ -20,6 +20,7 @@ import org.usfirst.frc1388.Robot;
 import org.usfirst.frc1388.RobotMap;
 import org.usfirst.frc1388.UsbLogging;
 import org.usfirst.frc1388.subsystems.*;
+import org.usfirst.frc1388.subsystems.Elevator.ElevatorSetpoint;
 
 /**
  *
@@ -29,6 +30,8 @@ public class AutonomousInternal extends CommandGroup {
 	private Position position;
 	private Objective goal;
 	private String gameData;
+	private final double k_rightTurnAngle = 90;
+	private final double k_leftTurnAngle = -90;
 	private final double k_robotFrame = 28;
 	private final double k_robotBumber = 6;
 	private final double k_robotLength = k_robotFrame + k_robotBumber;
@@ -68,18 +71,17 @@ public class AutonomousInternal extends CommandGroup {
 		setGoal(priority);
 
 		//AutonShake command(s)? add here if necessary
+		String switchSide = gameData.substring(0, 1); // "L" L L 
+		String scaleSide = gameData.substring(1, 2); // L "L" L
 		
 		switch (goal) {
 		case SCALE:
-			String scaleSide = gameData.substring(1, 2);
 			runScale(position, scaleSide);
 			break;
 
 		case SWITCH:
-			String switchSide = gameData.substring(0, 1);
 			runSwitch(position, switchSide);
 			break;
-
 		default:
 			runLine();
 		}
@@ -89,42 +91,102 @@ public class AutonomousInternal extends CommandGroup {
 		UsbLogging.printLog("Auto: runScale:  position=" + position + "  switchSide=" + switchSide);
 
 		if( position.equals(Position.CENTER) ) {
-			if(switchSide == "R") {
-				System.out.println("CENTER POSITION, SWITCH, SW RIGHT");
-				//drive forward
-				//turn right
-				//drive forward
-				//turn left
-				//drive forward
-				//raise elevator
-				//drop cube
-			}
-			else {
-				System.out.println("CENTER POSITION, SWITCH, SW LEFT");
-				//drive forward
-				//turn left
-				//drive forward
-				//turn right
-				//drive forward
-				//drop cube
-			}
+			
+			double w = 38;
+			double xL = 89;
+			double xR = 65;
+			double y = k_autoDistanceWall - w;
+			double z = -10;
+			// switch Dims 12ft 9.5in wide, 4ft 8in deep, 1ft 6 3/4 in tall
+			// scale Dims
+			
+			
+			// Drive forward w
+			addSequential( new AutonomousDrive(w));
+			
+			// Turn Same
+			if(switchSide == "L") addSequential( new AutonomousTurnTo(k_leftTurnAngle));
+			else addSequential( new AutonomousTurnTo(k_rightTurnAngle));
+			
+			// Drive Forward x
+			if(switchSide == "L") addSequential( new AutonomousDrive(xL));
+			else addSequential( new AutonomousDrive(xR));
+			
+			// Turn Opposite
+			if(switchSide == "L") addSequential( new AutonomousTurnTo(k_rightTurnAngle));
+			else addSequential( new AutonomousTurnTo(k_leftTurnAngle));
+			
+			// P Elevator to switch
+			addParallel( new AutonomousMoveElevator(ElevatorSetpoint.SWITCH));
+			
+			// P Drive Forward y
+			addParallel( new AutonomousDrive(y));
+			
+			// Drop Box
+			addSequential( new AutonomousRunIntake("out"));
+			
+			// Drive BackWards z
+			addSequential( new AutonomousDrive(z));
+			
+		}//end if
+		else { // position == R or L 
+
+			double x = 151; 
+			double y = 10.5;
+			double z = -20;
+			
+			// Drive forward x
+			addSequential( new AutonomousDrive(x));
+			
+			// Turn opposite
+			if(switchSide == "L") addSequential( new AutonomousTurnTo(k_rightTurnAngle));
+			else addSequential( new AutonomousTurnTo(k_leftTurnAngle));
+			
+			// P Elevator to switch
+			addParallel( new AutonomousMoveElevator(ElevatorSetpoint.SWITCH));
+			
+			// P Drive forward y
+			addSequential( new AutonomousDrive(y));
+			
+			// drop box
+			addSequential( new AutonomousRunIntake("out"));
+			
+			// Drive backwards z
+			addSequential( new AutonomousDrive(z));
 		}
-		//drive forward
-		//turn opposite
-		//drive forward
-		//raise elevator
-		//drop cube
-		
 	}
 
 	public void runScale(Position position, String scaleSide) {
 		UsbLogging.printLog("Auto: runScale:  position=" + position + "  scaleSide=" + scaleSide);
-		//drive forward
-		//turn opposite
-		//drive forward
-		//raise elevator
-		//drop cube
+		double x = 307; 
+		double y = -19;
+		double z = -10;
 		
+		// Drive forward x
+		addSequential( new AutonomousDrive(x));
+		
+		// Turn opposite
+		if(scaleSide == "L") addSequential( new AutonomousTurnTo(k_rightTurnAngle));
+		else addSequential( new AutonomousTurnTo(k_leftTurnAngle));
+		
+		// P Elevator to switch
+		addParallel( new AutonomousMoveElevator(ElevatorSetpoint.SCALE));
+		
+		// P Drive backwards y
+		addSequential( new AutonomousDrive(y));
+		
+		addSequential(new WaitCommand(1));
+		
+		// Drive Forward
+		addSequential( new AutonomousDrive(3)); // 3 is to get the arms over the scale edge
+		
+		// drop box
+		addSequential( new AutonomousRunIntake("out"));
+		
+		// Drive backwards z
+		addSequential( new AutonomousDrive(z));
+		
+		// Lower Elevator
 	}
 
 	public void runLine() {

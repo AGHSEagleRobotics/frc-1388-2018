@@ -175,12 +175,12 @@ public class Robot extends TimedRobot {
     	// reset the gyro to zero at the start of Auto. We do not want to do this at the start of Tele because we won't know what position
     	// the robot will be at the end of Auto
 
-    	autonObjective = objectiveChooser.getSelected();
-    	fieldPosition = positionChooser.getSelected();
+    	autonObjective = objectiveChooser.getSelected(); // what you want to go for, Scale, Switch, Line
+    	fieldPosition = positionChooser.getSelected(); // L C R
     	
-    	gameData = DriverStation.getInstance().getGameSpecificMessage();
+    	gameData = DriverStation.getInstance().getGameSpecificMessage(); // 
     	
-        autonToRun = autonomousChooser.getSelected();
+        autonToRun = autonomousChooser.getSelected(); // selector between script or hard code 
         autonomousCommand = new AutonomousLauncher(autonToRun);
 
 
