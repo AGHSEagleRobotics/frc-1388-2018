@@ -40,6 +40,7 @@ public class Robot extends TimedRobot {
     private SendableChooser<Objective> objectiveChooser = new SendableChooser<>();
     private SendableChooser<Position> positionChooser = new SendableChooser<>();    
 
+    public static DriverStation driverStation;
     public static String gameData;
     
 	public static Objective autonObjective;
@@ -182,8 +183,28 @@ public class Robot extends TimedRobot {
     	
         autonToRun = autonomousChooser.getSelected(); // selector between script or hard code 
         autonomousCommand = new AutonomousLauncher(autonToRun);
+    	
+    	if (driverStation == null)
+    		driverStation = DriverStation.getInstance();
 
+    	// Get match info from FMS
+    	if (driverStation.isFMSAttached()) {
+    		String fmsInfo = "FMS info:";
+    		fmsInfo += "  " + driverStation.getEventName();
+    		fmsInfo += " " + driverStation.getMatchType();
+    		fmsInfo += " match " + driverStation.getMatchNumber();
+    		if (driverStation.getReplayNumber() > 0) {
+    			fmsInfo += " replay " + driverStation.getReplayNumber();
+    		}
+    		fmsInfo += ";  " + driverStation.getAlliance() + " alliance";
+    		fmsInfo += ",  Driver Station " + driverStation.getLocation();
+    		UsbLogging.printLog(fmsInfo);
+    	} else {
+    		UsbLogging.printLog("FMS not connected");
+    	}
 
+    	// get autonomous parameters from DriverStation and SmartDashboard
+    	
 		Command elevatorInitialize = new ElevatorInit();
 		elevatorInitialize.start();
         

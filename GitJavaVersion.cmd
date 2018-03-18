@@ -2,7 +2,7 @@
 REM
 REM This script will create a Java class which contains git build info
 
-set "PATH=%PATH%;C:\Program Files\Git\bin"
+set "PATH=%PATH%;C:\Program Files\Git\bin;%LOCALAPPDATA%\Programs\Git\bin"
 
 set TEMPFILE=%TEMP%\%~n0.txt
 
