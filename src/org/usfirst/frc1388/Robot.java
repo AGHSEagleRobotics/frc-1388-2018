@@ -40,6 +40,7 @@ public class Robot extends TimedRobot {
     private SendableChooser<Objective> objectiveChooser = new SendableChooser<>();
     private SendableChooser<Position> positionChooser = new SendableChooser<>();    
 
+    public static DriverStation driverStation;
     public static String gameData;
     
 	public static Objective autonObjective;
@@ -100,7 +101,7 @@ public class Robot extends TimedRobot {
         gyro.calibrate();
 
 		// camera, TODO add check for Camera to see if camera is on robot, otherwise do not stop capture 
-		CameraServer.getInstance().startAutomaticCapture();
+		//CameraServer.getInstance().startAutomaticCapture();
 		
 		//elevator encoder
 		//SmartDashboard.getData(elevator.getHeight());
@@ -175,15 +176,35 @@ public class Robot extends TimedRobot {
     	// reset the gyro to zero at the start of Auto. We do not want to do this at the start of Tele because we won't know what position
     	// the robot will be at the end of Auto
 
-    	autonObjective = objectiveChooser.getSelected();
-    	fieldPosition = positionChooser.getSelected();
+    	autonObjective = objectiveChooser.getSelected(); // what you want to go for, Scale, Switch, Line
+    	fieldPosition = positionChooser.getSelected(); // L C R
     	
-    	gameData = DriverStation.getInstance().getGameSpecificMessage();
+    	gameData = DriverStation.getInstance().getGameSpecificMessage(); // 
     	
-        autonToRun = autonomousChooser.getSelected();
+        autonToRun = autonomousChooser.getSelected(); // selector between script or hard code 
         autonomousCommand = new AutonomousLauncher(autonToRun);
+    	
+    	if (driverStation == null)
+    		driverStation = DriverStation.getInstance();
 
+    	// Get match info from FMS
+    	if (driverStation.isFMSAttached()) {
+    		String fmsInfo = "FMS info:";
+    		fmsInfo += "  " + driverStation.getEventName();
+    		fmsInfo += " " + driverStation.getMatchType();
+    		fmsInfo += " match " + driverStation.getMatchNumber();
+    		if (driverStation.getReplayNumber() > 0) {
+    			fmsInfo += " replay " + driverStation.getReplayNumber();
+    		}
+    		fmsInfo += ";  " + driverStation.getAlliance() + " alliance";
+    		fmsInfo += ",  Driver Station " + driverStation.getLocation();
+    		UsbLogging.printLog(fmsInfo);
+    	} else {
+    		UsbLogging.printLog("FMS not connected");
+    	}
 
+    	// get autonomous parameters from DriverStation and SmartDashboard
+    	
 		Command elevatorInitialize = new ElevatorInit();
 		elevatorInitialize.start();
         

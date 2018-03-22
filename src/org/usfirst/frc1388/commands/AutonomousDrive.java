@@ -94,7 +94,7 @@ public class AutonomousDrive extends Command {
 		error = distance - (RobotMap.driveTrainleftEncoder.getDistance());
 		//error = distance - (RobotMap.driveTrainrightEncoder.getDistance());
 		
-		power = k_p * error + k_powerOffset;
+		power = k_p * error + Math.copySign(k_powerOffset, error); // need be same sign
 
 		power = Math.min(power,  k_maxPower); 
 		power = Math.max(power, -k_maxPower);
@@ -106,7 +106,7 @@ public class AutonomousDrive extends Command {
 		RobotMap.driveTrainmecanumDrive.driveCartesian(0, power, 0, 0);
 		
 		// TODO: Should be a way to select left/right/both encoders
-		if(RobotMap.driveTrainleftEncoder.getRate() < k_minSpeedThreshold ) {
+		if(Math.abs(RobotMap.driveTrainleftEncoder.getRate()) < k_minSpeedThreshold ) {
 			stallCount ++;
 		}else {
 			stallCount = 0;
