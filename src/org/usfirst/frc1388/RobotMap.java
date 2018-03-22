@@ -77,7 +77,7 @@ public class RobotMap {
         driveTrainmecanumDrive.setExpiration(0.1);
         driveTrainmecanumDrive.setMaxOutput(1.0);
 
-        driveTrainleftEncoder = new Encoder(2, 3, false, EncodingType.k1X);
+        driveTrainleftEncoder = new Encoder(2, 3, true, EncodingType.k1X);
         LiveWindow.addSensor("DriveTrain", "leftEncoder", driveTrainleftEncoder);
         driveTrainleftEncoder.setDistancePerPulse(distancePerPulse);
         driveTrainleftEncoder.setPIDSourceType(PIDSourceType.kDisplacement);
