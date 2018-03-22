@@ -42,7 +42,7 @@ public class RobotMap {
     public static MecanumDrive driveTrainmecanumDrive;
     public static Encoder driveTrainleftEncoder;
     public static Encoder driveTrainrightEncoder;
-    private static final double distancePerPulse = 0.0399991775;
+    private static final double distancePerPulse = 0.0199995888;
     public static DigitalInput elevatorbottomElevatorSwitch;
     public static Encoder elevatorelevatorEncoder;
     public static WPI_VictorSPX elevatorelevatorMotor;

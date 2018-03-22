@@ -103,16 +103,18 @@ public class AutonomousInternal extends CommandGroup {
 	public void runSwitch(Position position, String switchSide) {
 		UsbLogging.printLog("Auto: runSwitch:  position=" + position + "  switchSide=" + switchSide);
 
+		// Deploy arms
+		addSequential( new DeployArms() );
+		
 		if( position.equals(Position.CENTER) ) {
 			
-			double w = k_autoDistanceClearExchange;
+			double w = k_autoDistanceClearExchange + 10;
 			double xL = k_autoDistanceSwitchForBlock + k_centerRightOffset;
 			double xR = k_autoDistanceSwitchForBlock - k_centerRightOffset;
 			double y = k_autoDistanceWall - w;
-			double z = -10;
+			double z = -20;
 			// switch Dims 12ft 9.5in wide, 4ft 8in deep, 1ft 6 3/4 in tall
 			// scale Dims
-			
 			
 			// Drive forward w
 			addSequential( new AutonomousDrive(w));
@@ -179,8 +181,10 @@ public class AutonomousInternal extends CommandGroup {
 		double x = k_autoDistanceScale; 
 		double y = -19;//how far to go back from under the scale not to hit it
 		double y2 = 3; // 3 is to get the arms over the scale edge
-		double z = -10;//to clear the scale after auton
+		double z = -20;//to clear the scale after auton
 		
+		// Deploy arms
+		addSequential( new DeployArms() );
 		
 		// Drive forward x
 		addSequential( new AutonomousDrive(x));
@@ -211,10 +215,13 @@ public class AutonomousInternal extends CommandGroup {
 	public void runLine() {
 		UsbLogging.printLog("Auto: runLine");
 		
-		if(position == Position.CENTER)
+		if(position == Position.CENTER) {
 			runSwitch(position, switchSide);
-		else
-			addSequential( new AutonomousDrive(k_autoDistanceWall));
+		} else {
+			//addSequential( new AutonomousDrive(k_autoDistanceWall));
+			addSequential( new AutonomousDrive(50));
+		}
+			
 //		addSequential( new AutonomousDrive(k_autoDistanceLine));
 //		addSequential( new AutonomousTurnTo(180));
 //		addSequential( new AutonomousDrive(k_autoDistanceLine-k_robotFrame));
