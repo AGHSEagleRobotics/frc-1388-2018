@@ -86,8 +86,8 @@ public class Elevator extends Subsystem {
 	private final double k_rampDistUp = 2; //distance from top when power will scale down, not tested
 
 	private final double k_maxPwrDwn = -1.0; //max power when moving down, tested
-	private final double k_finalPwrDwn = -0.5; //max power when elevator is at bottom, not tested
-	private final double k_rampDistDwn = 20; //distance from bottom when power will scale down, not tested
+	private final double k_finalPwrDwn = -0.4; //max power when elevator is at bottom, not tested
+	private final double k_rampDistDwn = 30; //distance from bottom when power will scale down, not tested
 	
 	private final double k_slopeUp = (k_maxPwrUp - k_finalPwrUp) / k_rampDistUp; // slope of the limit = y / x = power / distance
 	private final double k_slopeDwn = (k_maxPwrDwn - k_finalPwrDwn) / k_rampDistDwn; // slope of the limit = y / x = power / distance

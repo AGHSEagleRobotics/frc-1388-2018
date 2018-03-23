@@ -28,7 +28,7 @@ public class DeployArms extends Command {
 
 	private final Elevator elevator = Robot.elevator;
 	
-	private final double k_deployArmsPwr = 0.5;
+	private final double k_deployArmsPwr = 0.4;
 	
 
 
