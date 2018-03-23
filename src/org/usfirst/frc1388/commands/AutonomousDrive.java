@@ -26,7 +26,7 @@ public class AutonomousDrive extends Command {
 	private final double k_minPwrCutoff = 0.2;	// stop motors if power is below this level
 	private double error;
 	private double power;
-	private final double k_maxPower = .5;
+	private final double k_maxPower = .6;
 	private static double threshold = 1.5; // error threshold for isFinished check (based on max dist over 20ms)
 	
 	private int stallCount = 0;
