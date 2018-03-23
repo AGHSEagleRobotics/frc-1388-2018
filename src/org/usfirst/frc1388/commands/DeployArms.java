@@ -55,6 +55,7 @@ public class DeployArms extends Command {
     @Override
     protected void initialize() {
     	UsbLogging.printLog(">>> " + this.getClass().getSimpleName() + " started");
+    	setTimeout(1.5);
     }
     
    
@@ -83,7 +84,7 @@ public class DeployArms extends Command {
     @Override
     protected boolean isFinished() {
     	double delta = elevator.distanceAboveSetPoint(this.setPoint);
-		return ( delta >= 0 && delta < k_acceptableThreshold );
+		return ( (delta >= 0 && delta < k_acceptableThreshold) || isTimedOut() );
     }
 
     // Called once after isFinished returns true
