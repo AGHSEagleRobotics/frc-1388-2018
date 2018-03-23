@@ -49,7 +49,7 @@ public class AutonomousInternal extends CommandGroup {
 	private final double k_exchangePlatformDepth = 36;
 	private final double k_autoDistanceClearExchange = k_exchangePlatformDepth + 2 ; //2 is the margin of error
 	private final double k_centerRightOffset = ((k_robotFrameWidth + k_robotBumper)/2) - 12;// 12 is the distance from center of field to the exchange platform
-	private final double k_autoDistanceSwitchForBlock = (k_switchLength /2 ) - (k_blockSize /2); 
+	private final double k_autoDistanceSwitchForBlock = (k_switchLength /2 ) - (k_blockSize); 
 	private String switchSide;
 	private String scaleSide;
 	
