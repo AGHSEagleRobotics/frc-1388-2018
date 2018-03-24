@@ -8,7 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package org.usfirst.frc1388.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -112,12 +111,13 @@ public class AutonomousInternal extends CommandGroup {
 			double xL = k_autoDistanceSwitchForBlock + k_centerRightOffset;
 			double xR = k_autoDistanceSwitchForBlock - k_centerRightOffset;
 			double y = k_autoDistanceWall - w;
-			double z = -20;
+			double z = -55;
+			double xC = k_autoDistanceSwitchForBlock - (k_robotLength/4);
 			// switch Dims 12ft 9.5in wide, 4ft 8in deep, 1ft 6 3/4 in tall
 			// scale Dims
 			
 			// Drive forward w
-			addSequential( new AutonomousDrive(w));
+			addParallel( new AutonomousDrive(w));
 			
 			// Turn Same
 			if(switchSide.equals("L")) addSequential( new AutonomousTurnTo(k_leftTurnAngle));
@@ -144,6 +144,16 @@ public class AutonomousInternal extends CommandGroup {
 			
 			// Lower Elevator
 			addSequential( new AutonomousMoveElevator(ElevatorSetpoint.BOTTOM));
+			
+			//turn opposite
+			if(switchSide.equals("L")) addSequential( new AutonomousTurnTo(k_rightTurnAngle));
+			else addSequential( new AutonomousTurnTo(k_leftTurnAngle));
+			
+			//run intake
+			addSequential(new AutonomousRunIntake("in"));
+			
+			//Drive to block pile
+			addParallel( new AutonomousDrive(xC));		
 			
 		}//end if
 		else { // position == R or L 

@@ -26,7 +26,7 @@ public class AutonomousDrive extends Command {
 	private final double k_minPwrCutoff = 0.2;	// stop motors if power is below this level
 	private double error;
 	private double power;
-	private final double k_maxPower = .6;
+	private final double k_maxPower = .7;
 	private static double threshold = 1.5; // error threshold for isFinished check (based on max dist over 20ms)
 	
 	private int stallCount = 0;
@@ -95,9 +95,12 @@ public class AutonomousDrive extends Command {
 		//error = distance - (RobotMap.driveTrainrightEncoder.getDistance());
 		
 		power = k_p * error + Math.copySign(k_powerOffset, error); // need be same sign
-
+	
 		power = Math.min(power,  k_maxPower); 
 		power = Math.max(power, -k_maxPower);
+
+		UsbLogging.printLog("Power is: " + power);
+		
 
 		if(Math.abs(power) <= k_minPwrCutoff) {
 			power = 0;
