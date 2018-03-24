@@ -96,10 +96,12 @@ public class AutonomousDrive extends Command {
 		
 		power = k_p * error + Math.copySign(k_powerOffset, error); // need be same sign
 	
+		UsbLogging.printLog("Power is: " + power);
+		
 		power = Math.min(power,  k_maxPower); 
 		power = Math.max(power, -k_maxPower);
 
-		UsbLogging.printLog("Power is: " + power);
+		
 		
 
 		if(Math.abs(power) <= k_minPwrCutoff) {
