@@ -166,10 +166,14 @@ public class Robot extends TimedRobot {
 
 		UsbLogging.printLog("########  Autonomous enabled");
 
+		gyro.reset();
+		
+		/*
 		if(gyroReset == false) {
 			gyro.reset();
 			UsbLogging.printLog("USER button not pushed after startup, gyro reset automatically");
 		}
+		*/
 		
 		RobotMap.lidarSensor.startMeasuring();
 
