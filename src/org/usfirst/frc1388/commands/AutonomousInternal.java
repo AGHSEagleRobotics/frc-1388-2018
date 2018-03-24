@@ -36,7 +36,7 @@ public class AutonomousInternal extends CommandGroup {
 	private final double k_robotBumper = 6;
 	private final double k_robotLength = k_robotFrameLength + k_robotBumper;
 	private final double k_blockSize = 13;
-	private final double k_switchWall = 140;
+	private final double k_switchWall = 138;
 	private final double k_autoLine = 120;
 	private final double k_autoDistanceWall = k_switchWall - k_robotLength;
 	private final double k_autoDistanceLine = k_autoLine - k_robotLength;
@@ -48,7 +48,7 @@ public class AutonomousInternal extends CommandGroup {
 	private final double k_exchangePlatformDepth = 36;
 	private final double k_autoDistanceClearExchange = k_exchangePlatformDepth + 2 ; //2 is the margin of error
 	private final double k_centerRightOffset = ((k_robotFrameWidth + k_robotBumper)/2) - 12;// 12 is the distance from center of field to the exchange platform
-	private final double k_autoDistanceSwitchForBlock = (k_switchLength /2 ) - (k_blockSize); 
+	private final double k_autoDistanceSwitchForBlock = ((k_switchLength - 12) /2 ) - (k_blockSize); 
 	private String switchSide;
 	private String scaleSide;
 	
@@ -86,6 +86,8 @@ public class AutonomousInternal extends CommandGroup {
 		switchSide = gameData.substring(0, 1); // "L" L L 
 		scaleSide = gameData.substring(1, 2); // L "L" L
 		
+		addSequential(new ElevatorInit());
+		
 		switch (goal) {
 		case SCALE:
 			runScale(position, scaleSide);
@@ -103,7 +105,7 @@ public class AutonomousInternal extends CommandGroup {
 		UsbLogging.printLog("Auto: runSwitch:  position=" + position + "  switchSide=" + switchSide);
 
 		// Deploy arms
-		addSequential( new DeployArms() );
+		addParallel( new DeployArms() );
 		
 		if( position.equals(Position.CENTER) ) {
 			
@@ -111,13 +113,13 @@ public class AutonomousInternal extends CommandGroup {
 			double xL = k_autoDistanceSwitchForBlock + k_centerRightOffset;
 			double xR = k_autoDistanceSwitchForBlock - k_centerRightOffset;
 			double y = k_autoDistanceWall - w;
-			double z = -55;
-			double xC = k_autoDistanceSwitchForBlock - (k_robotLength/4);
+			double z = -20;
+			double xC = k_autoDistanceSwitchForBlock - (k_robotLength/3);
 			// switch Dims 12ft 9.5in wide, 4ft 8in deep, 1ft 6 3/4 in tall
 			// scale Dims
 			
 			// Drive forward w
-			addParallel( new AutonomousDrive(w));
+			addSequential( new AutonomousDrive(w));
 			
 			// Turn Same
 			if(switchSide.equals("L")) addSequential( new AutonomousTurnTo(k_leftTurnAngle));
@@ -150,10 +152,10 @@ public class AutonomousInternal extends CommandGroup {
 			else addSequential( new AutonomousTurnTo(k_leftTurnAngle));
 			
 			//run intake
-			addSequential(new AutonomousRunIntake("in"));
+			addParallel(new AutonomousRunIntake("in"));
 			
 			//Drive to block pile
-			addParallel( new AutonomousDrive(xC));		
+			addSequential( new AutonomousDrive(xC));		
 			
 		}//end if
 		else { // position == R or L 

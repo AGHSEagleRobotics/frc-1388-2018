@@ -22,7 +22,7 @@ import org.usfirst.frc1388.UsbLogging;
 public class AutonomousDrive extends Command {
 
 	private static double k_p = .005; // p is proportional constant for PID loop
-	private final double k_powerOffset = .195; // offsets the p value in the power calculation
+	private final double k_powerOffset = .3; // offsets the p value in the power calculation 0.195
 	private final double k_minPwrCutoff = 0.2;	// stop motors if power is below this level
 	private double error;
 	private double power;
@@ -96,7 +96,7 @@ public class AutonomousDrive extends Command {
 		
 		power = k_p * error + Math.copySign(k_powerOffset, error); // need be same sign
 	
-		UsbLogging.printLog("Power is: " + power);
+		//UsbLogging.printLog("Power is: " + power);
 		
 		power = Math.min(power,  k_maxPower); 
 		power = Math.max(power, -k_maxPower);

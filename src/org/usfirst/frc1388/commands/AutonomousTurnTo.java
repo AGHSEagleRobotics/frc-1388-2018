@@ -27,8 +27,8 @@ public class AutonomousTurnTo extends Command {
 
 	private double target;
 	private double error;
-	private final double k_p = 0.01;
-	private final double k_maxTurnPwr = 0.6; // not tested
+	private final double k_p = 0.02;
+	private final double k_maxTurnPwr = 0.5; // not tested
 	private final double k_marginOfError = 2; // not tested
 	private final double k_powerOffset = 0.08;
 	private final double k_minPwrCutoff = 0.2;

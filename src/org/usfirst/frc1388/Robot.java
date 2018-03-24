@@ -209,8 +209,6 @@ public class Robot extends TimedRobot {
 
     	// get autonomous parameters from DriverStation and SmartDashboard
     	
-		Command elevatorInitialize = new ElevatorInit();
-		elevatorInitialize.start();
         
         if (autonomousCommand != null) autonomousCommand.start();
     }
