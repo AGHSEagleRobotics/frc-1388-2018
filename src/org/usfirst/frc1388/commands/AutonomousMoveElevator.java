@@ -77,6 +77,7 @@ public class AutonomousMoveElevator extends Command {
 	@Override
 	protected void initialize() {
     	UsbLogging.printLog(">>> " + this.getClass().getSimpleName() + " started");
+    	setTimeout(10);
 	}
 
 	private void moveToSetpoint(double setpoint) {
@@ -113,7 +114,7 @@ public class AutonomousMoveElevator extends Command {
 		}
 
 		double delta = elevator.distanceAboveSetPoint(this.setPoint);
-		return ( delta >= 0 && delta < acceptableThreshold );
+		return ( (delta >= 0 && delta < acceptableThreshold) || isTimedOut() );
 	}
 
 	// Called once after isFinished returns true

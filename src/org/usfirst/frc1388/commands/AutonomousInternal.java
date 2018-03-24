@@ -196,7 +196,7 @@ public class AutonomousInternal extends CommandGroup {
 		double z = -20;//to clear the scale after auton
 		
 		// Deploy arms
-		addSequential( new DeployArms() );
+		addParallel( new DeployArms() );
 		
 		// Drive forward x
 		addSequential( new AutonomousDrive(x));
