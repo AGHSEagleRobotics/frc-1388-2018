@@ -21,12 +21,12 @@ import org.usfirst.frc1388.UsbLogging;
  */
 public class AutonomousDrive extends Command {
 
-	private static double k_p = .005; // p is proportional constant for PID loop
+	private static double k_p = .03; // p is proportional constant for PID loop
 	private final double k_powerOffset = .3; // offsets the p value in the power calculation 0.195
 	private final double k_minPwrCutoff = 0.2;	// stop motors if power is below this level
 	private double error;
 	private double power;
-	private final double k_maxPower = .7;
+	private final double k_maxPower = 1;
 	private static double threshold = 1.5; // error threshold for isFinished check (based on max dist over 20ms)
 	
 	private int stallCount = 0;
