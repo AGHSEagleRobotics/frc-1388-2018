@@ -1,0 +1,53 @@
+2018-03-24
+12:58:20.043  Git version: e260fd5 (branch: TheRealAutonomous 2 files changed, 3 insertions(+), 2 deletions(-))
+12:58:20.065  Built: Sat 03/24/2018   12:58 PM
+12:58:26.602  ########  Robot disabled
+12:58:26.860  Elevator encoder held in reset; pre-reset value: -7.519856756025
+12:58:44.482  ########  Autonomous enabled
+12:58:44.506  FMS not connected
+12:58:44.521  >>> Drive started
+12:58:44.553  >>> MoveElevator started
+12:58:44.570  >>> RunIntake started
+12:58:44.657  Priority == Scale
+12:58:44.669  Positon Right is equal to right side
+12:58:44.683  Objective now Scale
+12:58:44.703  Auto: runScale:  position=RIGHT  scaleSide=R
+12:58:44.724  <<< MoveElevator interrupted
+12:58:44.737  <<< MoveElevator ended
+12:58:44.750  <<< Drive interrupted
+12:58:44.763  <<< Drive ended
+12:58:44.776  <<< RunIntake interrupted
+12:58:44.789  <<< RunIntake ended
+12:58:44.805  >>> ElevatorInit started
+12:58:44.819  <<< ElevatorInit ended
+12:58:44.832  >>> DeployArms started
+12:58:45.041  Elevator encoder released from reset
+12:58:46.342  <<< DeployArms ended
+12:58:46.353  >>> AutonomousDrive started
+12:58:46.366  Distance: 306.65  time: 99999.0
+12:58:50.584  Error: 0.9362856032000195 StallCount: 0
+12:58:50.596  <<< AutonomousDrive ended
+12:58:50.609  >>> AutonomousTurnTo started
+12:58:50.622  Time: 99999.0 Angle: -90.0 Heading:-1.8486029112377886
+12:58:51.582  <<< AutonomousTurnTo ended
+12:58:51.593  Error: -1.3992747353419617 StallCount: 0 Heading:-89.80818022190559
+12:58:51.607  >>> AutonomousDrive started
+12:58:51.620  Distance: -19.0  time: 99999.0
+12:58:52.304  Error: -1.2003659679999998 StallCount: 0
+12:58:52.314  <<< AutonomousDrive ended
+12:58:52.329  >>> AutonomousMoveElevator started
+12:58:56.342  <<< AutonomousMoveElevator ended
+12:58:56.353  >>> AutonomousDrive started
+12:58:56.365  Distance: 14.0  time: 99999.0
+12:58:56.945  Error: 1.2802615232 StallCount: 0
+12:58:56.956  <<< AutonomousDrive ended
+12:58:56.980  >>> AutonomousRunIntake started
+12:58:57.982  <<< AutonomousRunIntake ended
+12:58:57.993  >>> AutonomousDrive started
+12:58:58.008  Distance: -20.0  time: 99999.0
+12:58:58.724  Error: -1.100388584000001 StallCount: 0
+12:58:58.736  <<< AutonomousDrive ended
+12:58:58.749  >>> AutonomousMoveElevator started
+12:59:00.101  ########  Robot disabled
+12:59:00.115  <<< AutonomousMoveElevator interrupted
+12:59:00.127  <<< AutonomousMoveElevator ended

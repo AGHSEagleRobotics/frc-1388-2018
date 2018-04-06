@@ -1,0 +1,18 @@
+1969-12-31
+16:06:41.963  Git version: b74f90c (branch: TheRealAutonomous)
+16:06:41.990  Built: Fri 03/23/2018   11:31 AM
+2018-03-23
+13:09:01.860  ########  Robot disabled
+13:09:01.897  Elevator encoder held in reset; pre-reset value: 0.0
+13:09:47.978  ########  Teleop enabled
+13:09:47.992  >>> Drive started
+13:09:48.065  >>> MoveElevator started
+13:09:48.083  >>> RunIntake started
+13:09:50.178  Elevator encoder released from reset
+13:10:31.278  ########  Robot disabled
+13:10:31.289  <<< Drive interrupted
+13:10:31.301  <<< Drive ended
+13:10:31.315  <<< MoveElevator interrupted
+13:10:31.327  <<< MoveElevator ended
+13:10:31.340  <<< RunIntake interrupted
+13:10:31.352  <<< RunIntake ended

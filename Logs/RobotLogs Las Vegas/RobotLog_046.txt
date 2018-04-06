@@ -1,0 +1,8 @@
+1969-12-31
+16:06:41.862  Git version: e260fd5 (branch: TheRealAutonomous 3 files changed, 4 insertions(+), 3 deletions(-))
+16:06:41.886  Built: Sat 03/24/2018   01:11 PM
+16:06:48.808  ########  Robot disabled
+16:09:17.202  Elevator encoder held in reset; pre-reset value: 0.00846354165
+16:09:17.382  Elevator encoder released from reset
+16:09:17.482  Elevator encoder held in reset; pre-reset value: 0.0
+16:09:17.682  Elevator encoder released from reset

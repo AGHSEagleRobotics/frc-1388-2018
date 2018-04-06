@@ -1,0 +1,8 @@
+2018-03-24
+14:04:57.059  Git version: 7092a19 (branch: TheRealAutonomous)
+14:04:57.082  Built: Sat 03/24/2018   02:04 PM
+14:05:03.648  ########  Robot disabled
+14:05:22.588  ########  Teleop enabled
+14:05:22.600  >>> Drive started
+14:05:22.643  >>> MoveElevator started
+14:05:22.666  >>> RunIntake started

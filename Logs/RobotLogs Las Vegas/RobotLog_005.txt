@@ -1,0 +1,3 @@
+2018-01-20
+14:33:58.161  Git version: 5655cf4 (branch: AutonomousSmartDB 1 file changed, 70 deletions(-))
+14:33:58.184  Built: Sat 02/10/2018   02:15 PM

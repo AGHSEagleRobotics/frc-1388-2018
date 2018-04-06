@@ -1,0 +1,44 @@
+1969-12-31
+16:06:42.155  Git version: 4edd923 (branch: TheRealAutonomous 6 files changed, 18 insertions(+), 18 deletions(-))
+16:06:42.181  Built: Sat 03/24/2018   11:02 AM
+16:06:49.047  ########  Robot disabled
+16:06:49.142  Elevator encoder held in reset; pre-reset value: 0.0
+2018-03-24
+12:44:59.085  Elevator encoder released from reset
+12:45:01.612  Elevator encoder held in reset; pre-reset value: 0.012695312475
+12:45:24.218  ########  Autonomous enabled
+12:45:24.251  FMS not connected
+12:45:24.272  >>> Drive started
+12:45:24.307  >>> MoveElevator started
+12:45:24.326  >>> RunIntake started
+12:45:24.364  Priority == Scale
+12:45:24.375  Positon Right is equal to right side
+12:45:24.388  Objective now Scale
+12:45:24.408  Auto: runScale:  position=RIGHT  scaleSide=R
+12:45:24.428  <<< MoveElevator interrupted
+12:45:24.442  <<< MoveElevator ended
+12:45:24.938  <<< Drive interrupted
+12:45:24.952  <<< Drive ended
+12:45:24.964  <<< RunIntake interrupted
+12:45:24.978  <<< RunIntake ended
+12:45:24.992  >>> ElevatorInit started
+12:45:25.006  <<< ElevatorInit ended
+12:45:25.019  >>> DeployArms started
+12:45:25.178  Elevator encoder released from reset
+12:45:26.539  <<< DeployArms ended
+12:45:26.551  >>> AutonomousDrive started
+12:45:26.563  Distance: 306.65  time: 99999.0
+12:45:30.644  Error: 0.716290126399997 StallCount: 0
+12:45:30.655  <<< AutonomousDrive ended
+12:45:30.668  >>> AutonomousTurnTo started
+12:45:30.680  Time: 99999.0 Angle: -90.0 Heading:-3.236944500811684
+12:45:31.579  <<< AutonomousTurnTo ended
+12:45:31.590  Error: -1.5836977475649405 StallCount: 0 Heading:-89.75603693181817
+12:45:31.603  >>> AutonomousDrive started
+12:45:31.616  Distance: -19.0  time: 99999.0
+12:45:32.262  Error: -1.220365556800001 StallCount: 0
+12:45:32.273  <<< AutonomousDrive ended
+12:45:32.286  >>> AutonomousMoveElevator started
+12:45:46.358  ########  Robot disabled
+12:45:46.369  <<< AutonomousMoveElevator interrupted
+12:45:46.384  <<< AutonomousMoveElevator ended

@@ -1,0 +1,42 @@
+2018-03-24
+12:55:03.539  Git version: e260fd5 (branch: TheRealAutonomous 1 file changed, 1 insertion(+), 1 deletion(-))
+12:55:03.563  Built: Sat 03/24/2018   12:54 PM
+12:55:10.082  ########  Robot disabled
+12:55:18.369  Elevator encoder held in reset; pre-reset value: -13.947916639199999
+12:55:31.862  ########  Autonomous enabled
+12:55:31.887  FMS not connected
+12:55:31.902  >>> Drive started
+12:55:31.936  >>> MoveElevator started
+12:55:31.954  >>> RunIntake started
+12:55:31.990  Priority == Scale
+12:55:32.003  Positon Right is equal to right side
+12:55:32.016  Objective now Scale
+12:55:32.034  Auto: runScale:  position=RIGHT  scaleSide=R
+12:55:32.052  <<< MoveElevator interrupted
+12:55:32.065  <<< MoveElevator ended
+12:55:32.078  <<< Drive interrupted
+12:55:32.092  <<< Drive ended
+12:55:32.105  <<< RunIntake interrupted
+12:55:32.118  <<< RunIntake ended
+12:55:32.131  >>> ElevatorInit started
+12:55:32.145  <<< ElevatorInit ended
+12:55:32.158  >>> DeployArms started
+12:55:32.282  Elevator encoder released from reset
+12:55:33.663  <<< DeployArms ended
+12:55:33.674  >>> AutonomousDrive started
+12:55:33.686  Distance: 306.65  time: 99999.0
+12:55:37.864  Error: 0.6362917711999785 StallCount: 0
+12:55:37.877  <<< AutonomousDrive ended
+12:55:37.890  >>> AutonomousTurnTo started
+12:55:37.903  Time: 99999.0 Angle: -90.0 Heading:-2.7345849450325734
+12:55:38.843  <<< AutonomousTurnTo ended
+12:55:38.854  Error: -1.223800132328975 StallCount: 0 Heading:-88.77619986767102
+12:55:38.869  >>> AutonomousDrive started
+12:55:38.882  Distance: -19.0  time: 99999.0
+12:55:39.545  Error: -1.0203696688000008 StallCount: 0
+12:55:39.557  <<< AutonomousDrive ended
+12:55:39.570  >>> AutonomousMoveElevator started
+12:55:52.422  ########  Robot disabled
+12:55:52.434  <<< AutonomousMoveElevator interrupted
+12:55:52.446  <<< AutonomousMoveElevator ended
+12:56:33.943  Elevator encoder held in reset; pre-reset value: -24.827799430275

@@ -1,0 +1,87 @@
+1969-12-31
+16:06:43.347  Git version: b74f90c (branch: TheRealAutonomous)
+16:06:43.374  Built: Fri 03/23/2018   11:31 AM
+16:06:50.273  ########  Robot disabled
+16:06:50.331  Elevator encoder held in reset; pre-reset value: 0.0
+16:10:37.551  USER button pushed, gyro reset
+16:10:51.971  Elevator encoder released from reset
+16:10:52.671  Elevator encoder held in reset; pre-reset value: 0.080403645675
+16:10:53.111  Elevator encoder released from reset
+16:10:55.671  Elevator encoder held in reset; pre-reset value: 0.088867187325
+16:10:55.794  Elevator encoder released from reset
+2018-03-24
+10:07:11.782  ########  Autonomous enabled
+10:07:11.815  FMS info:  NVLV Qualification match 76 replay 1;  Red alliance,  Driver Station 1
+10:07:12.314  >>> Drive started
+10:07:12.342  >>> MoveElevator started
+10:07:12.364  >>> RunIntake started
+10:07:12.378  <<< MoveElevator interrupted
+10:07:12.391  <<< MoveElevator ended
+10:07:12.472  >>> ElevatorInit started
+10:07:12.486  <<< ElevatorInit ended
+10:07:12.520  Positon is equal to Center objective Switch
+10:07:12.536  Auto: runSwitch:  position=CENTER  switchSide=L
+10:07:12.559  <<< Drive interrupted
+10:07:12.574  <<< Drive ended
+10:07:12.586  <<< RunIntake interrupted
+10:07:12.599  <<< RunIntake ended
+10:07:12.615  >>> DeployArms started
+10:07:14.118  <<< DeployArms ended
+10:07:14.130  >>> AutonomousDrive started
+10:07:14.144  Distance: 48.0  time: 99999.0
+10:07:15.641  Error: 1.380958507199999 StallCount: 0
+10:07:15.651  <<< AutonomousDrive ended
+10:07:15.665  >>> AutonomousTurnTo started
+10:07:15.678  Time: 99999.0 Angle: -90.0 Heading:12.235463440532884
+10:07:16.818  <<< AutonomousTurnTo ended
+10:07:16.829  Error: -1.1524271844649405 StallCount: 0 Heading:-89.54788379854476
+10:07:16.842  >>> AutonomousDrive started
+10:07:16.855  Distance: 66.0  time: 99999.0
+10:07:18.600  Error: 1.3213298208000026 StallCount: 0
+10:07:18.611  <<< AutonomousDrive ended
+10:07:18.624  >>> AutonomousTurnTo started
+10:07:18.636  Time: 99999.0 Angle: 0.0 Heading:-90.0803208434475
+10:07:19.657  <<< AutonomousTurnTo ended
+10:07:19.668  Error: 1.9246169599523224 StallCount: 0 Heading:-0.8932873179620309
+10:07:19.681  >>> AutonomousDrive started
+10:07:19.694  Distance: 58.0  time: 99999.0
+10:07:19.708  >>> AutonomousMoveElevator started
+10:07:20.961  <<< AutonomousMoveElevator ended
+10:07:21.482  Error: 1.0411710975999995 StallCount: 0
+10:07:21.494  <<< AutonomousDrive ended
+10:07:21.508  >>> AutonomousRunIntake started
+10:07:22.519  <<< AutonomousRunIntake ended
+10:07:22.530  >>> AutonomousDrive started
+10:07:22.542  Distance: -20.0  time: 99999.0
+10:07:23.499  Error: -1.120388172800002 StallCount: 0
+10:07:23.512  <<< AutonomousDrive ended
+10:07:23.524  >>> AutonomousMoveElevator started
+10:07:24.538  <<< AutonomousMoveElevator ended
+10:07:24.557  >>> Drive started
+10:07:24.573  >>> MoveElevator started
+10:07:24.586  >>> RunIntake started
+10:07:27.018  <<< Drive interrupted
+10:07:27.030  <<< Drive ended
+10:07:27.042  <<< MoveElevator interrupted
+10:07:27.057  <<< MoveElevator ended
+10:07:27.069  <<< RunIntake interrupted
+10:07:27.082  <<< RunIntake ended
+10:07:27.095  ########  Robot disabled
+10:07:27.318  ########  Teleop enabled
+10:07:27.331  >>> Drive started
+10:07:27.346  >>> MoveElevator started
+10:07:27.360  >>> RunIntake started
+10:07:28.098  Warning: Elevator motor power limit exceeded!
+10:07:28.110  Elevator encoder held in reset; pre-reset value: -1.07486978955
+10:07:32.377  Elevator encoder released from reset
+10:07:36.959  Warning: Elevator motor power limit exceeded!
+10:07:36.972  Elevator encoder held in reset; pre-reset value: -8.467773420824999
+10:07:41.797  Elevator encoder released from reset
+10:07:45.058  Elevator encoder held in reset; pre-reset value: -5.911783842525
+10:09:42.597  ########  Robot disabled
+10:09:42.609  <<< Drive interrupted
+10:09:42.622  <<< Drive ended
+10:09:42.635  <<< MoveElevator interrupted
+10:09:42.649  <<< MoveElevator ended
+10:09:42.660  <<< RunIntake interrupted
+10:09:42.673  <<< RunIntake ended

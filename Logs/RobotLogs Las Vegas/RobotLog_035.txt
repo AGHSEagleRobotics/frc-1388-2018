@@ -1,0 +1,32 @@
+1969-12-31
+16:06:41.976  Git version: 4edd923 (branch: TheRealAutonomous 6 files changed, 18 insertions(+), 18 deletions(-))
+16:06:42.001  Built: Sat 03/24/2018   11:02 AM
+2018-03-24
+11:10:44.454  ########  Robot disabled
+11:13:02.101  ########  Teleop enabled
+11:13:02.113  >>> Drive started
+11:13:02.172  >>> MoveElevator started
+11:13:02.242  >>> RunIntake started
+11:13:06.560  Warning: Elevator motor power limit exceeded!
+11:13:06.594  Elevator encoder held in reset; pre-reset value: -12.665690079225
+11:13:07.740  Elevator encoder released from reset
+11:13:17.900  Warning: Elevator motor power limit exceeded!
+11:13:17.911  Elevator encoder held in reset; pre-reset value: -1.586914059375
+11:13:27.481  ########  Robot disabled
+11:13:27.493  <<< Drive interrupted
+11:13:27.505  <<< Drive ended
+11:13:27.517  <<< MoveElevator interrupted
+11:13:27.530  <<< MoveElevator ended
+11:13:27.542  <<< RunIntake interrupted
+11:13:27.554  <<< RunIntake ended
+11:13:36.800  ########  Teleop enabled
+11:13:36.812  >>> Drive started
+11:13:36.826  >>> MoveElevator started
+11:13:36.840  >>> RunIntake started
+11:13:42.840  ########  Robot disabled
+11:13:42.851  <<< Drive interrupted
+11:13:42.865  <<< Drive ended
+11:13:42.877  <<< MoveElevator interrupted
+11:13:42.890  <<< MoveElevator ended
+11:13:42.902  <<< RunIntake interrupted
+11:13:42.914  <<< RunIntake ended

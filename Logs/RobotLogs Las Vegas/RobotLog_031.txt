@@ -1,0 +1,39 @@
+1969-12-31
+16:06:42.707  Git version: b74f90c (branch: TheRealAutonomous)
+16:06:42.734  Built: Fri 03/23/2018   11:31 AM
+2018-03-24
+09:48:50.952  ########  Robot disabled
+09:49:04.267  ########  Teleop enabled
+09:49:04.281  >>> Drive started
+09:49:04.328  >>> MoveElevator started
+09:49:04.359  >>> RunIntake started
+09:49:09.727  ########  Robot disabled
+09:49:09.739  <<< Drive interrupted
+09:49:09.753  <<< Drive ended
+09:49:09.765  <<< MoveElevator interrupted
+09:49:09.778  <<< MoveElevator ended
+09:49:09.791  <<< RunIntake interrupted
+09:49:09.803  <<< RunIntake ended
+09:49:15.967  ########  Teleop enabled
+09:49:15.979  >>> Drive started
+09:49:15.993  >>> MoveElevator started
+09:49:16.005  >>> RunIntake started
+09:49:18.507  Warning: Elevator motor power limit exceeded!
+09:49:18.543  Elevator encoder held in reset; pre-reset value: -11.8658853933
+09:49:19.647  Elevator encoder released from reset
+09:49:27.347  Warning: Elevator motor power limit exceeded!
+09:49:27.358  Elevator encoder held in reset; pre-reset value: -3.00455728575
+09:49:28.627  Elevator encoder released from reset
+09:49:31.627  Warning: Elevator motor power limit exceeded!
+09:49:35.588  Warning: Elevator motor power limit exceeded!
+09:49:35.600  Elevator encoder held in reset; pre-reset value: -0.791341144275
+09:49:40.587  Elevator encoder released from reset
+09:49:46.867  Warning: Elevator motor power limit exceeded!
+09:49:46.880  Elevator encoder held in reset; pre-reset value: -0.80403645675
+09:50:08.167  ########  Robot disabled
+09:50:08.180  <<< Drive interrupted
+09:50:08.192  <<< Drive ended
+09:50:08.204  <<< MoveElevator interrupted
+09:50:08.216  <<< MoveElevator ended
+09:50:08.228  <<< RunIntake interrupted
+09:50:08.241  <<< RunIntake ended
