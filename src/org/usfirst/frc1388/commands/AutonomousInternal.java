@@ -111,10 +111,10 @@ public class AutonomousInternal extends CommandGroup {
 		
 		if( position.equals(Position.CENTER) ) {
 			
-			double w = k_autoDistanceClearExchange + 10;
+			double w = k_autoDistanceClearExchange + 5; // additional offset, indeterminateS
 			double xL = k_autoDistanceSwitchForBlock + k_centerRightOffset;
 			double xR = k_autoDistanceSwitchForBlock - k_centerRightOffset;
-			double y = k_autoDistanceWall - w - 5;// 5 is to not hit the switch wall so hard
+			double y = k_autoDistanceWall - w;
 			double z = -20;
 			double xC = k_autoDistanceSwitchForBlock - (k_robotLength/3);
 			// switch Dims 12ft 9.5in wide, 4ft 8in deep, 1ft 6 3/4 in tall
