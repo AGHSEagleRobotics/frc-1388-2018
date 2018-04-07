@@ -33,6 +33,8 @@ public class AutonomousInternal extends CommandGroup {
 	private final double k_leftTurnAngle = -90;
 	private final double k_rightTurn70 = 70;
 	private final double k_leftTurn70 = -70;
+	private final double k_rightTurn60 = 60;
+	private final double k_leftTurn60 = -60;
 	private final double k_robotFrameLength = 28;
 	private final double k_robotFrameWidth = 32;
 	private final double k_robotBumper = 6;
@@ -114,7 +116,7 @@ public class AutonomousInternal extends CommandGroup {
 			double w = k_autoDistanceClearExchange + 5; // additional offset, indeterminateS
 			double xL = k_autoDistanceSwitchForBlock + k_centerRightOffset;
 			double xR = k_autoDistanceSwitchForBlock - k_centerRightOffset;
-			double y = k_autoDistanceWall - w;
+			double y = k_autoDistanceWall - w - 5;// 5 so dont hit the switch wall hard
 			double z = -20;
 			double xC = k_autoDistanceSwitchForBlock - (k_robotLength/3);
 			// switch Dims 12ft 9.5in wide, 4ft 8in deep, 1ft 6 3/4 in tall
@@ -158,6 +160,37 @@ public class AutonomousInternal extends CommandGroup {
 			
 			//Drive to block pile
 			addSequential( new AutonomousDrive(xC));		
+			
+			//backup to switch
+			addSequential( new AutonomousDrive(-xC));
+			
+			//elevator up
+			addParallel( new AutonomousMoveElevator(ElevatorSetpoint.SWITCH));
+			
+			// Turn to 0
+			addSequential( new AutonomousTurnTo(0));
+			
+			// Drive BackWards z
+			addSequential( new AutonomousDrive(-z));
+			
+			// Drop Box
+			addSequential( new AutonomousRunIntake("out"));
+			
+			// Drive BackWards z
+			addSequential( new AutonomousDrive(z));
+
+			// Lower Elevator
+			addSequential( new AutonomousMoveElevator(ElevatorSetpoint.BOTTOM));
+
+			//turn opposite
+			if(switchSide.equals("L")) addSequential( new AutonomousTurnTo(k_rightTurn60));
+			else addSequential( new AutonomousTurnTo(k_leftTurn60));
+			
+			//run intake
+			addParallel(new AutonomousRunIntake("in"));
+			
+			//Drive to block pile
+			addSequential( new AutonomousDrive(xC));	
 			
 		}//end if
 		else { // position == R or L 
