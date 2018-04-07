@@ -1,5 +1,5 @@
 {
-  "dividerPosition": 0.25390218522372526,
+  "dividerPosition": 0.29864724245577523,
   "tabPane": [
     {
       "title": "SmartDashboard",
@@ -11,7 +11,7 @@
         "hgap": 16.0,
         "vgap": 16.0,
         "tiles": {
-          "5,1": {
+          "8,1": {
             "size": [
               1,
               1
@@ -22,23 +22,9 @@
               "_title": "Elevator Height"
             }
           },
-          "7,1": {
+          "8,0": {
             "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Simple Dial",
-              "_source0": "network_table:///LiveWindow/Ungrouped/ADIS16448_IMU/AngleZ",
-              "_title": "Gyro Angle",
-              "minValue": -360.0,
-              "maxValue": 360.0,
-              "valueVisible": true
-            }
-          },
-          "7,0": {
-            "size": [
-              2,
+              1,
               1
             ],
             "content": {
@@ -49,7 +35,7 @@
               "colorWhenFalse": "#00FF00FF"
             }
           },
-          "5,0": {
+          "8,2": {
             "size": [
               1,
               1
@@ -60,7 +46,7 @@
               "_title": "Left Drive Enc"
             }
           },
-          "6,0": {
+          "8,3": {
             "size": [
               1,
               1
@@ -80,17 +66,6 @@
               "_type": "ComboBox Chooser",
               "_source0": "network_table:///SmartDashboard/Objective",
               "_title": "Objective"
-            }
-          },
-          "6,1": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Command",
-              "_source0": "network_table:///SmartDashboard/DeployArms",
-              "_title": "DeployArms"
             }
           },
           "0,0": {
@@ -117,13 +92,13 @@
           },
           "2,0": {
             "size": [
-              3,
-              3
+              6,
+              4
             ],
             "content": {
               "_type": "Camera Stream",
-              "_source0": "camera_server://Front Camera",
-              "_title": "Front Camera",
+              "_source0": "camera_server://USB Camera 0",
+              "_title": "USB Camera 0",
               "showControls": true,
               "showCrosshair": true,
               "crosshairColor": "#FFFFFFFF",
@@ -342,7 +317,7 @@
           },
           "7,0": {
             "size": [
-              2,
+              1,
               4
             ],
             "content": {
