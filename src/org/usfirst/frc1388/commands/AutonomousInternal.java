@@ -235,7 +235,7 @@ public class AutonomousInternal extends CommandGroup {
 			runSwitch(position, switchSide);
 		} else {
 			//addSequential( new AutonomousDrive(k_autoDistanceWall));
-			addSequential( new AutonomousDrive(70));
+			addSequential( new AutonomousDrive(k_autoDistanceLine + 6));// 6 to guarantee the line crossed
 		}
 			
 //		addSequential( new AutonomousDrive(k_autoDistanceLine));
