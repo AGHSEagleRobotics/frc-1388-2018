@@ -103,7 +103,7 @@ public class Robot extends TimedRobot {
         gyro.calibrate();
 
 		// camera, TODO add check for Camera to see if camera is on robot, otherwise do not stop capture 
-		CameraServer.getInstance().startAutomaticCapture();
+		//CameraServer.getInstance().startAutomaticCapture();
 		
 		//elevator encoder
 		//SmartDashboard.getData(elevator.getHeight());
@@ -235,6 +235,9 @@ public class Robot extends TimedRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        
+        // camera, TODO add check for Camera to see if camera is on robot, otherwise do not stop capture 
+     	CameraServer.getInstance().startAutomaticCapture();
 
     }
 

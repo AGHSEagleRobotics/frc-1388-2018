@@ -129,13 +129,11 @@ public class AutonomousInternal extends CommandGroup {
 			if(switchSide.equals("L")) addSequential( new AutonomousDrive(xL));
 			else addSequential( new AutonomousDrive(xR));
 			
-			// Turn to 0
-			addSequential( new AutonomousTurnTo(0));
-			
 			// P Elevator to switch
 			addParallel( new AutonomousMoveElevator(ElevatorSetpoint.SWITCH));
 			
-			addSequential(new WaitCommand(0.5));
+			// Turn to 0
+			addSequential( new AutonomousTurnTo(0));
 			
 			// P Drive Forward y
 			addSequential( new AutonomousDrive(y));
