@@ -174,6 +174,8 @@ public class AutonomousInternal extends CommandGroup {
 			// P Elevator to switch
 			addParallel( new AutonomousMoveElevator(ElevatorSetpoint.SWITCH));
 			
+			addSequential(new WaitCommand(0.5));
+			
 			// P Drive forward y
 			addSequential( new AutonomousDrive(y));
 			
@@ -211,6 +213,8 @@ public class AutonomousInternal extends CommandGroup {
 		// P Elevator to scale
 		addSequential( new AutonomousMoveElevator(ElevatorSetpoint.SCALE));
 		
+		addSequential(new WaitCommand(1.5));
+		
 		// Drive Forward
 		addSequential( new AutonomousDrive(y2)); 
 		
@@ -231,7 +235,7 @@ public class AutonomousInternal extends CommandGroup {
 			runSwitch(position, switchSide);
 		} else {
 			//addSequential( new AutonomousDrive(k_autoDistanceWall));
-			addSequential( new AutonomousDrive(50));
+			addSequential( new AutonomousDrive(70));
 		}
 			
 //		addSequential( new AutonomousDrive(k_autoDistanceLine));
