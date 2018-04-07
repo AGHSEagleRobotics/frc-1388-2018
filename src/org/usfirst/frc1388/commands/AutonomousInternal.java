@@ -31,6 +31,8 @@ public class AutonomousInternal extends CommandGroup {
 	private String gameData;
 	private final double k_rightTurnAngle = 90;
 	private final double k_leftTurnAngle = -90;
+	private final double k_rightTurn70 = 70;
+	private final double k_leftTurn70 = -70;
 	private final double k_robotFrameLength = 28;
 	private final double k_robotFrameWidth = 32;
 	private final double k_robotBumper = 6;
@@ -112,7 +114,7 @@ public class AutonomousInternal extends CommandGroup {
 			double w = k_autoDistanceClearExchange + 10;
 			double xL = k_autoDistanceSwitchForBlock + k_centerRightOffset;
 			double xR = k_autoDistanceSwitchForBlock - k_centerRightOffset;
-			double y = k_autoDistanceWall - w;
+			double y = k_autoDistanceWall - w - 5;// 5 is to not hit the switch wall so hard
 			double z = -20;
 			double xC = k_autoDistanceSwitchForBlock - (k_robotLength/3);
 			// switch Dims 12ft 9.5in wide, 4ft 8in deep, 1ft 6 3/4 in tall
@@ -148,8 +150,8 @@ public class AutonomousInternal extends CommandGroup {
 			addSequential( new AutonomousMoveElevator(ElevatorSetpoint.BOTTOM));
 			
 			//turn opposite
-			if(switchSide.equals("L")) addSequential( new AutonomousTurnTo(k_rightTurnAngle));
-			else addSequential( new AutonomousTurnTo(k_leftTurnAngle));
+			if(switchSide.equals("L")) addSequential( new AutonomousTurnTo(k_rightTurn70));
+			else addSequential( new AutonomousTurnTo(k_leftTurn70));
 			
 			//run intake
 			addParallel(new AutonomousRunIntake("in"));
