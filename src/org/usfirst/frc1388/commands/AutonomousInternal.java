@@ -135,6 +135,8 @@ public class AutonomousInternal extends CommandGroup {
 			// P Elevator to switch
 			addParallel( new AutonomousMoveElevator(ElevatorSetpoint.SWITCH));
 			
+			addSequential(new WaitCommand(0.5));
+			
 			// P Drive Forward y
 			addSequential( new AutonomousDrive(y));
 			
