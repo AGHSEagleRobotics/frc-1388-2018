@@ -117,7 +117,7 @@ public class AutonomousInternal extends CommandGroup {
 			double xL = k_autoDistanceSwitchForBlock + k_centerRightOffset;
 			double xR = k_autoDistanceSwitchForBlock - k_centerRightOffset;
 			double y = k_autoDistanceWall - w - 5;// 5 so dont hit the switch wall hard
-			double z = -20;
+			double z = -30;
 			double xC = k_autoDistanceSwitchForBlock - (k_robotLength/3);
 			// switch Dims 12ft 9.5in wide, 4ft 8in deep, 1ft 6 3/4 in tall
 			// scale Dims
