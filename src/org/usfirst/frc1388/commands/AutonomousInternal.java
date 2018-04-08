@@ -230,7 +230,7 @@ public class AutonomousInternal extends CommandGroup {
 		double x = k_autoDistanceScale; 
 		double y = -19;//how far to go back from under the scale not to hit it
 		double y2 = 14; // 3 is to get the arms over the scale edge
-		double z = -20;//to clear the scale after auton
+		double z = -25;//to clear the scale after auton
 		
 		// Deploy arms
 		addParallel( new DeployArms() );
@@ -248,7 +248,7 @@ public class AutonomousInternal extends CommandGroup {
 		// P Elevator to scale
 		addSequential( new AutonomousMoveElevator(ElevatorSetpoint.SCALE));
 		
-		addSequential(new WaitCommand(1.5));
+		addSequential(new WaitCommand(2));
 		
 		// Drive Forward
 		addSequential( new AutonomousDrive(y2)); 
