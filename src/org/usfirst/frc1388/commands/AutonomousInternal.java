@@ -228,9 +228,9 @@ public class AutonomousInternal extends CommandGroup {
 	public void runScale(Position position, String scaleSide) {
 		UsbLogging.printLog("Auto: runScale:  position=" + position + "  scaleSide=" + scaleSide);
 		double x = k_autoDistanceScale; 
-		double y = -19;//how far to go back from under the scale not to hit it
+		double y = -24;//how far to go back from under the scale not to hit it
 		double y2 = 14; // 3 is to get the arms over the scale edge
-		double z = -25;//to clear the scale after auton
+		double z = -20;//to clear the scale after auton
 		
 		// Deploy arms
 		addParallel( new DeployArms() );
