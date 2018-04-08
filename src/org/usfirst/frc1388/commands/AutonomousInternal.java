@@ -227,6 +227,7 @@ public class AutonomousInternal extends CommandGroup {
 
 	public void runScale(Position position, String scaleSide) {
 		UsbLogging.printLog("Auto: runScale:  position=" + position + "  scaleSide=" + scaleSide);
+		double w = 130;//distance to the second cube for scale(closest switch side cube)
 		double x = k_autoDistanceScale; 
 		double y = -24;//how far to go back from under the scale not to hit it
 		double y2 = 14; // 3 is to get the arms over the scale edge
@@ -260,7 +261,44 @@ public class AutonomousInternal extends CommandGroup {
 		addSequential( new AutonomousDrive(z));
 		
 		// Lower Elevator
+		addParallel( new AutonomousMoveElevator(ElevatorSetpoint.BOTTOM));
+		
+		//turn to second cube 
+		
+		if(scaleSide.equals("L")) addSequential( new AutonomousTurnTo(k_rightTurnAngle + 67));
+		else addSequential( new AutonomousTurnTo(k_leftTurnAngle - 67));// 67 the angle to get to the second cube by switch
+		
+		//pick cube up
+		addParallel(new AutonomousRunIntake("in"));
+		
+		//drive forward
+		addSequential( new AutonomousDrive(w));
+		
+		//backup 
+		addSequential( new AutonomousDrive(-w));
+		
+		//turn 
+		if(scaleSide.equals("L")) addSequential( new AutonomousTurnTo(k_rightTurnAngle));
+		else addSequential( new AutonomousTurnTo(k_leftTurnAngle));
+		
+		//raise 
+		addSequential( new AutonomousMoveElevator(ElevatorSetpoint.SCALE));
+
+		addSequential(new WaitCommand(2));
+
+		//drive forward
+		addSequential( new AutonomousDrive(-z));
+
+		// drop box
+		addSequential( new AutonomousRunIntake("out"));
+		
+		
+		// Drive backwards z
+		addSequential( new AutonomousDrive(z));
+
+		// Lower Elevator
 		addSequential( new AutonomousMoveElevator(ElevatorSetpoint.BOTTOM));
+
 	}
 
 	public void runLine() {
