@@ -1,0 +1,76 @@
+1969-12-31
+16:06:43.052  Git version: e0e17b2 (branch: master)
+16:06:43.078  Built: Sun 04/08/2018   11:00 AM
+16:06:50.296  ########  Robot disabled
+16:06:50.366  Elevator encoder held in reset; pre-reset value: 0.0
+16:09:43.875  Elevator encoder released from reset
+16:09:46.207  Elevator encoder held in reset; pre-reset value: 0.07617187485
+2018-04-08
+13:48:11.073  ########  Autonomous enabled
+13:48:11.105  FMS info:  CAFR Elimination match 2 replay 1;  Blue alliance,  Driver Station 2
+13:48:11.121  >>> Drive started
+13:48:11.151  >>> MoveElevator started
+13:48:11.165  >>> RunIntake started
+13:48:11.202  Priority == Scale
+13:48:11.215  not equal RR or LL
+13:48:11.228  not equal RR or LL
+13:48:11.248  Auto: runLine
+13:48:11.262  <<< MoveElevator interrupted
+13:48:11.276  <<< MoveElevator ended
+13:48:11.288  <<< Drive interrupted
+13:48:11.305  <<< Drive ended
+13:48:11.321  >>> ElevatorInit started
+13:48:11.336  <<< ElevatorInit ended
+13:48:11.352  >>> AutonomousDrive started
+13:48:11.365  Distance: 92.0  time: 99999.0
+13:48:12.488  Error: 1.1018689039999998 StallCount: 0
+13:48:12.500  <<< AutonomousDrive ended
+13:48:12.515  Elevator encoder released from reset
+13:48:12.528  >>> Drive started
+13:48:12.542  >>> MoveElevator started
+13:48:26.304  ########  Robot disabled
+13:48:26.316  <<< RunIntake interrupted
+13:48:26.328  <<< RunIntake ended
+13:48:26.340  <<< Drive interrupted
+13:48:26.355  <<< Drive ended
+13:48:26.368  <<< MoveElevator interrupted
+13:48:26.380  <<< MoveElevator ended
+13:48:26.804  ########  Teleop enabled
+13:48:26.817  >>> Drive started
+13:48:26.832  >>> MoveElevator started
+13:48:26.845  >>> RunIntake started
+13:48:33.464  Warning: Elevator motor power limit exceeded!
+13:48:33.475  Elevator encoder held in reset; pre-reset value: -0.181966145475
+13:48:33.684  Elevator encoder released from reset
+13:48:36.884  Elevator encoder held in reset; pre-reset value: -0.241210937025
+13:48:50.504  Elevator encoder released from reset
+13:48:55.783  Warning: Elevator motor power limit exceeded!
+13:49:01.124  Warning: Elevator motor power limit exceeded!
+13:49:01.191  Elevator encoder held in reset; pre-reset value: -0.5755208321999999
+13:49:09.404  Elevator encoder released from reset
+13:49:12.963  Warning: Elevator motor power limit exceeded!
+13:49:18.563  Warning: Elevator motor power limit exceeded!
+13:49:18.574  Elevator encoder held in reset; pre-reset value: -0.402018228375
+13:49:26.904  Elevator encoder released from reset
+13:49:30.364  Warning: Elevator motor power limit exceeded!
+13:49:36.243  Warning: Elevator motor power limit exceeded!
+13:49:36.254  Elevator encoder held in reset; pre-reset value: -0.3893229159
+13:49:41.724  Elevator encoder released from reset
+13:49:53.564  Warning: Elevator motor power limit exceeded!
+13:49:53.574  Elevator encoder held in reset; pre-reset value: -0.48242187405
+13:49:59.883  Elevator encoder released from reset
+13:50:04.364  Warning: Elevator motor power limit exceeded!
+13:50:04.374  Elevator encoder held in reset; pre-reset value: -0.4908854157
+13:50:13.524  Elevator encoder released from reset
+13:50:20.984  Warning: Elevator motor power limit exceeded!
+13:50:20.995  Elevator encoder held in reset; pre-reset value: -0.495117186525
+13:50:26.063  Elevator encoder released from reset
+13:50:29.984  Warning: Elevator motor power limit exceeded!
+13:50:29.994  Elevator encoder held in reset; pre-reset value: -0.334309895175
+13:50:42.103  ########  Robot disabled
+13:50:42.114  <<< Drive interrupted
+13:50:42.129  <<< Drive ended
+13:50:42.140  <<< MoveElevator interrupted
+13:50:42.153  <<< MoveElevator ended
+13:50:42.165  <<< RunIntake interrupted
+13:50:42.178  <<< RunIntake ended

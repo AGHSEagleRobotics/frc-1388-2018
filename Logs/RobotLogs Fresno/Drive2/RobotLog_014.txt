@@ -1,0 +1,5 @@
+1969-12-31
+16:06:42.723  Git version: 9bc4cd6 (branch: master)
+16:06:42.748  Built: Sun 04/08/2018   08:52 AM
+16:06:49.581  ########  Robot disabled
+16:06:49.656  Elevator encoder held in reset; pre-reset value: 0.0

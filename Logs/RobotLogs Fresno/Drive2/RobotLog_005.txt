@@ -1,0 +1,87 @@
+1969-12-31
+16:06:43.011  Git version: ffac1c1 (branch: master 2 files changed, 35 insertions(+), 2 deletions(-))
+16:06:43.036  Built: Sat 04/07/2018   03:25 PM
+16:06:49.958  ########  Robot disabled
+2018-04-07
+17:28:35.687  Elevator encoder held in reset; pre-reset value: 0.11848958309999999
+17:31:02.505  ########  Autonomous enabled
+17:31:02.536  FMS info:  CAFR Qualification match 65 replay 1;  Blue alliance,  Driver Station 3
+17:31:02.553  >>> Drive started
+17:31:02.590  >>> MoveElevator started
+17:31:02.604  >>> RunIntake started
+17:31:02.645  Priority == Scale
+17:31:02.656  Positon Right is equal to right side
+17:31:02.669  Objective now Scale
+17:31:02.688  Auto: runScale:  position=RIGHT  scaleSide=R
+17:31:02.709  <<< MoveElevator interrupted
+17:31:02.721  <<< MoveElevator ended
+17:31:02.734  <<< Drive interrupted
+17:31:02.748  <<< Drive ended
+17:31:02.760  <<< RunIntake interrupted
+17:31:02.772  <<< RunIntake ended
+17:31:02.787  >>> ElevatorInit started
+17:31:02.801  <<< ElevatorInit ended
+17:31:02.814  >>> AutonomousDrive started
+17:31:02.827  Distance: 306.65  time: 99999.0
+17:31:02.843  >>> DeployArms started
+17:31:03.026  Elevator encoder released from reset
+17:31:04.350  <<< DeployArms ended
+17:31:05.695  Error: 0.25629958399997577 StallCount: 0
+17:31:05.706  <<< AutonomousDrive ended
+17:31:05.718  >>> AutonomousTurnTo started
+17:31:05.731  Time: 99999.0 Angle: -90.0 Heading:-4.912633601384363
+17:31:07.266  <<< AutonomousTurnTo ended
+17:31:07.277  Error: -5.038299063517911 StallCount: 26 Heading:-84.95927066368078
+17:31:07.291  >>> AutonomousDrive started
+17:31:07.303  Distance: -19.0  time: 99999.0
+17:31:07.711  Error: -1.0603688463999994 StallCount: 0
+17:31:07.724  <<< AutonomousDrive ended
+17:31:07.738  >>> AutonomousMoveElevator started
+17:31:10.987  <<< AutonomousMoveElevator ended
+17:31:12.506  >>> AutonomousDrive started
+17:31:12.517  Distance: 14.0  time: 99999.0
+17:31:12.932  Error: 0.9602681024000006 StallCount: 0
+17:31:12.943  <<< AutonomousDrive ended
+17:31:12.956  >>> AutonomousRunIntake started
+17:31:13.966  <<< AutonomousRunIntake ended
+17:31:13.977  >>> AutonomousDrive started
+17:31:13.989  Distance: -20.0  time: 99999.0
+17:31:14.289  Error: -1.4803807712000001 StallCount: 0
+17:31:14.300  <<< AutonomousDrive ended
+17:31:14.313  >>> AutonomousMoveElevator started
+17:31:16.047  <<< AutonomousMoveElevator ended
+17:31:16.067  >>> Drive started
+17:31:16.080  >>> MoveElevator started
+17:31:16.093  >>> RunIntake started
+17:31:17.845  ########  Robot disabled
+17:31:17.857  <<< Drive interrupted
+17:31:17.872  <<< Drive ended
+17:31:17.885  <<< MoveElevator interrupted
+17:31:17.898  <<< MoveElevator ended
+17:31:17.910  <<< RunIntake interrupted
+17:31:17.923  <<< RunIntake ended
+17:31:18.416  ########  Teleop enabled
+17:31:18.430  >>> Drive started
+17:31:18.445  >>> MoveElevator started
+17:31:18.458  >>> RunIntake started
+17:31:29.685  Warning: Elevator motor power limit exceeded!
+17:31:29.696  Elevator encoder held in reset; pre-reset value: -0.5416666656
+17:31:32.406  Elevator encoder released from reset
+17:31:36.186  Warning: Elevator motor power limit exceeded!
+17:31:36.197  Elevator encoder held in reset; pre-reset value: -0.56705729055
+17:31:39.825  Elevator encoder released from reset
+17:31:44.105  Warning: Elevator motor power limit exceeded!
+17:31:44.117  Elevator encoder held in reset; pre-reset value: -0.503580728175
+17:31:46.866  Elevator encoder released from reset
+17:31:53.046  Warning: Elevator motor power limit exceeded!
+17:31:53.058  Elevator encoder held in reset; pre-reset value: -0.5585937489
+17:31:57.606  Elevator encoder released from reset
+17:32:01.725  Warning: Elevator motor power limit exceeded!
+17:32:01.736  Elevator encoder held in reset; pre-reset value: -0.308919270225
+17:33:33.446  ########  Robot disabled
+17:33:33.457  <<< Drive interrupted
+17:33:33.471  <<< Drive ended
+17:33:33.483  <<< MoveElevator interrupted
+17:33:33.495  <<< MoveElevator ended
+17:33:33.506  <<< RunIntake interrupted
+17:33:33.520  <<< RunIntake ended

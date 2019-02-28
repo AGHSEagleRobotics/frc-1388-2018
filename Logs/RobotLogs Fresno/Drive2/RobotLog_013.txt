@@ -1,0 +1,84 @@
+1969-12-31
+16:06:42.682  Git version: 9bc4cd6 (branch: master)
+16:06:42.707  Built: Sun 04/08/2018   08:52 AM
+16:06:49.700  ########  Robot disabled
+16:06:49.774  Elevator encoder held in reset; pre-reset value: 0.0
+16:07:51.099  Elevator encoder released from reset
+16:07:55.911  Elevator encoder held in reset; pre-reset value: 0.24544270785
+2018-04-08
+10:15:21.652  ########  Autonomous enabled
+10:15:21.686  FMS info:  CAFR Qualification match 80 replay 1;  Red alliance,  Driver Station 2
+10:15:21.700  >>> Drive started
+10:15:21.730  >>> MoveElevator started
+10:15:21.745  >>> RunIntake started
+10:15:21.802  Priority == Scale
+10:15:21.814  Positon Right is equal to right side
+10:15:21.827  Objective now Scale
+10:15:21.846  Auto: runScale:  position=RIGHT  scaleSide=R
+10:15:21.865  <<< MoveElevator interrupted
+10:15:21.879  <<< MoveElevator ended
+10:15:21.892  <<< Drive interrupted
+10:15:21.906  <<< Drive ended
+10:15:21.918  <<< RunIntake interrupted
+10:15:21.931  <<< RunIntake ended
+10:15:21.945  >>> ElevatorInit started
+10:15:21.959  <<< ElevatorInit ended
+10:15:21.973  >>> AutonomousDrive started
+10:15:21.985  Distance: 306.65  time: 99999.0
+10:15:22.001  >>> DeployArms started
+10:15:22.029  Warning: Elevator motor power limit exceeded!
+10:15:22.308  Elevator encoder released from reset
+10:15:23.509  <<< DeployArms ended
+10:15:24.893  Error: 0.836287659199968 StallCount: 0
+10:15:24.904  <<< AutonomousDrive ended
+10:15:25.397  >>> AutonomousTurnTo started
+10:15:25.409  Time: 99999.0 Angle: -90.0 Heading:-7.087169177524432
+10:15:25.471  <<< AutonomousTurnTo ended
+10:15:25.482  Error: -83.01402814535831 StallCount: 26 Heading:-7.455755038680784
+10:15:25.499  >>> AutonomousDrive started
+10:15:25.511  Distance: -24.0  time: 99999.0
+10:15:25.934  Error: -1.3804650671999994 StallCount: 0
+10:15:25.944  <<< AutonomousDrive ended
+10:15:25.957  >>> AutonomousMoveElevator started
+10:15:28.989  <<< AutonomousMoveElevator ended
+10:15:31.008  >>> AutonomousDrive started
+10:15:31.019  Distance: 14.0  time: 99999.0
+10:15:31.431  Error: 0.9802676911999999 StallCount: 0
+10:15:31.442  <<< AutonomousDrive ended
+10:15:31.457  >>> AutonomousRunIntake started
+10:15:32.468  <<< AutonomousRunIntake ended
+10:15:32.480  >>> AutonomousDrive started
+10:15:32.493  Distance: -20.0  time: 99999.0
+10:15:32.858  Error: -0.9403918735999994 StallCount: 0
+10:15:32.869  <<< AutonomousDrive ended
+10:15:32.881  >>> AutonomousMoveElevator started
+10:15:34.709  <<< AutonomousMoveElevator ended
+10:15:34.728  >>> Drive started
+10:15:34.741  >>> MoveElevator started
+10:15:34.754  >>> RunIntake started
+10:15:36.908  ########  Robot disabled
+10:15:36.919  <<< Drive interrupted
+10:15:36.934  <<< Drive ended
+10:15:36.946  <<< MoveElevator interrupted
+10:15:36.959  <<< MoveElevator ended
+10:15:36.972  <<< RunIntake interrupted
+10:15:36.984  <<< RunIntake ended
+10:15:37.508  ########  Teleop enabled
+10:15:37.520  >>> Drive started
+10:15:37.533  >>> MoveElevator started
+10:15:37.546  >>> RunIntake started
+10:16:39.968  Elevator encoder held in reset; pre-reset value: -0.1015624998
+10:17:25.468  Elevator encoder released from reset
+10:17:36.088  Warning: Elevator motor power limit exceeded!
+10:17:36.099  Elevator encoder held in reset; pre-reset value: -0.7109374986
+10:17:37.868  Elevator encoder released from reset
+10:17:41.048  Warning: Elevator motor power limit exceeded!
+10:17:47.648  Warning: Elevator motor power limit exceeded!
+10:17:47.658  Elevator encoder held in reset; pre-reset value: -0.6601562487
+10:17:52.848  ########  Robot disabled
+10:17:52.859  <<< Drive interrupted
+10:17:52.872  <<< Drive ended
+10:17:52.884  <<< MoveElevator interrupted
+10:17:52.896  <<< MoveElevator ended
+10:17:52.908  <<< RunIntake interrupted
+10:17:52.920  <<< RunIntake ended

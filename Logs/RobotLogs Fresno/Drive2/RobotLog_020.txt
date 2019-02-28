@@ -1,0 +1,32 @@
+1969-12-31
+16:06:42.489  Git version: e0e17b2 (branch: master)
+16:06:42.514  Built: Sun 04/08/2018   11:00 AM
+2018-04-08
+13:59:03.686  ########  Robot disabled
+13:59:03.745  Elevator encoder held in reset; pre-reset value: 0.0
+13:59:16.342  ########  Teleop enabled
+13:59:16.362  ########  Robot disabled
+13:59:30.182  ########  Teleop enabled
+13:59:30.202  ########  Robot disabled
+13:59:52.243  ########  Teleop enabled
+13:59:52.255  >>> Drive started
+13:59:52.309  >>> MoveElevator started
+13:59:52.322  >>> RunIntake started
+14:00:02.273  ########  Robot disabled
+14:00:02.284  <<< Drive interrupted
+14:00:02.298  <<< Drive ended
+14:00:02.310  <<< MoveElevator interrupted
+14:00:02.323  <<< MoveElevator ended
+14:00:02.335  <<< RunIntake interrupted
+14:00:02.349  <<< RunIntake ended
+14:00:21.002  ########  Teleop enabled
+14:00:21.014  >>> Drive started
+14:00:21.028  >>> MoveElevator started
+14:00:21.040  >>> RunIntake started
+14:00:48.462  ########  Robot disabled
+14:00:48.474  <<< Drive interrupted
+14:00:48.488  <<< Drive ended
+14:00:48.500  <<< MoveElevator interrupted
+14:00:48.513  <<< MoveElevator ended
+14:00:48.525  <<< RunIntake interrupted
+14:00:48.537  <<< RunIntake ended

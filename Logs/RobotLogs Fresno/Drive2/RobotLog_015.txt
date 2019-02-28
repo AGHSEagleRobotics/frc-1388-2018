@@ -1,0 +1,143 @@
+1969-12-31
+16:07:03.394  Git version: e0e17b2 (branch: master)
+16:07:03.417  Built: Sun 04/08/2018   11:00 AM
+16:07:09.924  ########  Robot disabled
+16:07:09.949  Elevator encoder held in reset; pre-reset value: 0.0
+2018-04-08
+11:07:55.120  ########  Teleop enabled
+11:07:55.133  >>> Drive started
+11:07:55.164  >>> MoveElevator started
+11:07:55.179  >>> RunIntake started
+11:08:17.273  Elevator encoder released from reset
+11:08:20.613  Warning: Elevator motor power limit exceeded!
+11:08:20.640  Elevator encoder held in reset; pre-reset value: -0.42317708249999997
+11:08:21.273  Elevator encoder released from reset
+11:08:26.774  ########  Robot disabled
+11:08:26.785  <<< Drive interrupted
+11:08:26.799  <<< Drive ended
+11:08:26.811  <<< MoveElevator interrupted
+11:08:26.825  <<< MoveElevator ended
+11:08:26.838  <<< RunIntake interrupted
+11:08:26.851  <<< RunIntake ended
+11:10:21.273  ########  Teleop enabled
+11:10:21.284  >>> Drive started
+11:10:21.296  >>> MoveElevator started
+11:10:21.309  >>> RunIntake started
+11:10:36.493  Warning: Elevator motor power limit exceeded!
+11:10:36.503  Elevator encoder held in reset; pre-reset value: -0.537434894775
+11:11:07.393  ########  Robot disabled
+11:11:07.404  <<< Drive interrupted
+11:11:07.417  <<< Drive ended
+11:11:07.429  <<< MoveElevator interrupted
+11:11:07.442  <<< MoveElevator ended
+11:11:07.455  <<< RunIntake interrupted
+11:11:07.467  <<< RunIntake ended
+11:12:46.673  ########  Teleop enabled
+11:12:46.685  >>> Drive started
+11:12:46.698  >>> MoveElevator started
+11:12:46.712  >>> RunIntake started
+11:13:09.233  ########  Robot disabled
+11:13:09.244  <<< Drive interrupted
+11:13:09.258  <<< Drive ended
+11:13:09.271  <<< MoveElevator interrupted
+11:13:09.283  <<< MoveElevator ended
+11:13:09.296  <<< RunIntake interrupted
+11:13:09.309  <<< RunIntake ended
+11:14:13.312  ########  Teleop enabled
+11:14:13.324  >>> Drive started
+11:14:13.337  >>> MoveElevator started
+11:14:13.350  >>> RunIntake started
+11:14:23.713  Elevator encoder released from reset
+11:14:29.273  ########  Robot disabled
+11:14:29.284  <<< Drive interrupted
+11:14:29.297  <<< Drive ended
+11:14:29.309  <<< MoveElevator interrupted
+11:14:29.322  <<< MoveElevator ended
+11:14:29.334  <<< RunIntake interrupted
+11:14:29.347  <<< RunIntake ended
+11:15:36.974  ########  Teleop enabled
+11:15:36.986  >>> Drive started
+11:15:37.001  >>> MoveElevator started
+11:15:37.013  >>> RunIntake started
+11:16:55.074  ########  Robot disabled
+11:16:55.087  <<< Drive interrupted
+11:16:55.101  <<< Drive ended
+11:16:55.113  <<< MoveElevator interrupted
+11:16:55.175  <<< MoveElevator ended
+11:16:55.187  <<< RunIntake interrupted
+11:16:55.201  <<< RunIntake ended
+11:18:05.374  ########  Teleop enabled
+11:18:05.386  >>> Drive started
+11:18:05.399  >>> MoveElevator started
+11:18:05.412  >>> RunIntake started
+11:18:46.614  Warning: Elevator motor power limit exceeded!
+11:18:49.319  Elevator encoder held in reset; pre-reset value: -0.173502603825
+11:18:49.414  Elevator encoder released from reset
+11:19:10.794  Warning: Elevator motor power limit exceeded!
+11:19:10.806  Elevator encoder held in reset; pre-reset value: -0.36393229095
+11:19:11.294  Elevator encoder released from reset
+11:19:13.954  Warning: Elevator motor power limit exceeded!
+11:19:13.966  Elevator encoder held in reset; pre-reset value: -0.528971353125
+11:19:17.074  Elevator encoder released from reset
+11:19:31.294  Warning: Elevator motor power limit exceeded!
+11:19:31.305  Elevator encoder held in reset; pre-reset value: -0.56705729055
+11:19:35.894  Elevator encoder released from reset
+11:19:39.594  Warning: Elevator motor power limit exceeded!
+11:19:39.605  Elevator encoder held in reset; pre-reset value: -0.427408853325
+11:19:40.894  Elevator encoder released from reset
+11:19:43.394  Warning: Elevator motor power limit exceeded!
+11:19:43.407  Elevator encoder held in reset; pre-reset value: -0.44856770744999996
+11:19:46.776  Elevator encoder released from reset
+11:19:50.154  Warning: Elevator motor power limit exceeded!
+11:19:50.167  Elevator encoder held in reset; pre-reset value: -0.3723958326
+11:20:09.814  Elevator encoder released from reset
+11:20:24.454  Elevator encoder held in reset; pre-reset value: -0.059244791549999995
+11:20:41.774  Elevator encoder released from reset
+11:20:48.194  Warning: Elevator motor power limit exceeded!
+11:20:48.206  Elevator encoder held in reset; pre-reset value: -0.630533852925
+11:25:09.534  Elevator encoder released from reset
+11:25:19.334  Warning: Elevator motor power limit exceeded!
+11:25:19.345  Elevator encoder held in reset; pre-reset value: -0.571289061375
+11:25:39.973  ########  Robot disabled
+11:25:39.985  <<< Drive interrupted
+11:25:39.997  <<< Drive ended
+11:25:40.010  <<< MoveElevator interrupted
+11:25:40.022  <<< MoveElevator ended
+11:25:40.034  <<< RunIntake interrupted
+11:25:40.046  <<< RunIntake ended
+11:26:15.673  ########  Teleop enabled
+11:26:15.685  >>> Drive started
+11:26:15.698  >>> MoveElevator started
+11:26:15.711  >>> RunIntake started
+11:26:39.813  ########  Robot disabled
+11:26:39.824  <<< Drive interrupted
+11:26:39.837  <<< Drive ended
+11:26:39.850  <<< MoveElevator interrupted
+11:26:39.863  <<< MoveElevator ended
+11:26:39.875  <<< RunIntake interrupted
+11:26:39.888  <<< RunIntake ended
+11:28:20.273  ########  Teleop enabled
+11:28:20.285  >>> Drive started
+11:28:20.298  >>> MoveElevator started
+11:28:20.312  >>> RunIntake started
+11:31:17.673  ########  Robot disabled
+11:31:17.684  <<< Drive interrupted
+11:31:17.697  <<< Drive ended
+11:31:17.709  <<< MoveElevator interrupted
+11:31:17.721  <<< MoveElevator ended
+11:31:17.734  <<< RunIntake interrupted
+11:31:17.794  <<< RunIntake ended
+11:31:29.713  ########  Teleop enabled
+11:31:29.724  >>> Drive started
+11:31:29.737  >>> MoveElevator started
+11:31:29.749  >>> RunIntake started
+11:31:38.713  Elevator encoder released from reset
+11:32:31.395  Warning: Elevator motor power limit exceeded!
+11:32:31.406  Elevator encoder held in reset; pre-reset value: -0.579752603025
+11:33:33.373  ########  Robot disabled
+11:33:33.386  <<< Drive interrupted
+11:33:33.399  <<< Drive ended
+11:33:33.413  <<< MoveElevator interrupted
+11:33:33.427  <<< MoveElevator ended
+11:33:33.439  <<< RunIntake interrupted
+11:33:33.452  <<< RunIntake ended

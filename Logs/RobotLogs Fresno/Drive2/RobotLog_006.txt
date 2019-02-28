@@ -1,0 +1,44 @@
+1969-12-31
+16:06:42.519  Git version: ffac1c1 (branch: master 2 files changed, 35 insertions(+), 2 deletions(-))
+16:06:42.545  Built: Sat 04/07/2018   03:25 PM
+2018-04-07
+17:50:40.340  ########  Robot disabled
+17:50:40.392  Elevator encoder held in reset; pre-reset value: 0.0
+17:51:08.271  ########  Teleop enabled
+17:51:08.283  >>> Drive started
+17:51:08.347  >>> MoveElevator started
+17:51:08.364  >>> RunIntake started
+17:51:10.451  Elevator encoder released from reset
+17:57:32.010  Warning: Elevator motor power limit exceeded!
+17:57:40.404  Elevator encoder held in reset; pre-reset value: -0.376627603425
+17:57:40.950  Elevator encoder released from reset
+17:57:44.950  Warning: Elevator motor power limit exceeded!
+17:57:44.990  Warning: Elevator motor power limit exceeded!
+17:57:49.050  Warning: Elevator motor power limit exceeded!
+17:57:49.062  Elevator encoder held in reset; pre-reset value: -0.7447916652
+17:57:49.730  Elevator encoder released from reset
+17:57:56.630  Warning: Elevator motor power limit exceeded!
+17:57:56.671  Warning: Elevator motor power limit exceeded!
+17:58:17.210  Warning: Elevator motor power limit exceeded!
+17:58:17.221  Elevator encoder held in reset; pre-reset value: -0.5247395823
+17:59:23.590  ########  Robot disabled
+17:59:23.602  <<< Drive interrupted
+17:59:23.614  <<< Drive ended
+17:59:23.626  <<< MoveElevator interrupted
+17:59:23.639  <<< MoveElevator ended
+17:59:23.651  <<< RunIntake interrupted
+17:59:23.663  <<< RunIntake ended
+17:59:35.770  ########  Teleop enabled
+17:59:35.782  >>> Drive started
+17:59:35.801  >>> MoveElevator started
+17:59:35.814  >>> RunIntake started
+17:59:38.150  Elevator encoder released from reset
+18:01:45.290  Warning: Elevator motor power limit exceeded!
+18:01:45.300  Elevator encoder held in reset; pre-reset value: -0.545898436425
+18:01:47.790  ########  Robot disabled
+18:01:47.801  <<< Drive interrupted
+18:01:47.814  <<< Drive ended
+18:01:48.305  <<< MoveElevator interrupted
+18:01:48.321  <<< MoveElevator ended
+18:01:48.333  <<< RunIntake interrupted
+18:01:48.348  <<< RunIntake ended

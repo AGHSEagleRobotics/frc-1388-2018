@@ -1,0 +1,17 @@
+1969-12-31
+16:06:41.905  Git version: ffac1c1 (branch: master 2 files changed, 35 insertions(+), 2 deletions(-))
+16:06:41.934  Built: Sat 04/07/2018   03:25 PM
+16:06:49.001  ########  Robot disabled
+16:06:49.098  Elevator encoder held in reset; pre-reset value: 0.0
+2018-04-07
+16:41:33.998  ########  Teleop enabled
+16:41:34.474  >>> Drive started
+16:41:34.512  >>> MoveElevator started
+16:41:34.526  >>> RunIntake started
+16:42:05.055  ########  Robot disabled
+16:42:05.067  <<< Drive interrupted
+16:42:05.079  <<< Drive ended
+16:42:05.091  <<< MoveElevator interrupted
+16:42:05.104  <<< MoveElevator ended
+16:42:05.117  <<< RunIntake interrupted
+16:42:05.130  <<< RunIntake ended

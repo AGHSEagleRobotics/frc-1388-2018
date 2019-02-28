@@ -1,0 +1,125 @@
+1969-12-31
+16:06:42.335  Git version: ffac1c1 (branch: master 2 files changed, 35 insertions(+), 2 deletions(-))
+16:06:42.361  Built: Sat 04/07/2018   03:25 PM
+16:06:49.852  ########  Robot disabled
+16:06:49.921  Elevator encoder held in reset; pre-reset value: 0.0
+2018-04-07
+15:33:22.482  ########  Autonomous enabled
+15:33:22.511  FMS info:  CAFR Qualification match 48 replay 1;  Red alliance,  Driver Station 3
+15:33:22.527  >>> Drive started
+15:33:22.558  >>> MoveElevator started
+15:33:22.572  >>> RunIntake started
+15:33:22.610  Positon is equal to Center objective Switch
+15:33:22.628  Auto: runSwitch:  position=CENTER  switchSide=L
+15:33:22.649  <<< MoveElevator interrupted
+15:33:22.661  <<< MoveElevator ended
+15:33:22.674  <<< Drive interrupted
+15:33:22.687  <<< Drive ended
+15:33:22.700  <<< RunIntake interrupted
+15:33:22.713  <<< RunIntake ended
+15:33:22.730  >>> ElevatorInit started
+15:33:22.744  <<< ElevatorInit ended
+15:33:22.757  >>> AutonomousDrive started
+15:33:22.784  Distance: 43.0  time: 99999.0
+15:33:22.799  >>> DeployArms started
+15:33:23.040  Elevator encoder released from reset
+15:33:23.465  Error: 0.8208672208000038 StallCount: 0
+15:33:23.476  <<< AutonomousDrive ended
+15:33:23.489  >>> AutonomousTurnTo started
+15:33:23.502  Time: 99999.0 Angle: -90.0 Heading:0.7976855150651454
+15:33:24.301  <<< DeployArms ended
+15:33:24.501  <<< AutonomousTurnTo ended
+15:33:24.513  Error: -1.6123065960912015 StallCount: 0 Heading:-88.3876934039088
+15:33:24.526  >>> AutonomousDrive started
+15:33:24.538  Distance: 60.0  time: 99999.0
+15:33:25.347  Error: 0.8812155072000039 StallCount: 0
+15:33:25.362  <<< AutonomousDrive ended
+15:33:25.375  >>> AutonomousTurnTo started
+15:33:25.387  Time: 99999.0 Angle: 0.0 Heading:-88.47777127443
+15:33:25.402  >>> AutonomousMoveElevator started
+15:33:26.503  <<< AutonomousTurnTo ended
+15:33:26.514  Error: 1.6777051099349087 StallCount: 0 Heading:-0.9268106168567329
+15:33:26.528  >>> AutonomousDrive started
+15:33:26.542  Distance: 56.0  time: 99999.0
+15:33:26.556  <<< AutonomousMoveElevator ended
+15:33:27.326  Error: 0.5611398464000033 StallCount: 0
+15:33:27.338  <<< AutonomousDrive ended
+15:33:27.351  >>> AutonomousRunIntake started
+15:33:28.361  <<< AutonomousRunIntake ended
+15:33:28.372  >>> AutonomousDrive started
+15:33:28.385  Distance: -20.0  time: 99999.0
+15:33:28.766  Error: -1.3203840608000021 StallCount: 0
+15:33:28.778  <<< AutonomousDrive ended
+15:33:28.791  >>> AutonomousMoveElevator started
+15:33:29.601  <<< AutonomousMoveElevator ended
+15:33:29.612  >>> AutonomousTurnTo started
+15:33:29.625  Time: 99999.0 Angle: 70.0 Heading:27.020353216612396
+15:33:30.141  <<< AutonomousTurnTo ended
+15:33:30.153  Error: 1.915651720276884 StallCount: 0 Heading:68.08434827972312
+15:33:30.167  >>> AutonomousDrive started
+15:33:30.180  Distance: 41.666666666666664  time: 99999.0
+15:33:30.196  >>> AutonomousRunIntake started
+15:33:31.026  Error: 1.4274940010666697 StallCount: 0
+15:33:31.038  <<< AutonomousDrive ended
+15:33:31.051  >>> AutonomousDrive started
+15:33:31.064  Distance: -41.666666666666664  time: 99999.0
+15:33:31.767  Error: -1.0875009914666691 StallCount: 0
+15:33:31.881  <<< AutonomousDrive ended
+15:33:32  >>> AutonomousTurnTo started
+15:33:32.014  Time: 99999.0 Angle: 0.0 Heading:36.46528018118882
+15:33:32.028  >>> AutonomousMoveElevator started
+15:33:32.447  <<< AutonomousRunIntake ended
+15:33:32.621  <<< AutonomousTurnTo ended
+15:33:32.633  Error: -1.7918375916122702 StallCount: 0 Heading:1.6625152687295341
+15:33:32.648  >>> AutonomousDrive started
+15:33:32.661  Distance: 20.0  time: 99999.0
+15:33:33.104  Error: 0.6803972191999996 StallCount: 0
+15:33:33.115  <<< AutonomousDrive ended
+15:33:33.127  >>> AutonomousRunIntake started
+15:33:33.142  <<< AutonomousMoveElevator ended
+15:33:34.141  <<< AutonomousRunIntake ended
+15:33:34.153  >>> AutonomousDrive started
+15:33:34.165  Distance: -20.0  time: 99999.0
+15:33:34.523  Error: -0.7803951632000015 StallCount: 0
+15:33:34.535  <<< AutonomousDrive ended
+15:33:34.548  >>> AutonomousMoveElevator started
+15:33:35.361  <<< AutonomousMoveElevator ended
+15:33:35.374  >>> AutonomousTurnTo started
+15:33:35.387  Time: 99999.0 Angle: 60.0 Heading:19.787605608713275
+15:33:35.903  <<< AutonomousTurnTo ended
+15:33:35.914  Error: 1.9362899531759723 StallCount: 0 Heading:58.06371004682403
+15:33:35.927  >>> AutonomousDrive started
+15:33:35.940  Distance: 41.666666666666664  time: 99999.0
+15:33:35.956  >>> AutonomousRunIntake started
+15:33:36.567  Error: 0.7875071594666636 StallCount: 0
+15:33:36.578  <<< AutonomousDrive ended
+15:33:37.740  ########  Robot disabled
+15:33:37.752  <<< AutonomousRunIntake interrupted
+15:33:37.764  <<< AutonomousRunIntake ended
+15:33:38.001  ########  Teleop enabled
+15:33:38.014  >>> Drive started
+15:33:38.029  >>> MoveElevator started
+15:33:38.042  >>> RunIntake started
+15:33:58.541  Warning: Elevator motor power limit exceeded!
+15:33:58.581  Warning: Elevator motor power limit exceeded!
+15:34:03.261  Warning: Elevator motor power limit exceeded!
+15:34:03.275  Elevator encoder held in reset; pre-reset value: -0.4570312491
+15:34:09.621  Elevator encoder released from reset
+15:34:17.860  Warning: Elevator motor power limit exceeded!
+15:34:17.872  Elevator encoder held in reset; pre-reset value: -0.630533852925
+15:34:41.480  Elevator encoder released from reset
+15:34:45.121  Warning: Elevator motor power limit exceeded!
+15:34:45.132  Elevator encoder held in reset; pre-reset value: -0.393554686725
+15:35:08.322  Elevator encoder released from reset
+15:35:12.541  Warning: Elevator motor power limit exceeded!
+15:35:12.553  Elevator encoder held in reset; pre-reset value: -0.3216145827
+15:35:18.220  Elevator encoder released from reset
+15:35:25.820  Warning: Elevator motor power limit exceeded!
+15:35:25.832  Elevator encoder held in reset; pre-reset value: -0.5247395823
+15:35:53.381  ########  Robot disabled
+15:35:53.392  <<< Drive interrupted
+15:35:53.407  <<< Drive ended
+15:35:53.421  <<< MoveElevator interrupted
+15:35:53.433  <<< MoveElevator ended
+15:35:53.446  <<< RunIntake interrupted
+15:35:53.515  <<< RunIntake ended
